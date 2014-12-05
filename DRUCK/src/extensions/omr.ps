@@ -1,0 +1,26 @@
+
+%% cm
+
+/omrstartx 0.6 cm def
+/omrstarty 16 cm def
+/omrstep -0.3 cm def
+/omrlaenge 0.6 cm def
+/omrbreite 3 def
+
+/omrstrich {
+  currentlinewidth exch
+  omrbreite setlinewidth 
+  newpath
+  omrstep mul omrstarty add omrstartx exch moveto
+  omrlaenge 0 rlineto
+  stroke
+  setlinewidth 
+  } def
+
+ /omrstriche {
+   { omrstrich } forall 
+ } def
+ 
+%% [ 1 2 3 5 ] omrstriche
+   
+

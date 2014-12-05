@@ -1,0 +1,2921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.6.0_21" class="java.beans.XMLDecoder">
+	<object class="druck.DruckDataInStore">
+		<void property="components">
+			<object class="java.util.Vector">
+				<void method="add">
+					<object class="druck.SectionComponent">
+						<void property="childs">
+							<void method="add">
+								<object class="toni.druck.elements.Chart">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>100.0</double>
+									</void>
+									<void property="height">
+										<double>100.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>68</double>
+										</void>
+										<void property="translateY">
+											<double>50</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="toni.druck.elements.Chart">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>100.0</double>
+									</void>
+									<void property="height">
+										<double>100.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>168</double>
+										</void>
+										<void property="translateY">
+											<double>50</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+						</void>
+						<void property="bordered">
+							<boolean>false</boolean>
+						</void>
+						<void property="filled">
+							<boolean>false</boolean>
+						</void>
+						<void property="grayscale">
+							<int>100</int>
+						</void>
+						<void property="linewidth">
+							<int>-1</int>
+						</void>
+						<void property="width">
+							<double>218.0</double>
+						</void>
+						<void property="height">
+							<double>100.0</double>
+						</void>
+						<void property="trans">
+							<void property="translateX">
+								<double>109</double>
+							</void>
+							<void property="translateY">
+								<double>50</double>
+							</void>
+						</void>
+						<void property="font">
+							<object class="java.awt.Font">
+								<string>Dialog</string>
+								<int>0</int>
+								<int>4</int>
+							</object>
+						</void>
+						<void property="name">
+							<string>grafik</string>
+						</void>
+						<void property="nr">
+							<int>1</int>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.SectionComponent">
+						<void property="childs">
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>bsnr</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>27</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>patient</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>27.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>49</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>anz</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>16.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>71</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>anzvj</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>16.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>87</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>brutto</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>105</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>bruttopriv</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>125</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>bruttovj</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>146</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>bruttossb</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>168</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>schnitt</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>190</double>
+										</void>
+										<void property="translateY">
+											<double>4</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+						</void>
+						<void property="bordered">
+							<boolean>false</boolean>
+						</void>
+						<void property="filled">
+							<boolean>false</boolean>
+						</void>
+						<void property="grayscale">
+							<int>100</int>
+						</void>
+						<void property="linewidth">
+							<int>-1</int>
+						</void>
+						<void property="width">
+							<double>201.0</double>
+						</void>
+						<void property="height">
+							<double>8.0</double>
+						</void>
+						<void property="trans">
+							<void property="translateX">
+								<double>100</double>
+							</void>
+							<void property="translateY">
+								<double>4</double>
+							</void>
+						</void>
+						<void property="font">
+							<object class="java.awt.Font">
+								<string>Dialog</string>
+								<int>0</int>
+								<int>4</int>
+							</object>
+						</void>
+						<void property="name">
+							<string>item</string>
+						</void>
+						<void property="nr">
+							<int>2</int>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.SectionComponent">
+						<void property="childs">
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>25</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Kundennummer</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>25</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>nummer</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>25</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>43</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Kunden-IK</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>43</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>ik</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>43</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>63</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Abrechnungsmonat</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>63</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>mj</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>63</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>84</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Datum</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>84</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>datum</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>84</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>7.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>97</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Seite</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>7.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>97</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>seite</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>7.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>97</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>27.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>116</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Sachbearbeiter</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>27.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>116</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>bearbeiter</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>27.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>116</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>25.0</double>
+									</void>
+									<void property="height">
+										<double>12.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>142</double>
+										</void>
+										<void property="translateY">
+											<double>24</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Telefon</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>25.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>142</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>telefon</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>25.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>142</double>
+										</void>
+										<void property="translateY">
+											<double>26</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>139.0</double>
+									</void>
+									<void property="height">
+										<double>15.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>85</double>
+										</void>
+										<void property="translateY">
+											<double>39</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Kundenadresse</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>25</double>
+										</void>
+										<void property="translateY">
+											<double>35</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>139.0</double>
+									</void>
+									<void property="height">
+										<double>9.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>85</double>
+										</void>
+										<void property="translateY">
+											<double>42</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>name</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>137.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>86</double>
+										</void>
+										<void property="translateY">
+											<double>41</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>strasseort</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>137.0</double>
+									</void>
+									<void property="height">
+										<double>4.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>86</double>
+										</void>
+										<void property="translateY">
+											<double>45</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="components.ImageComponent">
+									<void property="image">
+										<string>testdaten/tutte.eps</string>
+									</void>
+									<void property="bordered">
+										<boolean>true</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>40.0</double>
+									</void>
+									<void property="height">
+										<double>40.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>183</double>
+										</void>
+										<void property="translateY">
+											<double>38</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Bruttoumsatz</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>true</boolean>
+									</void>
+									<void property="grayscale">
+										<int>90</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>27</double>
+										</void>
+										<void property="translateY">
+											<double>77</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Monat:</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>49</double>
+										</void>
+										<void property="translateY">
+											<double>77</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.TextFieldComponent">
+									<void id="FieldName0" property="field">
+										<void property="name">
+											<string>mj</string>
+										</void>
+									</void>
+									<void property="field">
+										<object idref="FieldName0" />
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>22.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>69</double>
+										</void>
+										<void property="translateY">
+											<double>77</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>für BSNR</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>8.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>89</double>
+										</void>
+										<void property="translateY">
+											<double>77</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>BIG-STATISTIK</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>true</boolean>
+									</void>
+									<void property="grayscale">
+										<int>80</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>40.0</double>
+									</void>
+									<void property="height">
+										<double>10.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>183</double>
+										</void>
+										<void property="translateY">
+											<double>78</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.BoxComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>true</boolean>
+									</void>
+									<void property="grayscale">
+										<int>90</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>187.0</double>
+									</void>
+									<void property="height">
+										<double>16.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>109</double>
+										</void>
+										<void property="translateY">
+											<double>98</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Betriebst.</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>17.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>24</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Name</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>43.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>54</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Rezepte</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>40.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>96</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Brutto EUR</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>54.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>143</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>SSB PC</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>179</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Schnitt</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>10.0</double>
+									</void>
+									<void property="height">
+										<double>7.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>193</double>
+										</void>
+										<void property="translateY">
+											<double>93</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>187.0</double>
+									</void>
+									<void property="height">
+										<double>0.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>109</double>
+										</void>
+										<void property="translateY">
+											<double>97</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Aktuell</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>15.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>78</double>
+										</void>
+										<void property="translateY">
+											<double>100</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Vorjahr</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>32.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>102</double>
+										</void>
+										<void property="translateY">
+											<double>100</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Aktuell</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>28.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>132</double>
+										</void>
+										<void property="translateY">
+											<double>100</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Vorjahr</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>25.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>158</double>
+										</void>
+										<void property="translateY">
+											<double>100</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Aktuell</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>15.0</double>
+									</void>
+									<void property="height">
+										<double>6.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>178</double>
+										</void>
+										<void property="translateY">
+											<double>100</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Kasse</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>25.0</double>
+									</void>
+									<void property="height">
+										<double>3.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>118</double>
+										</void>
+										<void property="translateY">
+											<double>104</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Privat</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>18.0</double>
+									</void>
+									<void property="height">
+										<double>3.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>140</double>
+										</void>
+										<void property="translateY">
+											<double>104</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.LabelComponent">
+									<void property="text">
+										<string>Kasse</string>
+									</void>
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>15.0</double>
+									</void>
+									<void property="height">
+										<double>3.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>156</double>
+										</void>
+										<void property="translateY">
+											<double>104</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+						</void>
+						<void property="bordered">
+							<boolean>false</boolean>
+						</void>
+						<void property="filled">
+							<boolean>false</boolean>
+						</void>
+						<void property="grayscale">
+							<int>100</int>
+						</void>
+						<void property="linewidth">
+							<int>-1</int>
+						</void>
+						<void property="width">
+							<double>203.0</double>
+						</void>
+						<void property="height">
+							<double>106.0</double>
+						</void>
+						<void property="trans">
+							<void property="translateX">
+								<double>101</double>
+							</void>
+							<void property="translateY">
+								<double>53</double>
+							</void>
+						</void>
+						<void property="font">
+							<object class="java.awt.Font">
+								<string>Dialog</string>
+								<int>0</int>
+								<int>4</int>
+							</object>
+						</void>
+						<void property="name">
+							<string>header</string>
+						</void>
+						<void property="nr">
+							<int>3</int>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.SectionComponent">
+						<void property="childs">
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>187.0</double>
+									</void>
+									<void property="height">
+										<double>1.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>109</double>
+										</void>
+										<void property="translateY">
+											<double>1</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>20.0</double>
+									</void>
+									<void property="height">
+										<double>14.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>26</double>
+										</void>
+										<void property="translateY">
+											<double>11</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>30.0</double>
+									</void>
+									<void property="height">
+										<double>14.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>51</double>
+										</void>
+										<void property="translateY">
+											<double>11</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>60.0</double>
+									</void>
+									<void property="height">
+										<double>14.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>96</double>
+										</void>
+										<void property="translateY">
+											<double>11</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>1</int>
+									</void>
+									<void property="width">
+										<double>187.0</double>
+									</void>
+									<void property="height">
+										<double>1.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>109</double>
+										</void>
+										<void property="translateY">
+											<double>20</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+							<void method="add">
+								<object class="druck.SectionComponent">
+									<void property="bordered">
+										<boolean>false</boolean>
+									</void>
+									<void property="filled">
+										<boolean>false</boolean>
+									</void>
+									<void property="grayscale">
+										<int>100</int>
+									</void>
+									<void property="linewidth">
+										<int>-1</int>
+									</void>
+									<void property="width">
+										<double>0.0</double>
+									</void>
+									<void property="height">
+										<double>0.0</double>
+									</void>
+									<void property="trans">
+										<void property="translateX">
+											<double>203</double>
+										</void>
+										<void property="translateY">
+											<double>1</double>
+										</void>
+									</void>
+									<void property="font">
+										<object class="java.awt.Font">
+											<string>Dialog</string>
+											<int>0</int>
+											<int>4</int>
+										</object>
+									</void>
+								</object>
+							</void>
+						</void>
+						<void property="bordered">
+							<boolean>false</boolean>
+						</void>
+						<void property="filled">
+							<boolean>false</boolean>
+						</void>
+						<void property="grayscale">
+							<int>100</int>
+						</void>
+						<void property="linewidth">
+							<int>-1</int>
+						</void>
+						<void property="width">
+							<double>203.0</double>
+						</void>
+						<void property="height">
+							<double>22.0</double>
+						</void>
+						<void property="trans">
+							<void property="translateX">
+								<double>101</double>
+							</void>
+							<void property="translateY">
+								<double>11</double>
+							</void>
+						</void>
+						<void property="font">
+							<object class="java.awt.Font">
+								<string>Dialog</string>
+								<int>0</int>
+								<int>4</int>
+							</object>
+						</void>
+						<void property="name">
+							<string>footer</string>
+						</void>
+						<void property="nr">
+							<int>4</int>
+						</void>
+					</object>
+				</void>
+			</object>
+		</void>
+		<void property="komponentenOhneGrafik">
+			<object class="java.util.Vector">
+				<void method="add">
+					<object class="druck.Verteiler">
+						<void property="name">
+							<string>firma</string>
+						</void>
+						<void property="fields">
+							<string>bearbeiter,telefon</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="toni.druck.elements.PageCounter">
+						<void property="verteiler">
+							<string>firma</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Verteiler">
+						<void property="name">
+							<string>kunde</string>
+						</void>
+						<void property="fields">
+							<string>nummer,ik,mj,datum,name,strasseort</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Verteiler">
+						<void property="name">
+							<string>item</string>
+						</void>
+						<void property="fields">
+							<string>bsnr,patient,anz,anzvj,brutto,bruttopriv,bruttovj,bruttossb,schnitt
+							</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Summierer">
+						<void property="verteiler">
+							<string>item</string>
+						</void>
+						<void property="clearAt">
+							<string>kunde</string>
+						</void>
+						<void property="item">
+							<string>brutto</string>
+						</void>
+						<void property="sum">
+							<string>sbrutto</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Summierer">
+						<void property="verteiler">
+							<string>item</string>
+						</void>
+						<void property="clearAt">
+							<string>kunde</string>
+						</void>
+						<void property="item">
+							<string>bruttovj</string>
+						</void>
+						<void property="sum">
+							<string>sbruttovj</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Verteiler">
+						<void property="name">
+							<string>summe</string>
+						</void>
+						<void property="fields">
+							<string>null</string>
+						</void>
+					</object>
+				</void>
+				<void method="add">
+					<object class="druck.Verteiler">
+						<void property="name">
+							<string>grafik</string>
+						</void>
+						<void property="fields">
+							<string>jahre</string>
+						</void>
+					</object>
+				</void>
+			</object>
+		</void>
+	</object>
+</java> 

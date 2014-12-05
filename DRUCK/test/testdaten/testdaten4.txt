@@ -1,0 +1,11 @@
+output|results/testdaten4.ps
+layout|testdaten/testpage1
+kunde|nill|100
+kunde|nill2|200
+kunde|nill3|300
+kunde|nill4|400
+kunde|nill5|500
+kunde|nill6|600
+kunde|nill7|700
+kunde|nill8|800
+kunde|nill9|900

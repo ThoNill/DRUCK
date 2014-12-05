@@ -1,0 +1,5 @@
+<Page name="erster" width="200" height="290">
+	<Vbox>
+		<TextField variable="test" />
+	</Vbox>
+</Page>

@@ -1,0 +1,163 @@
+%!PS-Adobe-2.0
+%%BeginComments
+%Creator: toni.druck.renderer.PostscriptRenderer
+%%Pages: (atend)
+%%EndComments
+%%BeginSetup
+ /defaults save def
+/cm { 28 mul} def
+/reck { 0              cm 1 index              cm rlineto
+		1 index        cm 0                    cm rlineto
+0              cm 1 index -1 mul       cm rlineto
+1 index -1 mul cm 0                    cm rlineto
+pop pop
+} def
+/calculateTextHeight  { 
+
+  gsave                                  % save graphic context
+    {                            
+        100 100 moveto                     % move to some point 
+        (HÍpg) true charpath pathbbox      % gets text path bounding box (LLx LLy URx URy)
+        exch pop 3 -1 roll pop             % keeps LLy and URy
+        exch sub                           % URy - LLy
+    }
+    stopped                                % did the last block fail?
+    {
+        pop pop                            % get rid of "stopped" junk
+        currentfont /FontMatrix get 3 get  % gets alternative text height
+    }
+    if
+    grestore                               % restore graphic context
+
+	1.1 mul /TextHeight exch def 
+} def
+
+/yzentrieren { dup true charpath pathbbox 3 -1 roll sub 2 div neg 3 1 roll sub exch rmoveto } def 
+
+/ralign { yzentrieren exch 1 index  stringwidth pop sub 0 rmoveto show } def 
+/calign { yzentrieren exch 1 index  stringwidth pop sub 2 div 0 rmoveto show } def
+/lalign { yzentrieren exch pop show } def
+
+
+
+/BeginEPSF {                           %def
+/b4_Inc_state save def                 % Save state for cleanup 
+/dict_count countdictstack def         % Count objects on dict stack
+/op_count count 1 sub def              % Count objects on operand stack
+userdict begin                         % Push userdict on dict stack
+/showpage { } def                      % Redefine showpage, { } = null proc
+0 setgray 0 setlinecap                 % Prepare graphics state
+1 setlinewidth 0 setlinejoin 
+10 setmiterlimit [ ] 0 setdash newpath 
+/languagelevel where                   % If level not equal to 1 then
+{pop languagelevel                     % set strokeadjust and
+1 ne                                   % overprint to their defaults.
+{false setstrokeadjust false setoverprint
+} if
+} if
+} bind def
+
+/EndEPSF {                              %def
+count op_count sub {pop} repeat         % Clean up stacks
+countdictstack dict_count sub {end} repeat 
+b4_Inc_state restore
+} bind def
+
+%% Page arztstat
+/ISOvec [
+8#244   /Euro           % Eurozeichen
+8#304	/Adieresis		% Umlaut A	196
+8#326	/Odieresis		% Umlaut O	214
+8#334	/Udieresis		% Umlaut U	220
+8#337	/germandbls		% scharf-s	223
+8#344  /adieresis		% Umlaut a	228
+8#366  /odieresis		% Umlaut o	246
+8#374  /udieresis		% Umlaut u	252
+8#307  /Ccedilla   % 
+8#347  /ccedilla   % 
+8#300  /Agrave   % 
+8#301  /Aacute		 % 
+8#302  /Acircumflex % 
+8#340  /agrave   % 
+8#341  /aacute		 % 
+8#342  /acircumflex % 
+8#310  /Egrave   % 
+8#311  /Eacute		 % 
+8#312  /Ecircumflex % 
+8#313  /Edieresis   % 
+8#350  /egrave   % 
+8#351  /eacute		 % 
+8#352  /ecircumflex % 
+8#353  /edieresis   % 
+8#314  /Igrave   % 
+8#315  /Iacute		 % 
+8#316  /Icircumflex % 
+8#317  /Idieresis   % 
+8#354  /igrave   % 
+8#355  /iacute		 % 
+8#356  /icircumflex % 
+8#357  /idieresis   % 
+8#322  /Ograve   % 
+8#323  /Oacute		 % 
+8#324  /Ocircumflex % 
+8#362  /ograve   % 
+8#363  /oacute		 % 
+8#344  /ocircumflex % 
+8#331  /Ugrave   % 
+8#332  /Uacute		 % 
+8#333  /Ucircumflex % 
+8#371  /ugrave   % 
+8#372  /uacute		 % 
+8#373  /ucircumflex % 
+] def
+
+
+/ReEncode {				% font newfont vector ReEncode -
+3 2 roll findfont			% newfont vector font auf Stack
+dup length dict			%   leere Kopie auf Stack
+begin				%   auf DStack
+{					%   fuer alle key/value in Courier
+1 index /FID eq			%     if key == /FID
+{ pop pop }			%       ignorieren
+{ 1 index /Encoding eq	%     else if key == /Encoding
+{ dup length array copy def	%	kopieren
+dup aload			%       vector Elemente auf Stack
+length 2 idiv		%	fuer jedes Paar
+{ currentdict /Encoding get %	  Encoding auf Stack
+3 1 roll put		%	  Encoding[index] name
+} repeat
+}
+{ def } ifelse		%     else key/value kopieren
+} ifelse
+} forall
+pop				%   vector entfernen
+currentdict			%   neuer Font auf Stack
+end
+definefont				%   neuer Font heisst newfont
+pop					%   newfont entfernen
+} bind def
+/Helvetica /ISOfont ISOvec ReEncode
+/Helvetica-Bold /ISOfontBold ISOvec ReEncode
+/Helvetica-Oblique /ISOfontItalic ISOvec ReEncode
+
+/Helvetica /Dialog ISOvec ReEncode
+/Helvetica-Bold /DialogBold ISOvec ReEncode
+/Helvetica-Oblique /DialogItalic ISOvec ReEncode
+
+/Helvetica /SansSerif ISOvec ReEncode
+/Helvetica-Bold /SansSerifBold ISOvec ReEncode
+/Helvetica-Oblique /SansSerifItalic ISOvec ReEncode
+
+/Helvetica /Serif ISOvec ReEncode
+/Helvetica-Bold /SerifBold ISOvec ReEncode
+/Helvetica-Oblique /SerifItalic ISOvec ReEncode
+
+/Helvetica /DialogInput ISOvec ReEncode
+/Helvetica-Bold /DialogInputBold ISOvec ReEncode
+/Helvetica-Oblique /DialogInputItalic ISOvec ReEncode
+
+/Helvetica /Monospaced ISOvec ReEncode
+/Helvetica-Bold /MonospacedBold ISOvec ReEncode
+/Helvetica-Oblique /MonospacedItalic ISOvec ReEncode
+
+%%EndSetup

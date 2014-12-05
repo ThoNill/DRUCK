@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Page name="biglist" width="210" height="300">
+	<Verteiler name="firma" fields="bearbeiter,telefon" />
+	<Verteiler name="kunde" fields="nummer,ik,mj,datum,name,strasseort" />
+	<Verteiler name="item"
+		fields="bsnr,patient,anz,anzvj,brutto,bruttopriv,bruttovj,bruttossb,schnitt">
+		<Sum item="brutto" sum="sbrutto" clearAt="kunde" />
+		<Sum item="bruttovj" sum="sbruttovj" clearAt="kunde" />
+	</Verteiler>
+	<Verteiler name="summe" />
+
+	<Hbox name="item" fontsize="8">
+		<Label width="18" height="2" />
+		<TextField variable="bsnr" width="18" height="8" />
+		<TextField variable="patient" width="27" height="8" />
+		<TextField variable="anz" width="16" height="8" align="r" />
+		<TextField variable="anzvj" width="16" height="8" align="r" />
+		<TextField variable="brutto" width="20" height="8" align="r" />
+		<TextField variable="bruttopriv" width="20" height="8"
+			align="r" />
+		<TextField variable="bruttovj" width="22" height="8" align="r" />
+		<TextField variable="bruttossb" width="22" height="8" align="r" />
+		<TextField variable="schnitt" width="22" height="8" align="r" />
+	</Hbox>
+
+	<Vbox name="header" fontsize="8">
+		<Label width="18" height="18" />
+		<Hbox>
+			<Label width="16" height="2" />
+			<Vbox>
+				<Hbox>
+					<Vbox bordered="true" linewidth="2">
+						<Label text="Kundennummer" width="18" height="4" bordered="true"
+							fontsize="6" linewidth="1" align="c" />
+						<TextField variable="nummer" width="18" height="8"
+							align="c" linewidth="1" bordered="true" fontsize="8" />
+					</Vbox>
+					<Vbox bordered="true" linewidth="1">
+						<Label text="Kunde" width="18" height="4" bordered="true"
+							fontsize="6" linewidth="1" align="c" filled="true" grayscale="60" />
+						<TextField variable="ik" width="18" height="8" align="c"
+							linewidth="1" bordered="true" filled="true" grayscale="80" />
+					</Vbox>
+					<Vbox bordered="true" linewidth="1" filled="true" grayscale="40">
+						<Label text="Monat" width="22" height="4" bordered="true"
+							fontsize="6" linewidth="1" align="c" />
+						<TextField variable="mj" width="22" height="8" align="c"
+							linewidth="1" bordered="true" />
+					</Vbox>
+
+
+				</Hbox>
+				<Label width="2" height="2" />
+
+				<TextField variable="name" width="137" height="4" filled="true"
+					grayscale="40" />
+				<TextField variable="strasseort" width="137" height="4"
+					filled="true" grayscale="40" />
+
+			</Vbox>
+		</Hbox>
+		<Label width="6" height="15" />
+
+	</Vbox>
+
+	<Vbox name="footer" fontsize="8">
+		<Label width="2" height="1" />
+		<Hbox>
+			<Label width="16" height="2" />
+			<Vbox>
+				<Line width="187" linewidth="1" height="1" />
+				<Label width="2" height="2" />
+				<Hbox>
+					<QRCode variable="nummer" width="20" height="14" />
+					<MultiLine width="30" height="14"
+						text="Das ist ein langer Text, der umgebrochen werden muß"
+						charsInRow="20" rows="4" filled="true" grayscale="70" />
+					<MultiLine width="60" height="14"
+						text="Das ist ein langer Text, der umgebrochen werden muß"
+						charsInRow="40" rows="4" filled="true" grayscale="70" />
+
+				</Hbox>
+
+				<Label width="2" height="2" />
+				<Line width="187" linewidth="1" height="1" />
+			</Vbox>
+			<OmrStriche text=" 1 2 " />
+		</Hbox>
+		<Label width="2" height="1" />
+	</Vbox>
+
+
+</Page>

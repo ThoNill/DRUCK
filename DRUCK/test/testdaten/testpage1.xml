@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Page name="erster" width="212" height="291">
+	<Verteiler name="kunde" fields="name,nummer" />
+	<Vbox name="head">
+		<TextField variable="test" />
+	</Vbox>
+	<Vbox name="kunde">
+		<TextField variable="test" />
+	</Vbox>
+</Page>

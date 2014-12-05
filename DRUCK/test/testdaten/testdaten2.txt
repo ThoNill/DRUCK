@@ -1,0 +1,12 @@
+output|results/testdaten2.ps
+layout|sum
+kunde|nill|234
+item|1.899,21|3,2
+item|1,2|3,2
+summe
+kunde|nill2|234
+item|1,2|3,2
+item|1,2|3,2
+item|1,2|3,2
+summe
+print

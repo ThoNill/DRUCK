@@ -1,0 +1,7 @@
+<Page name="Abrechnung" width="200" height="290">
+	<Verteiler name="kunde" fields="name,nummer" />
+	<Vbox name="kunde">
+		<TextField variable="name" />
+		<TextField variable="nummer" />
+	</Vbox>
+</Page>

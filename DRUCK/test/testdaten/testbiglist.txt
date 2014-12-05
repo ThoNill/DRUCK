@@ -1,0 +1,7 @@
+output|results/biglist2.ps
+layout|testdaten/biglist
+firma|bearbeiter|:telefon
+kunde|nummer|:ik|:mj|:datum|:name|:strasseort
+item|:bsnr1|:patient1|:anz1|:anzvj1|:brutto1|:bruttopriv1|:bruttovj1|:bruttossb1|:schnitt1
+item|:bsnr2|:patient2|:anz2|:anzvj2|:brutto2|:bruttopriv2|:bruttovj2|:bruttossb2|:schnitt2
+item|:bsnr3|:patient3|:anz3|:anzvj3|:brutto3|:bruttopriv3|:bruttovj3|:bruttossb3|:schnitt3

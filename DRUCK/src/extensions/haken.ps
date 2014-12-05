@@ -1,0 +1,21 @@
+
+
+%% /cm { } def
+
+
+/hakenv { cm 0 exch rlineto true } def
+/hakenh { cm 0 rlineto false } def
+/haken { { hakenh } {  hakenv } ifelse } def
+
+/hakenschlagen {
+  setlinewidth
+  newpath
+  moveto
+  { exch haken } forall
+  stroke
+} def
+ 
+ 
+%% true  [ 10 20 30 50 ] 100 100 4 hakenschlagen showpage
+    
+

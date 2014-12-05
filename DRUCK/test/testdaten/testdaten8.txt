@@ -1,0 +1,10 @@
+output|results/testdaten8.ps
+layout|testdaten/testpage8
+item|1,2
+item|1,2
+item|bordered
+item|filled
+item|disabled
+item|filled,bordered
+item|filled
+print
