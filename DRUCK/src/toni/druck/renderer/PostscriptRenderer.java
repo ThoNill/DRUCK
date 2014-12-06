@@ -38,14 +38,17 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public int getStatus() {
 		return REAL_PRINT;
 	}
 
+	@Override
 	public void addExtension(Extension extension) {
 		extensions.addElement(extension);
 	}
 
+	@Override
 	protected void printChart(Chart elem, JFreeChart chart) {
 
 		try {
@@ -97,6 +100,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		}
 	}
 
+	@Override
 	public void print(Element elem) {
 		if (!elem.isEnabled())
 			return;
@@ -121,7 +125,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 				|| elem instanceof Label) {
 			printElement(elem);
 		} else if (elem instanceof Element) {
-			printExtension((Element) elem);
+			printExtension(elem);
 		}
 		;
 		out.println();
@@ -200,6 +204,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 						// hasLineWidth(elem);
 	}
 
+	@Override
 	public void startDocument(Page page) {
 		super.startDocument(page);
 		try {
@@ -237,6 +242,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		}
 	}
 
+	@Override
 	public void include(String filename) throws IOException {
 		out.print(" false 0 startjob pop ");
 		out.print("%%BeginDocument doc" + counter);
@@ -272,6 +278,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 
 	}
 
+	@Override
 	public void endDocument() {
 		if (out != null) {
 			grestore();
@@ -517,6 +524,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		out.print(" cm rlineto \n stroke \n");
 	}
 
+	@Override
 	public void newPage(int pagenr, Page page) {
 		pageCount++;
 		out.println("showpage ");

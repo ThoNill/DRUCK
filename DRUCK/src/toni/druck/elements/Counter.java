@@ -34,6 +34,7 @@ public class Counter extends Operation implements Action, PrintListener {
 		this.count = count;
 	}
 
+	@Override
 	public void connect(DataModel source) {
 		icount = source.getIndex(count);
 	}
@@ -56,6 +57,7 @@ public class Counter extends Operation implements Action, PrintListener {
 		inc();
 	}
 
+	@Override
 	public void setPage(Page page) {
 		super.setPage(page);
 		if (clearAt != null) {

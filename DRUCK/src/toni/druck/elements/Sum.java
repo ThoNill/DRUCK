@@ -53,6 +53,7 @@ public class Sum extends Operation implements Action, PrintListener {
 		this.ssum = ssum;
 	}
 
+	@Override
 	public void connect(DataModel source) {
 		isum = source.getIndex(ssum);
 		iitem = source.getIndex(sitem);
@@ -69,6 +70,7 @@ public class Sum extends Operation implements Action, PrintListener {
 		writeMoney(isum, 0L);
 	}
 
+	@Override
 	public void setPage(Page page) {
 		super.setPage(page);
 		if (clearAt != null) {

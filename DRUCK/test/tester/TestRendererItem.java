@@ -2,7 +2,7 @@ package tester;
 
 import java.util.Vector;
 
-import toni.druck.core2.Element;
+import toni.druck.page.Element;
 
 public class TestRendererItem {
 

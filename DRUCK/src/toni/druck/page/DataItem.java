@@ -98,6 +98,7 @@ public class DataItem {
 		return values[pos];
 	}
 
+	@Override
 	public String toString() {
 		String erg = getClass().getSimpleName() + " c=[" + command + "] ";
 		for (int i = 0; i < values.length; i++)

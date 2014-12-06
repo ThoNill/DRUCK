@@ -53,6 +53,7 @@ public class Variable extends StandardElement {
 		return s;
 	}
 
+	@Override
 	public String getText() {
 		String text = super.getText();
 		if (felder != null) {

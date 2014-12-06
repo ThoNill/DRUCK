@@ -1,7 +1,5 @@
 package toni.druck.filter;
 
-import java.sql.NClob;
-
 import toni.druck.page.DataItem;
 
 public class CountBetweenFilter extends BasisFilter {

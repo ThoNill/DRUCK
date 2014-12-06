@@ -9,7 +9,7 @@ import toni.druck.chart.BalkenFactory;
 import toni.druck.chart.Chart;
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
-import toni.druck.core2.PageRenderer;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PDFRenderer;
 import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.xml.XMLPageLoader;

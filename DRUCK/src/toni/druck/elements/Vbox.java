@@ -14,6 +14,7 @@ public class Vbox extends VHElement {
 		super();
 	}
 
+	@Override
 	public void berechneGroesse() {
 		int h = 0;
 		int w = 0;
@@ -27,6 +28,7 @@ public class Vbox extends VHElement {
 		setzeWidthAndHeight(h, w);
 	}
 
+	@Override
 	public void setzePositionen() {
 
 		int h = 0;

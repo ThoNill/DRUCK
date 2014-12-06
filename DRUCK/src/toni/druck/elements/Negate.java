@@ -14,6 +14,7 @@ public class Negate extends Add {
 	}
 
 
+	@Override
 	public void perform() {
 		resultValue(-add());
 	}

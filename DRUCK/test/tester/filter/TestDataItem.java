@@ -2,7 +2,7 @@ package tester.filter;
 
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
+import toni.druck.page.DataItem;
 
 public class TestDataItem extends DataItem {
 

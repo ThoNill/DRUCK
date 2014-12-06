@@ -5,11 +5,11 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import toni.druck.core.DataFIFO;
-import toni.druck.core.StandardElement;
 import toni.druck.core.PageLoader;
-import toni.druck.core2.DataItem;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.page.DataItem;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
 
 
 public class FIFO {

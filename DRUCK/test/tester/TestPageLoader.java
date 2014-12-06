@@ -1,17 +1,17 @@
 package tester;
 
 import toni.druck.core.StandardPageLoader;
-import toni.druck.core.StandardElement;
-import toni.druck.core.VHElement;
-import toni.druck.core.Variable;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
-import toni.druck.core2.Verteiler;
 import toni.druck.elements.Add;
 import toni.druck.elements.Hbox;
 import toni.druck.elements.Sum;
 import toni.druck.elements.TextField;
 import toni.druck.elements.Vbox;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.page.Verteiler;
+import toni.druck.standardElemente.StandardElement;
+import toni.druck.standardElemente.VHElement;
+import toni.druck.standardElemente.Variable;
 
 public class TestPageLoader extends StandardPageLoader {
 

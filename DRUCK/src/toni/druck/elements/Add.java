@@ -39,6 +39,7 @@ public class Add extends Operation implements Action {
 		this.sresult = sresult;
 	}
 
+	@Override
 	public void connect(DataModel source) {
 		place = source.getMultiIndex(fields);
 		iresult = source.getIndex(sresult);

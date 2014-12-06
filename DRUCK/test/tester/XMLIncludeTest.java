@@ -7,8 +7,8 @@ import static org.junit.Assert.assertNull;
 import org.junit.Assert;
 import org.junit.Test;
 
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
 import toni.druck.xml.XMLPageLoader;
 
 public class XMLIncludeTest {

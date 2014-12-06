@@ -10,9 +10,9 @@ import org.junit.Test;
 
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
 import toni.druck.main.Main;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.testdatei.ErzeugeTestBescheibung;
 import toni.druck.xml.DruckWalker;

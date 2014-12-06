@@ -1,7 +1,7 @@
 package tester.filter;
 
-import toni.druck.core2.DataItem;
 import toni.druck.filter.EmptyFilter;
+import toni.druck.page.DataItem;
 
 public class TestFilter extends EmptyFilter {
 	public String name;

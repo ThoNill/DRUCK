@@ -2,9 +2,9 @@ package tester.filter;
 
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
 import toni.druck.filter.BasisFilter;
 import toni.druck.filter.EmptyFilter;
+import toni.druck.page.DataItem;
 
 public class RecorderFilter extends BasisFilter {
 	private Vector<String> commands = new Vector<String>();

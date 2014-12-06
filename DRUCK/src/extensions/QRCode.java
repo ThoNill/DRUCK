@@ -20,10 +20,12 @@ public class QRCode extends Extension {
 		super("extensions/qrcode.ps");
 	}
 
+	@Override
 	public boolean zustaendig(Element elem) {
 		return elem instanceof toni.druck.elements.QRCode;
 	}
 
+	@Override
 	public void print(Element elem, PrintWriter out) {
 		out.print(" (");
 		out.print(elem.getText());

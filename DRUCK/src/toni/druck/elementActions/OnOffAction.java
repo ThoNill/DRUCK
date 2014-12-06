@@ -36,6 +36,7 @@ public abstract class OnOffAction extends StandardElementAction {
 		return "true".equals(value) || "TRUE".equals(value) || "0".equals(value);
 	}
 
+	@Override
 	public void prepareForPrint(Element elem, DataModel model, Page page) {
 		StandardElement selem = (StandardElement)elem;
 		boolean on = isOn(model, page);

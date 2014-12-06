@@ -22,10 +22,12 @@ public class Omr extends Extension {
 		super("extensions/omr.ps");
 	}
 
+	@Override
 	public boolean zustaendig(Element elem) {
 		return elem instanceof toni.druck.elements.OmrStriche;
 	}
 
+	@Override
 	public void print(Element elem, PrintWriter out) {
 		out.print(" [ ");
 		out.print(elem.getText());

@@ -16,6 +16,7 @@ public class RegExpAction extends OnOffAction {
 	}
 
 	
+	@Override
 	protected boolean isOn(String value) {
 		return ifRe.matcher(value).matches();
 	}

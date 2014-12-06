@@ -2,8 +2,8 @@ package tester.filter;
 
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
 import toni.druck.filter.Filter;
+import toni.druck.page.DataItem;
 
 public class ItemGenarator {
 	Vector<String> commands = new Vector<String>();

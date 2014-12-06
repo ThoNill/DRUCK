@@ -51,11 +51,13 @@ public class EditorXMLWalker extends DruckWalker {
 				"druck.SectionComponent");
 	}
 
+	@Override
 	protected void bearbeiteVerteiler(Element elem, Verteiler reference) {
 		super.bearbeiteVerteiler(elem, reference);
 		verteiler.addElement(reference);
 	}
 
+	@Override
 	public void bearbeiteDruckElement(Element elem,
 			toni.druck.page.Element reference) {
 		super.bearbeiteDruckElement(elem, reference);

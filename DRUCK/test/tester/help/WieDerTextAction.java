@@ -1,12 +1,12 @@
 package tester.help;
 
-import toni.druck.core.ElementAction;
-import toni.druck.core.StandardElement;
-import toni.druck.core.StandardElementAction;
-import toni.druck.core.StandardRenderer;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.elementRenderer.StandardRenderer;
+import toni.druck.model.DataModel;
+import toni.druck.page.Element;
+import toni.druck.page.ElementAction;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
+import toni.druck.standardElemente.StandardElementAction;
 
 public class WieDerTextAction extends StandardElementAction {
 

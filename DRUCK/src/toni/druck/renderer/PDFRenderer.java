@@ -111,6 +111,7 @@ public class PDFRenderer extends DefaultPageRenderer {
 		}
 	}
 
+	@Override
 	protected void printChart(Chart elem, JFreeChart chart) {
 		if (chart != null) {
 			Dimension apos = getAbsolutPositionForPdf(elem);

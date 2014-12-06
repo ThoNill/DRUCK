@@ -46,6 +46,7 @@ public class AllCounter extends Operation implements Action, PrintListener {
 		this.key = key;
 	}
 
+	@Override
 	public void connect(DataModel source) {
 
 		icount = source.getIndex(count);

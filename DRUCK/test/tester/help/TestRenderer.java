@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Vector;
 
-import toni.druck.core2.Element;
-import toni.druck.core2.Extension;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
+import toni.druck.page.Element;
+import toni.druck.page.Extension;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 
 public class TestRenderer implements PageRenderer {
 	int pageCount = 0;

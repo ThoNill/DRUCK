@@ -8,6 +8,7 @@ public class OmrStriche extends Variable {
 		super();
 	}
 
+	@Override
 	public String getText() {
 		int c = (int) Math.round(Math.random() * 16);
 		String erg = " 1 ";

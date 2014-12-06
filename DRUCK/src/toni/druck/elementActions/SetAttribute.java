@@ -15,6 +15,7 @@ public class SetAttribute extends StandardElementAction {
 	public SetAttribute() {
 	}
 	
+	@Override
 	public void prepareForPrint(Element elem, DataModel model, Page page) {
 		ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(elem);
 		if (varpos <0) {

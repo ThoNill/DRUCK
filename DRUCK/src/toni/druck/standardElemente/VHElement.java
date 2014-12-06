@@ -15,11 +15,13 @@ public class VHElement extends StandardElement {
 		super();
 	}
 
+	@Override
 	public void setHeight(int h) {
 		mheight = h;
 		super.setHeight(h);
 	}
 
+	@Override
 	public void setWidth(int w) {
 		mwidth = w;
 		super.setWidth(w);

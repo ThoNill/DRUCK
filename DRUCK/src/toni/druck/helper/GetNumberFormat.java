@@ -6,6 +6,7 @@ import java.util.Locale;
 public class GetNumberFormat extends ThreadLocal<NumberFormat> {
 	public static GetNumberFormat format = new GetNumberFormat();
 
+	@Override
 	protected NumberFormat initialValue() {
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
 		nf.setMinimumFractionDigits(2);

@@ -8,8 +8,7 @@ import org.apache.log4j.Logger;
  * 
  * @author Thomas Nill
  * 
- *         Ein {@link DataModel} entspricht einer Klasse, der
- *         {@link DataContext} einer Klasseninstanz
+ *  Ein {@link DataModel} entspricht einer Klasse
  * 
  */
 public class DataModel {

@@ -16,16 +16,19 @@ public class PositionBox extends StandardElement {
 		super();
 	}
 
+	@Override
 	public void setHeight(int height) {
 		calculateHeight = false;
 		super.setHeight(height);
 	}
 
+	@Override
 	public void setWidth(int width) {
 		calculateWidth = false;
 		super.setWidth(width);
 	}
 
+	@Override
 	public void berechneGroesse() {
 		int h = 0;
 		int w = 0;

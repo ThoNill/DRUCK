@@ -17,10 +17,6 @@ import org.jfree.chart.JFreeChart;
 
 import toni.druck.chart.Chart;
 import toni.druck.chart.DruckChartFactory;
-import toni.druck.core2.Element;
-import toni.druck.core2.Extension;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
 import toni.druck.elements.Hbox;
 import toni.druck.elements.Image;
 import toni.druck.elements.Label;
@@ -29,6 +25,10 @@ import toni.druck.elements.MultiLine;
 import toni.druck.elements.PositionBox;
 import toni.druck.elements.TextField;
 import toni.druck.elements.Vbox;
+import toni.druck.page.Element;
+import toni.druck.page.Extension;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.DefaultPageRenderer;
 import toni.druck.renderer.ToFilePageRenderer;
 

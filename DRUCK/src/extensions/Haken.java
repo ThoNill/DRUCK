@@ -18,10 +18,12 @@ public class Haken extends Extension {
 		super("extensions/haken.ps");
 	}
 
+	@Override
 	public boolean zustaendig(Element elem) {
 		return elem instanceof toni.druck.elements.Haken;
 	}
 
+	@Override
 	public void print(Element elem, PrintWriter out) {
 		toni.druck.elements.Haken haken = (toni.druck.elements.Haken) elem;
 		out.print(" ");

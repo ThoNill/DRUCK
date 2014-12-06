@@ -9,17 +9,20 @@ public class PageCounter extends Counter {
 		super();
 	}
 
+	@Override
 	public void listenTo(PrintEvent ev) {
 		if (ev.type == PrintEvent.NEUE_SEITE) {
 			inc();
 		}
 	}
 
+	@Override
 	public void setPage(Page page) {
 		super.setPage(page);
 		page.addListener(this);
 	}
 
+	@Override
 	public void perform() {
 		set0();
 	}

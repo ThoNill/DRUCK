@@ -26,6 +26,7 @@ public class DruckWalker extends TreeWalker {
 		return page;
 	}
 
+	@Override
 	public void walkAlong(Document doc) {
 		super.walkAlong(doc);
 		page.connectPrintListener();
@@ -185,12 +186,14 @@ public class DruckWalker extends TreeWalker {
 		}
 	}
 
+	@Override
 	protected void goDown(Element elem) {
 		if (hasParent()) {
 			parents.pop();
 		}
 	}
 
+	@Override
 	protected void goUp(Element elem) {
 		Object obj = ((JDOMElementWithReference) elem).getReference();
 		if (obj instanceof toni.druck.page.Element) {

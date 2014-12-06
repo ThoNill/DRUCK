@@ -141,6 +141,7 @@ public class Manager extends BasisFilter {
 		return true;
 	}
 
+	@Override
 	public void receive(DataItem item) {
 		if (item != null
 				&& (doLoadLayout(item) || doOutput(item) || doPrint(item)

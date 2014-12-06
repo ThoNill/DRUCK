@@ -1,7 +1,7 @@
 package tester;
 
 import toni.druck.core.PageLoader;
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public class SinglePageLoader implements PageLoader {
 	Page page;

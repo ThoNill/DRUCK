@@ -2,8 +2,6 @@ package tester.filter;
 
 import static org.junit.Assert.*;
 
-
-
 import java.util.Vector;
 
 import org.jdom2.Element;
@@ -12,12 +10,12 @@ import org.junit.Test;
 
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
 import toni.druck.filter.AppendFilter;
 import toni.druck.filter.Filter;
 import toni.druck.filter.FilterFactory;
 import toni.druck.filter.FilterGroup;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.xml.XMLPageLoader;
 import extensions.Haken;
