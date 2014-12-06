@@ -2,7 +2,7 @@ package toni.druck.filter;
 
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
+import toni.druck.page.DataItem;
 
 public abstract class BasisFilter implements Filter {
 	private Vector<Filter> followers = new Vector<Filter>();

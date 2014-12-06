@@ -1,4 +1,6 @@
-package toni.druck.core2;
+package toni.druck.page;
+
+
 
 public interface PrintController {
 

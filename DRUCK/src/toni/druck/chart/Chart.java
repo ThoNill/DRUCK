@@ -1,8 +1,8 @@
 package toni.druck.chart;
 
-import toni.druck.core.Variable;
-import toni.druck.core2.Page;
 import toni.druck.helper.ClassFactory;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.Variable;
 
 public class Chart extends Variable {
 	private String classname;

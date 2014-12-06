@@ -16,13 +16,13 @@ import org.jfree.chart.JFreeChart;
 
 import toni.druck.chart.Chart;
 import toni.druck.chart.DruckChartFactory;
-import toni.druck.core.StandardElement;
-import toni.druck.core2.Element;
-import toni.druck.core2.Extension;
-import toni.druck.core2.Page;
 import toni.druck.elements.Image;
 import toni.druck.elements.Line;
 import toni.druck.elements.MultiLine;
+import toni.druck.page.Element;
+import toni.druck.page.Extension;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
 
 import com.itextpdf.awt.DefaultFontMapper;
 import com.itextpdf.awt.PdfGraphics2D;

@@ -1,7 +1,7 @@
 package toni.druck.elements;
 
-import toni.druck.core.StandardElement;
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
 
 public class Label extends StandardElement {
 

@@ -1,6 +1,6 @@
-package toni.druck.core;
+package toni.druck.standardElemente;
 
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public class VHElement extends StandardElement {
 

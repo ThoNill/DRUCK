@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-public class Verteiler extends toni.druck.core2.Verteiler {
+public class Verteiler extends toni.druck.page.Verteiler {
 
 	public Verteiler(String name, String placeNames) {
 		super(name, placeNames);

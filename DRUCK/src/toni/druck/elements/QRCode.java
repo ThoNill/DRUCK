@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-import toni.druck.core.Variable;
+import toni.druck.standardElemente.Variable;
 
 public class QRCode extends Variable {
 

@@ -1,9 +1,9 @@
 package toni.druck.elements;
 
-import toni.druck.core.ElementRenderer;
-import toni.druck.core.Variable;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Page;
+import toni.druck.elementRenderer.ElementRenderer;
+import toni.druck.model.DataModel;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.Variable;
 
 public class TextField extends Variable {
 

@@ -7,13 +7,13 @@ import java.util.Vector;
 
 import org.jdom2.Element;
 
-import toni.druck.core2.DataItem;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
 import toni.druck.filter.BasisFilter;
 import toni.druck.filter.Filter;
 import toni.druck.filter.FilterFactory;
 import toni.druck.filter.FilterGroup;
+import toni.druck.page.DataItem;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 
 public class Manager extends BasisFilter {
 

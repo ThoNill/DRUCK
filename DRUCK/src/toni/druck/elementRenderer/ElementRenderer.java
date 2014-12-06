@@ -1,4 +1,4 @@
-package toni.druck.core;
+package toni.druck.elementRenderer;
 
 
 public interface ElementRenderer {

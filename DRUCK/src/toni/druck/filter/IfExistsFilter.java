@@ -2,7 +2,7 @@ package toni.druck.filter;
 
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
+import toni.druck.page.DataItem;
 
 public class IfExistsFilter extends BasisFilter {
 	private boolean exclude = false;

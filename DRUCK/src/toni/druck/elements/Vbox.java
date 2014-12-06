@@ -1,8 +1,8 @@
 package toni.druck.elements;
 
-import toni.druck.core.VHElement;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.VHElement;
 
 public class Vbox extends VHElement {
 

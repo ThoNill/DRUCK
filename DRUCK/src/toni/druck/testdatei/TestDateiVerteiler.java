@@ -3,7 +3,7 @@ package toni.druck.testdatei;
 import java.io.IOException;
 import java.io.Writer;
 
-import toni.druck.core2.Verteiler;
+import toni.druck.page.Verteiler;
 
 public class TestDateiVerteiler {
 	Verteiler verteiler;

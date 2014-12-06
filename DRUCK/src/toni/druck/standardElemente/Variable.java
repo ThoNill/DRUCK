@@ -1,9 +1,12 @@
-package toni.druck.core;
+package toni.druck.standardElemente;
 
 import java.text.MessageFormat;
 
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Page;
+
+
+
+import toni.druck.model.DataModel;
+import toni.druck.page.Page;
 
 public class Variable extends StandardElement {
 

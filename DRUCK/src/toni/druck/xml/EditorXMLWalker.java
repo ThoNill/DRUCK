@@ -10,8 +10,6 @@ import java.util.Vector;
 
 import org.jdom2.Element;
 
-import toni.druck.core2.Action;
-import toni.druck.core2.Verteiler;
 import toni.druck.elements.Add;
 import toni.druck.elements.Haken;
 import toni.druck.elements.Hbox;
@@ -21,11 +19,13 @@ import toni.druck.elements.PositionBox;
 import toni.druck.elements.Sum;
 import toni.druck.elements.TextField;
 import toni.druck.elements.Vbox;
+import toni.druck.page.Action;
+import toni.druck.page.Verteiler;
 
 public class EditorXMLWalker extends DruckWalker {
 	PrintWriter out;
 	Vector<Verteiler> verteiler = new Vector<Verteiler>();
-	Vector<toni.druck.core2.Element> sections = new Vector<toni.druck.core2.Element>();
+	Vector<toni.druck.page.Element> sections = new Vector<toni.druck.page.Element>();
 	HashMap<String, String> clasnnames = new HashMap<String, String>();
 	int shifty = 0;
 
@@ -57,7 +57,7 @@ public class EditorXMLWalker extends DruckWalker {
 	}
 
 	public void bearbeiteDruckElement(Element elem,
-			toni.druck.core2.Element reference) {
+			toni.druck.page.Element reference) {
 		super.bearbeiteDruckElement(elem, reference);
 		if ((!hasParent()) && reference.getName() != null) {
 			sections.addElement(reference);
@@ -65,17 +65,17 @@ public class EditorXMLWalker extends DruckWalker {
 
 	}
 
-	private void setDescendents(toni.druck.core2.Element e,
-			Vector<toni.druck.core2.Element> descendents) {
+	private void setDescendents(toni.druck.page.Element e,
+			Vector<toni.druck.page.Element> descendents) {
 		if (e.getChilds() != null) {
-			for (toni.druck.core2.Element c : e.getChilds()) {
+			for (toni.druck.page.Element c : e.getChilds()) {
 				descendents.addElement(c);
 				setDescendents(c, descendents);
 			}
 		}
 	}
 
-	public void printParameterOfElement(toni.druck.core2.Element e) {
+	public void printParameterOfElement(toni.druck.page.Element e) {
 		if (e instanceof TextField) {
 			field(((TextField) e).getVariable());
 		}
@@ -124,7 +124,7 @@ public class EditorXMLWalker extends DruckWalker {
 		out.println("</void> ");
 	}
 
-	private void relXY(toni.druck.core2.Element e) {
+	private void relXY(toni.druck.page.Element e) {
 		out.println("<void property=\"trans\"> ");
 		out.println("<void property=\"translateX\"> ");
 		out.println("<double>" + (e.shiftX() + (e.getWidth() / 2))
@@ -137,7 +137,7 @@ public class EditorXMLWalker extends DruckWalker {
 		out.println("</void> ");
 	}
 
-	private void font(toni.druck.core2.Element e) {
+	private void font(toni.druck.page.Element e) {
 		out.println("<void property=\"font\">  ");
 		out.println("<object class=\"java.awt.Font\">  ");
 		out.println("<string>Dialog</string>  ");
@@ -162,15 +162,15 @@ public class EditorXMLWalker extends DruckWalker {
 		int nr = 1;
 		startPage();
 		startComponents();
-		for (toni.druck.core2.Element e : sections) {
+		for (toni.druck.page.Element e : sections) {
 			shifty += e.getHeight() / 2;
 			startSection();
 			startChilds();
 
-			Vector<toni.druck.core2.Element> descendents = new Vector<toni.druck.core2.Element>();
+			Vector<toni.druck.page.Element> descendents = new Vector<toni.druck.page.Element>();
 			setDescendents(e, descendents);
 			e.layout();
-			for (toni.druck.core2.Element c : descendents) {
+			for (toni.druck.page.Element c : descendents) {
 				if (erlaubt(c)) {
 					startClass(c.getClass());
 					printParameterOfElement(c);
@@ -221,7 +221,7 @@ public class EditorXMLWalker extends DruckWalker {
 		out.close();
 	}
 
-	private boolean erlaubt(toni.druck.core2.Element e) {
+	private boolean erlaubt(toni.druck.page.Element e) {
 		if (e instanceof TextField)
 			return true;
 		if (e instanceof Image)

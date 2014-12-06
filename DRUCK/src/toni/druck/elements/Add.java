@@ -1,8 +1,8 @@
 package toni.druck.elements;
 
-import toni.druck.core2.Action;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Operation;
+import toni.druck.model.DataModel;
+import toni.druck.page.Action;
+import toni.druck.page.Operation;
 
 public class Add extends Operation implements Action {
 

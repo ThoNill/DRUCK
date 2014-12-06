@@ -4,7 +4,7 @@ import org.jfree.chart.JFreeChart;
 
 import toni.druck.chart.Chart;
 import toni.druck.chart.DruckChartFactory;
-import toni.druck.core2.PageRenderer;
+import toni.druck.page.PageRenderer;
 
 public abstract class DefaultPageRenderer implements PageRenderer {
 

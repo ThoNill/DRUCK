@@ -1,8 +1,11 @@
-package toni.druck.core2;
+package toni.druck.page;
 
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Vector;
+
+import toni.druck.model.DataModel;
+//import toni.druck.standardElemente.PrintHeaderAndFooter;
 
 public class Page extends EventAction {
 	private static final String FOOTER = "footer";

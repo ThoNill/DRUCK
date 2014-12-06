@@ -2,7 +2,7 @@ package toni.druck.core;
 
 import java.util.HashMap;
 
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public class StandardPageLoader implements PageLoader {
 	HashMap<String, Page> pages;

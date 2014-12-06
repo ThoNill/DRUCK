@@ -1,6 +1,7 @@
-package toni.druck.core2;
+package toni.druck.page;
 
 import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.io.OutputStream;
 

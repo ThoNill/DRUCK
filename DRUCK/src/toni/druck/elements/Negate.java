@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-import toni.druck.core2.DataModel;
+import toni.druck.model.DataModel;
 
 public class Negate extends Add {
 

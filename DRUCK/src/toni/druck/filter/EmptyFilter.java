@@ -1,6 +1,6 @@
 package toni.druck.filter;
 
-import toni.druck.core2.DataItem;
+import toni.druck.page.DataItem;
 
 public class EmptyFilter extends BasisFilter {
 

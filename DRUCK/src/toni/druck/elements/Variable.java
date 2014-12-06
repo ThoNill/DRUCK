@@ -1,8 +1,8 @@
 package toni.druck.elements;
 
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
-public class Variable extends toni.druck.core.Variable {
+public class Variable extends toni.druck.standardElemente.Variable {
 
 	public Variable(String name, Page page) {
 		super(name, page);

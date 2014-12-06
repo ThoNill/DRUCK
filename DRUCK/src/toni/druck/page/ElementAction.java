@@ -1,6 +1,6 @@
-package toni.druck.core;
+package toni.druck.page;
 
-import toni.druck.core2.Element;
+
 
 public interface ElementAction {
 	void prepareForPrint(Element elem);

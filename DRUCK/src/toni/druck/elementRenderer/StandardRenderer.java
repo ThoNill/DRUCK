@@ -1,4 +1,5 @@
-package toni.druck.core;
+package toni.druck.elementRenderer;
+
 
 
 public class StandardRenderer implements ElementRenderer {

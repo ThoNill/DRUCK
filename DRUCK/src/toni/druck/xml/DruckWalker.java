@@ -8,15 +8,15 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 import toni.druck.chart.Chart;
-import toni.druck.core.ElementAction;
-import toni.druck.core.ElementRenderer;
-import toni.druck.core2.Action;
-import toni.druck.core2.Page;
-import toni.druck.core2.Verteiler;
+import toni.druck.elementRenderer.ElementRenderer;
 import toni.druck.elements.ActionOnElement;
 import toni.druck.elements.Filter;
 import toni.druck.elements.Renderer;
 import toni.druck.helper.SetAttributes;
+import toni.druck.page.Action;
+import toni.druck.page.ElementAction;
+import toni.druck.page.Page;
+import toni.druck.page.Verteiler;
 
 public class DruckWalker extends TreeWalker {
 	Page page;
@@ -42,9 +42,9 @@ public class DruckWalker extends TreeWalker {
 		if (reference instanceof Chart) {
 			bearbeiteChart(elem, (Chart) reference);
 		} else if (reference instanceof toni.druck.elements.Image) {
-			bearbeiteDruckElement(elem, (toni.druck.core2.Element) reference);
-		} else if (reference instanceof toni.druck.core2.Element) {
-			bearbeiteDruckElement(elem, (toni.druck.core2.Element) reference);
+			bearbeiteDruckElement(elem, (toni.druck.page.Element) reference);
+		} else if (reference instanceof toni.druck.page.Element) {
+			bearbeiteDruckElement(elem, (toni.druck.page.Element) reference);
 		} else if (reference instanceof Verteiler) {
 			bearbeiteVerteiler(elem, (Verteiler) reference);
 		} else if (reference instanceof Filter) {
@@ -68,10 +68,10 @@ public class DruckWalker extends TreeWalker {
 			String attributes[] = new String[] { "className" };
 			setBeanAttributesWithName(elem, action, attributes);
 			Object vo = parents.peek();
-			if (vo instanceof toni.druck.core.StandardElement) {
+			if (vo instanceof toni.druck.standardElemente.StandardElement) {
 				ElementAction er = action.createElementAction();
 				setBeanAttributesExcept(elem, er, attributes);
-				((toni.druck.core.StandardElement) vo).addBeforPrint(er);
+				((toni.druck.standardElemente.StandardElement) vo).addBeforPrint(er);
 			}
 		}
 	}
@@ -96,10 +96,10 @@ public class DruckWalker extends TreeWalker {
 			String attributes[] = new String[] { "className" };
 			setBeanAttributesWithName(elem, renderer, attributes);
 			Object vo = parents.peek();
-			if (vo instanceof toni.druck.core.StandardElement) {
+			if (vo instanceof toni.druck.standardElemente.StandardElement) {
 				ElementRenderer er = renderer.createElementRenderer();
 				setBeanAttributesExcept(elem, er, attributes);
-				((toni.druck.core.StandardElement) vo).setRenderer(er);
+				((toni.druck.standardElemente.StandardElement) vo).setRenderer(er);
 			}
 		}
 	}
@@ -123,7 +123,7 @@ public class DruckWalker extends TreeWalker {
 	}
 
 	public void bearbeiteDruckElement(Element elem,
-			toni.druck.core2.Element reference) {
+			toni.druck.page.Element reference) {
 		reference.setPage(page);
 		setBeanAttributes(elem, reference);
 
@@ -131,9 +131,9 @@ public class DruckWalker extends TreeWalker {
 
 	}
 
-	private void addToParentOrPage(toni.druck.core2.Element reference) {
+	private void addToParentOrPage(toni.druck.page.Element reference) {
 		if (hasParent()) {
-			((toni.druck.core2.Element) parents.peek()).addChild(reference);
+			((toni.druck.page.Element) parents.peek()).addChild(reference);
 		} else {
 			if (reference.getName() != null) {
 				page.addSection(reference);
@@ -193,7 +193,7 @@ public class DruckWalker extends TreeWalker {
 
 	protected void goUp(Element elem) {
 		Object obj = ((JDOMElementWithReference) elem).getReference();
-		if (obj instanceof toni.druck.core2.Element) {
+		if (obj instanceof toni.druck.page.Element) {
 			parents.push(obj);
 		}
 		if (obj instanceof Page) {

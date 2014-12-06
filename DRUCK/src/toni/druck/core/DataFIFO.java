@@ -4,11 +4,11 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import toni.druck.core2.DataItem;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.page.DataItem;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
 
-public class DataFIFO { // extends ArrayBlockingQueue<DataItem> {
+public class DataFIFO { 
 
 	private static final long serialVersionUID = 1L;
 	UnprotectedArrayQueue<DataItem> withSections = null;

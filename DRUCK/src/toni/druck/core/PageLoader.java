@@ -1,6 +1,6 @@
 package toni.druck.core;
 
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public interface PageLoader {
 	Page createPage(String name);

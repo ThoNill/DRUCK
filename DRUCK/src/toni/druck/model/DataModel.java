@@ -1,4 +1,4 @@
-package toni.druck.core2;
+package toni.druck.model;
 
 import java.util.HashMap;
 

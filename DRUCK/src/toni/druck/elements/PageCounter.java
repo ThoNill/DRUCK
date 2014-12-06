@@ -1,7 +1,7 @@
 package toni.druck.elements;
 
-import toni.druck.core2.Page;
-import toni.druck.core2.PrintEvent;
+import toni.druck.page.Page;
+import toni.druck.page.PrintEvent;
 
 public class PageCounter extends Counter {
 

@@ -1,4 +1,5 @@
-package toni.druck.core2;
+package toni.druck.page;
+
 
 public class DataItemEvent extends PrintEvent {
 	public DataItem item;

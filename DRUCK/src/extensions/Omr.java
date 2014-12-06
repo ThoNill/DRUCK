@@ -2,9 +2,9 @@ package extensions;
 
 import java.io.PrintWriter;
 
-import toni.druck.core2.Element;
-import toni.druck.core2.Extension;
-import toni.druck.core2.PageRenderer;
+import toni.druck.page.Element;
+import toni.druck.page.Extension;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PDFRenderer;
 
 import com.itextpdf.awt.geom.Dimension;

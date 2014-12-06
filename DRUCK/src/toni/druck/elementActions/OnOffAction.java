@@ -1,10 +1,10 @@
 package toni.druck.elementActions;
 
-import toni.druck.core.StandardElement;
-import toni.druck.core.StandardElementAction;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.model.DataModel;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
+import toni.druck.standardElemente.StandardElementAction;
 
 public abstract class OnOffAction extends StandardElementAction {
 

@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import toni.druck.core.StandardElement;
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElement;
 
 public class Image extends StandardElement {
 	private String filename;

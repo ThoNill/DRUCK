@@ -2,12 +2,12 @@ package toni.druck.elements;
 
 import java.util.HashMap;
 
-import toni.druck.core2.Action;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Operation;
-import toni.druck.core2.PageRenderer;
-import toni.druck.core2.PrintEvent;
-import toni.druck.core2.PrintListener;
+import toni.druck.model.DataModel;
+import toni.druck.page.Action;
+import toni.druck.page.Operation;
+import toni.druck.page.PageRenderer;
+import toni.druck.page.PrintEvent;
+import toni.druck.page.PrintListener;
 
 public class AllCounter extends Operation implements Action, PrintListener {
 

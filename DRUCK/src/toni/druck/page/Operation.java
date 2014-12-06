@@ -1,8 +1,9 @@
-package toni.druck.core2;
+package toni.druck.page;
 
 import java.text.NumberFormat;
 
 import toni.druck.helper.GetNumberFormat;
+import toni.druck.model.DataModel;
 
 public abstract class Operation {
 

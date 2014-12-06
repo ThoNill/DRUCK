@@ -1,7 +1,7 @@
 package toni.druck.elements;
 
-import toni.druck.core.ElementAction;
 import toni.druck.helper.ClassFactory;
+import toni.druck.page.ElementAction;
 
 public class ActionOnElement {
 	private String className;

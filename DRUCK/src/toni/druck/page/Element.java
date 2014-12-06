@@ -1,7 +1,9 @@
-package toni.druck.core2;
+package toni.druck.page;
 
 import java.awt.Dimension;
 import java.util.List;
+
+import toni.druck.model.DataModel;
 
 public interface Element extends PrintController {
 

@@ -1,4 +1,4 @@
-package toni.druck.core2;
+package toni.druck.page;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

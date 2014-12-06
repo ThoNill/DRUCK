@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-import toni.druck.core.ElementRenderer;
+import toni.druck.elementRenderer.ElementRenderer;
 import toni.druck.helper.ClassFactory;
 
 public class Renderer {

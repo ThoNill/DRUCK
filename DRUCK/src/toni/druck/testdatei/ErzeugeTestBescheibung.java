@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
-import toni.druck.core2.Verteiler;
 import toni.druck.elements.TextField;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.page.Verteiler;
 
 public class ErzeugeTestBescheibung {
 	HashMap<String, Verteiler> feld2verteiler = new HashMap<String, Verteiler>();

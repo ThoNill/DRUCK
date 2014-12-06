@@ -1,15 +1,17 @@
-package toni.druck.core;
+package toni.druck.standardElemente;
 
 import java.awt.Dimension;
 import java.util.List;
 import java.util.Vector;
 
-import toni.druck.core2.DataItem;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
+import toni.druck.elementRenderer.ElementRenderer;
 import toni.druck.helper.ClassFactory;
+import toni.druck.model.DataModel;
+import toni.druck.page.DataItem;
+import toni.druck.page.Element;
+import toni.druck.page.ElementAction;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 
 public class StandardElement implements Element {
 	private int width = 0;

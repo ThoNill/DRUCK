@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public class Chart extends toni.druck.chart.Chart {
 

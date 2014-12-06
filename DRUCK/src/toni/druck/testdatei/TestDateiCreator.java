@@ -13,8 +13,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Vector;
 
-import toni.druck.core2.Page;
-import toni.druck.core2.Verteiler;
+import toni.druck.page.Page;
+import toni.druck.page.Verteiler;
 import toni.druck.xml.XMLPageLoader;
 
 public class TestDateiCreator {

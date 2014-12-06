@@ -3,7 +3,7 @@ package toni.druck.xml;
 import org.jdom2.Document;
 
 import toni.druck.core.PageLoader;
-import toni.druck.core2.Page;
+import toni.druck.page.Page;
 
 public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
 

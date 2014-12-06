@@ -1,6 +1,6 @@
 package toni.druck.elements;
 
-public class Page extends toni.druck.core2.Page {
+public class Page extends toni.druck.page.Page {
 
 	public Page(String name) {
 		super(name);

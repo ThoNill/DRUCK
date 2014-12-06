@@ -13,8 +13,8 @@ import java.io.IOException;
 
 import org.apache.log4j.Category;
 
-import toni.druck.core2.DataItem;
 import toni.druck.helper.DebugAssistent;
+import toni.druck.page.DataItem;
 
 /**
  * @author Nill

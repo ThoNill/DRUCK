@@ -14,8 +14,8 @@ import org.jdom2.Document;
 
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
-import toni.druck.core2.Page;
-import toni.druck.core2.PageRenderer;
+import toni.druck.page.Page;
+import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PDFRenderer;
 import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.testdatei.ErzeugeTestBescheibung;

@@ -1,8 +1,9 @@
-package toni.druck.core;
+package toni.druck.standardElemente;
 
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.model.DataModel;
+import toni.druck.page.Element;
+import toni.druck.page.ElementAction;
+import toni.druck.page.Page;
 
 public abstract class StandardElementAction implements ElementAction {
 	

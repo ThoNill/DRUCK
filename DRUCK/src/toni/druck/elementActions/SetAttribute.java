@@ -2,10 +2,10 @@ package toni.druck.elementActions;
 
 import org.apache.commons.beanutils.ConvertingWrapDynaBean;
 
-import toni.druck.core.StandardElementAction;
-import toni.druck.core2.DataModel;
-import toni.druck.core2.Element;
-import toni.druck.core2.Page;
+import toni.druck.model.DataModel;
+import toni.druck.page.Element;
+import toni.druck.page.Page;
+import toni.druck.standardElemente.StandardElementAction;
 
 public class SetAttribute extends StandardElementAction {
 	private String attribute;

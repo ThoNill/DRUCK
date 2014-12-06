@@ -12,9 +12,9 @@ import java.io.UnsupportedEncodingException;
 import org.jfree.chart.JFreeChart;
 
 import toni.druck.chart.Chart;
-import toni.druck.core2.Element;
-import toni.druck.core2.Extension;
-import toni.druck.core2.Page;
+import toni.druck.page.Element;
+import toni.druck.page.Extension;
+import toni.druck.page.Page;
 
 public class ToFilePageRenderer extends DefaultPageRenderer {
 	protected PrintWriter out;
