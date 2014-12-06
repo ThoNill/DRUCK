@@ -4,8 +4,8 @@ import toni.druck.page.Page;
 
 public class VHElement extends StandardElement {
 
-	int mheight = 0;
-	int mwidth = 0;
+	private int mheight = 0;
+	private int mwidth = 0;
 
 	public VHElement(String name, Page page) {
 		super(name, page);

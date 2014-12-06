@@ -7,12 +7,11 @@
 package toni.druck.core;
 
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-import org.apache.log4j.Category;
-
+import org.apache.log4j.Logger;
 import toni.druck.helper.DebugAssistent;
 import toni.druck.page.DataItem;
 
@@ -23,11 +22,11 @@ import toni.druck.page.DataItem;
  *         Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 public class Reader implements Runnable {
-	static Category cat = Category.getInstance("Reader");
+	static Logger cat = Logger.getLogger("Reader");
 
-	DataFIFO queue;
-	boolean isEmpty = false;
-	java.io.Reader input;
+	private DataFIFO queue;
+	private boolean isEmpty = false;
+	private java.io.Reader input;
 
 	/**
 	 * 

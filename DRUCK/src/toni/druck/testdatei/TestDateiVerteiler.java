@@ -6,8 +6,8 @@ import java.io.Writer;
 import toni.druck.page.Verteiler;
 
 public class TestDateiVerteiler {
-	Verteiler verteiler;
-	int count;
+	private Verteiler verteiler;
+	private int count;
 
 	public TestDateiVerteiler(Verteiler verteiler, int count) {
 		super();

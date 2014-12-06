@@ -17,12 +17,12 @@ import toni.druck.page.PageRenderer;
 
 public class Manager extends BasisFilter {
 
-	Reader reader = null;
-	DataFIFO datenQueue;
-	Page page;
-	FilterGroup filterGroup = null;
+	private Reader reader = null;
+	private DataFIFO datenQueue;
+	private Page page;
+	private FilterGroup filterGroup = null;
 
-	PageRenderer renderer;
+	private PageRenderer renderer;
 
 	public Manager(PageLoader loader, PageRenderer renderer) {
 		this.renderer = renderer;

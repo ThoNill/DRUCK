@@ -44,21 +44,21 @@ public class PDFRenderer extends DefaultPageRenderer {
 
 	private Vector<Extension> extensions = new Vector<Extension>();
 
-	PdfWriter writer;
+	private PdfWriter writer;
 
-	PdfContentByte cb;
+	private PdfContentByte cb;
 
-	Document document = null;
+	private Document document = null;
 
-	int fontsize = 10;
+	private int fontsize = 10;
 
-	boolean inPrint = false;
+	private boolean inPrint = false;
 
-	BaseFont bfont = null;
+	private BaseFont bfont = null;
 
-	OutputStream out = null;
+	private OutputStream out = null;
 
-	String outputFileName = null;
+	private String outputFileName = null;
 
 	private float scaleX = 1.0f;
 	private float scaleY = 1.0f;

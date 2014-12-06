@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 public class RegExpAction extends OnOffAction {
 	private Pattern ifRe = null;
+	
 	public RegExpAction() {
 	}
 

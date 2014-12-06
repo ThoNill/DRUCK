@@ -14,8 +14,8 @@ public class CountBetweenFilter extends BasisFilter {
 	private String countElement;
 	private String[] countElementSplit;
 
-	int counter = 0;
-	boolean check = false;
+	private int counter = 0;
+	private boolean check = false;
 
 	public String getCommand() {
 		return command;

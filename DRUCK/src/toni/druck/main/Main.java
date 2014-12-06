@@ -28,9 +28,7 @@ import extensions.QRCode;
 
 public class Main {
 
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		if (args == null || args.length != 2) {
 			usage();

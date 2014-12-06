@@ -3,8 +3,8 @@ package toni.druck.page;
 
 
 public class VerteilerConnector {
-	String name;
-	PrintListener listener;
+	private String name;
+	private PrintListener listener;
 
 	public VerteilerConnector(String name, PrintListener listener) {
 		super();

@@ -11,10 +11,10 @@ import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 
 public class ErzeugeTestBescheibung {
-	HashMap<String, Verteiler> feld2verteiler = new HashMap<String, Verteiler>();
-	HashMap<String, Set<Verteiler>> abschnit2verteiler = new HashMap<String, Set<Verteiler>>();
-	Set<Verteiler> einmalig = new HashSet<Verteiler>();
-	Set<Verteiler> mehrfach = new HashSet<Verteiler>();
+	private HashMap<String, Verteiler> feld2verteiler = new HashMap<String, Verteiler>();
+	private HashMap<String, Set<Verteiler>> abschnit2verteiler = new HashMap<String, Set<Verteiler>>();
+	private Set<Verteiler> einmalig = new HashSet<Verteiler>();
+	private Set<Verteiler> mehrfach = new HashSet<Verteiler>();
 
 	public void analysierePage(Page page) {
 		analysiereVerteiler(page);

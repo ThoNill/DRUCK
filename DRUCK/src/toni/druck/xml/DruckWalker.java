@@ -19,8 +19,8 @@ import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 
 public class DruckWalker extends TreeWalker {
-	Page page;
-	Stack<Object> parents = new Stack<Object>();
+	private Page page;
+	private Stack<Object> parents = new Stack<Object>();
 
 	public Page getPage() {
 		return page;

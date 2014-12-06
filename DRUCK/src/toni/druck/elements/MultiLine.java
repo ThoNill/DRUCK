@@ -5,8 +5,8 @@ import toni.druck.standardElemente.StandardElement;
 
 public class MultiLine extends StandardElement {
 
-	int rows;
-	int charsInRow = 30;
+	private int rows;
+	private int charsInRow = 30;
 
 	public MultiLine(String name, Page page) {
 		super(name, page);

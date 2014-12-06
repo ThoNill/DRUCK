@@ -3,16 +3,13 @@ package toni.druck.page;
 
 
 public class PrintHeaderAndFooter implements PrintListener, PrintController {
-	boolean printTheHeader = true;
-	boolean printTheFooter = false;
-	Element header = null;
-	Element body = null;
-	Element footer = null;
-	Page page = null;
-	int lastHeight;
+	private boolean printTheHeader = true;
+	private boolean printTheFooter = false;
+	private Element header = null;
+	private Element body = null;
+	private Element footer = null;
 
 	public PrintHeaderAndFooter(Page page, String name) {
-		this.page = page;
 		header = page.getSection(name + "_header");
 		footer = page.getSection(name + "_footer");
 		body = page.getSection(name);

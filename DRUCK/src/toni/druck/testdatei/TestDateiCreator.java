@@ -18,10 +18,10 @@ import toni.druck.page.Verteiler;
 import toni.druck.xml.XMLPageLoader;
 
 public class TestDateiCreator {
-	Page page;
-	Vector<TestDateiVerteiler> verteiler = new Vector<TestDateiVerteiler>();
-	String outDir;
-	String inDir;
+	private Page page;
+	private Vector<TestDateiVerteiler> verteiler = new Vector<TestDateiVerteiler>();
+	private String outDir;
+	private String inDir;
 	
 	
 

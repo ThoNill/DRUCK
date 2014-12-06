@@ -23,11 +23,10 @@ import toni.druck.page.Action;
 import toni.druck.page.Verteiler;
 
 public class EditorXMLWalker extends DruckWalker {
-	PrintWriter out;
-	Vector<Verteiler> verteiler = new Vector<Verteiler>();
-	Vector<toni.druck.page.Element> sections = new Vector<toni.druck.page.Element>();
-	HashMap<String, String> clasnnames = new HashMap<String, String>();
-	int shifty = 0;
+	private PrintWriter out;
+	private Vector<Verteiler> verteiler = new Vector<Verteiler>();
+	private Vector<toni.druck.page.Element> sections = new Vector<toni.druck.page.Element>();
+	private HashMap<String, String> clasnnames = new HashMap<String, String>();
 
 	public EditorXMLWalker() {
 		super();
@@ -165,7 +164,6 @@ public class EditorXMLWalker extends DruckWalker {
 		startPage();
 		startComponents();
 		for (toni.druck.page.Element e : sections) {
-			shifty += e.getHeight() / 2;
 			startSection();
 			startChilds();
 

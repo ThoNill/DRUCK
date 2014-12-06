@@ -11,17 +11,17 @@ import toni.druck.page.Page;
 public class DataFIFO { 
 
 	private static final long serialVersionUID = 1L;
-	UnprotectedArrayQueue<DataItem> withSections = null;
-	UnprotectedArrayQueue<DataItem> dataItems;
-	Page page;
+	private UnprotectedArrayQueue<DataItem> withSections = null;
+	private UnprotectedArrayQueue<DataItem> dataItems;
+	private Page page;
 	private PageLoader loader;
 
-	final Lock lock = new ReentrantLock();
-	final Condition notFull = lock.newCondition();
-	final Condition notEmpty = lock.newCondition();
-	int capacity;
-	int count = 0;
-	boolean fuellen = true;
+	private final Lock lock = new ReentrantLock();
+	private final Condition notFull = lock.newCondition();
+	private final Condition notEmpty = lock.newCondition();
+	private int capacity;
+	private int count = 0;
+	private boolean fuellen = true;
 
 	public DataFIFO(int capacity, PageLoader loader) {
 		super();

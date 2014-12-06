@@ -29,9 +29,9 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 	static Logger logger = Logger.getLogger(PostscriptRenderer.class.getName());
 
 	private Vector<Extension> extensions = new Vector<Extension>();
-	int counter = 0;
-	int save_restore = 0;
-	int pageCount=0;
+	private int counter = 0;
+	private int save_restore = 0;
+	private int pageCount=0;
 
 	public PostscriptRenderer(String codepage) {
 		super(codepage);

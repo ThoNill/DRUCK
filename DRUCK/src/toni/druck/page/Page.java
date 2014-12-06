@@ -8,9 +8,9 @@ import toni.druck.model.DataModel;
 //import toni.druck.standardElemente.PrintHeaderAndFooter;
 
 public class Page extends EventAction {
-	private static final String FOOTER = "footer";
+	public  static final String FOOTER = "footer";
 	public static final String HEADER = "header";
-	private static final String FIRST_HEADER = "first_header";
+	public  static final String FIRST_HEADER = "first_header";
 
 	private HashMap<String, Element> sections;
 	private HashMap<String, Verteiler> verteiler = null;

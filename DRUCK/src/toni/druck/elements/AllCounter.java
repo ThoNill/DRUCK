@@ -19,7 +19,7 @@ public class AllCounter extends Operation implements Action, PrintListener {
 	private int iAllcount;
 	private int iKey;
 
-	HashMap<String, Long> map = new HashMap<String, Long>();
+	private HashMap<String, Long> map = new HashMap<String, Long>();
 
 	public AllCounter(String scount, String sallCount, String skey, DataModel m) {
 		super();

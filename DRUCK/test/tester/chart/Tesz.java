@@ -1,4 +1,4 @@
-package toni.druck.chart;
+package tester.chart;
 
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import toni.druck.page.Page;
 
 public class StandardPageLoader implements PageLoader {
-	HashMap<String, Page> pages;
+	private HashMap<String, Page> pages;
 
 	public StandardPageLoader() {
 		pages = new HashMap<String, Page>();
