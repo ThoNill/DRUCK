@@ -1,7 +1,18 @@
 package toni.druck.standardElemente;
 
+import toni.druck.elements.Hbox;
+import toni.druck.page.Element;
 import toni.druck.page.Page;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Basisklasse für Horizontale und Vertikale Boxen {@link Hbox}, {@Link Vbox}
+ * 
+ * 
+ */
 public class VHElement extends StandardElement {
 
 	private int mheight = 0;

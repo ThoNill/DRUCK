@@ -4,6 +4,14 @@ import toni.druck.helper.ClassFactory;
 import toni.druck.page.Page;
 import toni.druck.standardElemente.Variable;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dient dazu, um die implementierende Klasse einer Chart 
+ * indirekt über eine Factory festzulegen
+ * 
+ */
 public class Chart extends Variable {
 	private String classname;
 	private DruckChartFactory cf = null;

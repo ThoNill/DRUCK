@@ -4,6 +4,18 @@ import java.util.Vector;
 
 import toni.druck.page.DataItem;
 
+
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Erzeugt eine Gruppe von Filtern die hintereinander abgearbeitet werden
+ * @see Filter
+ * 
+ * @see BasisFilter 
+ *  
+ */
+
 public class FilterGroup implements Filter {
 	private Vector<Filter> filters = new Vector<Filter>();
 

@@ -14,6 +14,8 @@ import org.jdom2.Document;
 
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
+import toni.druck.filter.BasisFilter;
+import toni.druck.filter.Filter;
 import toni.druck.page.Page;
 import toni.druck.page.PageRenderer;
 import toni.druck.renderer.PDFRenderer;
@@ -26,6 +28,15 @@ import extensions.Haken;
 import extensions.Omr;
 import extensions.QRCode;
 
+
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Main Klasse
+ * 
+ *   
+ */
 public class Main {
 
 	

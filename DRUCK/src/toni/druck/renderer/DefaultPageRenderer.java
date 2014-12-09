@@ -6,6 +6,15 @@ import toni.druck.chart.Chart;
 import toni.druck.chart.DruckChartFactory;
 import toni.druck.page.PageRenderer;
 
+
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Basisklasse für einen PageRenderer
+ * 
+ */
 public abstract class DefaultPageRenderer implements PageRenderer {
 
 	protected void printChart(Chart elem, int thema) {

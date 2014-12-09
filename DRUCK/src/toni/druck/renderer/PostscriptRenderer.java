@@ -25,6 +25,16 @@ import toni.druck.page.Element;
 import toni.druck.page.Extension;
 import toni.druck.page.Page;
 
+
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Ausgabe in einer Postscript Datei
+ * 
+ * 
+ */
 public class PostscriptRenderer extends ToFilePageRenderer {
 	static Logger logger = Logger.getLogger(PostscriptRenderer.class.getName());
 

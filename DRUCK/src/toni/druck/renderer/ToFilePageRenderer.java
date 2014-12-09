@@ -16,6 +16,16 @@ import toni.druck.page.Element;
 import toni.druck.page.Extension;
 import toni.druck.page.Page;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Ausgabe der Daten eines Ausdruckes in einer Datei zu Debugzwecken
+ * 
+ * Datenstruktur
+ * 
+ */
 public class ToFilePageRenderer extends DefaultPageRenderer {
 	protected PrintWriter out;
 	protected boolean inPrint = false;
@@ -43,12 +53,9 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
 		if (out != null) {
 			out.println(elem.getName());
 		}
-		;
 	}
 
 	public void printDefs(Element elem) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void setOutput(OutputStream out) {
@@ -56,7 +63,6 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
 			this.out = new PrintWriter(new BufferedWriter(
 					new OutputStreamWriter(out, getCodepage()), 1000));
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -84,18 +90,12 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
 	}
 
 	public void addExtension(Extension qrCode) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void include(String filename) throws IOException {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	protected void printChart(Chart elem, JFreeChart chart) {
-		// TODO Auto-generated method stub
-
 	}
 }

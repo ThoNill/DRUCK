@@ -17,6 +17,14 @@ import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 import toni.druck.xml.XMLPageLoader;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Erzeugen von Testdaten für eine TestBeschreibung
+ * 
+ */
 public class TestDateiCreator {
 	private Page page;
 	private Vector<TestDateiVerteiler> verteiler = new Vector<TestDateiVerteiler>();

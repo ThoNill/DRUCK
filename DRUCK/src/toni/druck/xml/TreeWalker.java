@@ -3,13 +3,33 @@ package toni.druck.xml;
 import org.jdom2.Document;
 import org.jdom2.Element;
 
+import toni.druck.page.Verteiler;
+
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Klasse um den JDOM2 Tree zu durchlaufen und seine Elemente zu besuchen
+ * 
+ */
 public abstract class TreeWalker {
 
+	/**
+	 * Ein Dokument durchlaufen = beim Root Element starten
+	 * 
+	 * @param doc
+	 */
 	public void walkAlong(Document doc) {
 		Element root = doc.getRootElement();
 		walkAlong(root);
 	}
 
+	/**
+	 * Ein Element durchlaufen
+	 * 
+	 * @param elem
+	 */
 	protected void walkAlong(Element elem) {
 		if (elem.getChildren().size() == 0)
 			return;
@@ -25,15 +45,11 @@ public abstract class TreeWalker {
 
 	}
 
-	protected void goDown(Element elem) {
-		// TODO Auto-generated method stub
-
-	}
-
 	protected void goUp(Element elem) {
-		// TODO Auto-generated method stub
-
 	}
 
 	abstract protected void bearbeite(Element e);
+	
+	protected void goDown(Element elem) {
+	}
 }

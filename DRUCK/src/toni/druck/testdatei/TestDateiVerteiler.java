@@ -5,6 +5,14 @@ import java.io.Writer;
 
 import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Erzeugen von Testdaten für einen {@link Verteiler} 
+ * 
+ */
 public class TestDateiVerteiler {
 	private Verteiler verteiler;
 	private int count;

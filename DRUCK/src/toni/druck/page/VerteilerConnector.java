@@ -2,6 +2,15 @@ package toni.druck.page;
 
 
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Verbindet einen Verteiler mit einem Listener.
+ * 
+ * Datenstruktur
+ * 
+ */
 public class VerteilerConnector {
 	private String name;
 	private PrintListener listener;

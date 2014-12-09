@@ -6,6 +6,13 @@ import toni.druck.page.Page;
 import toni.druck.standardElemente.StandardElement;
 import toni.druck.standardElemente.StandardElementAction;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Setzt die Attribute visible bzw. printable eines Elements  
+ * 
+ */
 public abstract class OnOffAction extends StandardElementAction {
 
 	protected String variable = null;

@@ -39,6 +39,15 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 
+
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Ausgabe als PDF
+ * 
+ */
 public class PDFRenderer extends DefaultPageRenderer {
 	static Logger logger = Logger.getLogger("PDFRenderer");
 

@@ -1,5 +1,15 @@
 package toni.druck.page;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Basisklasse für arithmetische Operationen
+ * 
+ * Datentyp
+ * 
+ */
 import java.text.NumberFormat;
 
 import toni.druck.helper.GetNumberFormat;

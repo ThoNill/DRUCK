@@ -5,7 +5,17 @@ import java.io.InputStream;
 
 import org.jdom2.Element;
 
+import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Inkludiert eine andere XML Datei anstatt des Inckude Elements.
+ * Dises Element wird durch den Inhalt von filename ersetzt.
+ * 
+ */
 public class IncludeElement extends Element {
 	private static int zaehler = 1;
 	private String sternValue;

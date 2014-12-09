@@ -10,11 +10,17 @@ import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.RectangleInsets;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dient dazu, um eine Balkengrafik auszugeben
+ * 
+ */
 public class BalkenFactory implements DruckChartFactory {
 	private String title;
 	private String xtitle;
 	private String ytitle;
-
 	private int minX = 1;
 	private int groupSize = 2;
 	private boolean fehlendeWerteFuellen = false;
@@ -67,6 +73,7 @@ public class BalkenFactory implements DruckChartFactory {
 		this.ytitle = ytitle;
 	}
 
+	
 	public JFreeChart getChart(Chart chart, int theme) {
 		String values[] = chart.getVariablen();
 		if (values != null) {
@@ -83,6 +90,7 @@ public class BalkenFactory implements DruckChartFactory {
 		}
 	}
 
+	// Wegen Benutzung in Tests ist diese Methode public
 	public DefaultCategoryDataset fülleDasDataSet(Chart chart, String values[]) {
 		DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
 		for (int j = 0; j < values.length; j++) {
@@ -125,9 +133,6 @@ public class BalkenFactory implements DruckChartFactory {
 				.createJFreeTheme();
 
 		theme.setTitlePaint(Color.decode("#4572a7"));
-		// theme.setExtraLargeFont(new Font(fontName, Font.PLAIN, 16)); // title
-		// theme.setLargeFont(new Font(fontName, Font.BOLD, 15)); // axis-title
-		// theme.setRegularFont(new Font(fontName, Font.PLAIN, 11));
 		theme.setRangeGridlinePaint(Color.decode("#C0C0C0"));
 		theme.setPlotBackgroundPaint(Color.white);
 		theme.setChartBackgroundPaint(Color.white);

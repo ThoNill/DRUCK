@@ -10,12 +10,27 @@ package toni.druck.page;
 
 /*****
  * 
- * Eine Aktion die während des erstellens eines Ausdruckes aufgerufen wird
- * z.Bsp. Zählen der Seiten, addieren von Werten
- * 
- * Object Interface
- * 
  * @author Thomas Nill
+ * 
+ * DataItem repräsentiert eine Einheit im Datenstrom,
+ * der die Daten für den Report bereitstellt-
+ * Jede Zeile einer Datendatei erzeugt ein DataItem.
+ * 
+ * Ein DataItem ist im Wesentlichen ein Array aus Strings,
+ * Eine Zeile einer Datei wird durch | in die Fekdwerte aufgetrennt.
+ * Der erste Eintrag im Array hat dabei eine besondere Bedeutung,
+ * er wird als Command bezeichnet.
+ * Über diesen command Anteil ist dem DataItem 
+ * ein Abschnitt des Ausdruckes, eine Section zugeordnet,
+ * wenn die Sction denselben Namen, wie der Command hat.
+ * 
+ * Gibt es keinen solchen Abschnitt, so ist dem DataItem kein
+ * Abschnitt zugeordnet, sondern es versorgt über  {@link Verteiler}
+ * die {@link Page} mit Daten.
+ * 
+ * DataItem mit besonderen Command print, include, layout, output
+ * dienen der Steuerung des Druckvorganges.
+ * endOfFile repräsentiert den Abschluss des Datenstromes
  *
  */
 
@@ -28,9 +43,9 @@ public class DataItem {
 
 	private String command = null;
 	private String values[] = null;
-	private Element section;
-	private boolean nextItemOfTheSameType = false;
-	private Page page;
+	private Element section; // Abschnitt im Layout
+	private boolean nextItemOfTheSameType = false; // Hat der nachfolgende Druckabschnitt denselben Namen? 
+	private Page page; // LayoutPage für den die Daten des DataItems sind
 
 	public DataItem(String text) {
 		super();

@@ -15,14 +15,32 @@ import toni.druck.page.DataItem;
 import toni.druck.page.Page;
 import toni.druck.page.PageRenderer;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ *         Verwaltet das Zusammenspiel des Einlesens und verarbeiten der DatItem
+ * 
+ *         Der reader liest die Daten von einer Date ein und erzeugt DataItems
+ *         Diese DataItems werden in eine FIFO datenQueue zwischengespeichert.
+ *         Bei der Verarbeitung werden durch den Manager Sonderbefehle
+ *         abgefangen
+ * 
+ *         print - eine neue Seite erzwingen layout| Layoutname -- ein neues
+ *         Layout laden output|Name der Ausgabedatei -- Ausgabe festlegen
+ *         include| Dateiname -- zusätzliche Daten z.Bsp Skripte zur Ausgabe
+ *         einlesen.
+ * 
+ */
+
 public class Manager extends BasisFilter {
 
-	private Reader reader = null;
-	private DataFIFO datenQueue;
-	private Page page;
-	private FilterGroup filterGroup = null;
-
-	private PageRenderer renderer;
+	private Reader reader = null; // verantwortlich für das Einlesen der Daten
+	private DataFIFO datenQueue; // zwischenspeichern, damit auf nachfolgende
+									// Items zugegriffen werden kann
+	private FilterGroup filterGroup = null; // Filter der DataItems
+	private Page page; // aktuelles Layout, das verwendet wird
+	private PageRenderer renderer; // Art der Ausgabe: Postscript, PDF
 
 	public Manager(PageLoader loader, PageRenderer renderer) {
 		this.renderer = renderer;
@@ -53,6 +71,15 @@ public class Manager extends BasisFilter {
 			renderer.endDocument();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void receive(DataItem item) {
+		if (item != null
+				&& (doLoadLayout(item) || doOutput(item) || doPrint(item)
+						|| doInclude(item) || doData(item))) {
+
 		}
 	}
 
@@ -139,15 +166,6 @@ public class Manager extends BasisFilter {
 			page.printSectionOfTheItem(d, renderer);
 		}
 		return true;
-	}
-
-	@Override
-	public void receive(DataItem item) {
-		if (item != null
-				&& (doLoadLayout(item) || doOutput(item) || doPrint(item)
-						|| doInclude(item) || doData(item))) {
-
-		}
 	}
 
 	private Filter getFilter() {

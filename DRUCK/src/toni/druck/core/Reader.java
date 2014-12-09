@@ -7,20 +7,23 @@
 package toni.druck.core;
 
 import java.io.BufferedReader;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 import org.apache.log4j.Logger;
+
 import toni.druck.helper.DebugAssistent;
 import toni.druck.page.DataItem;
 
 /**
- * @author Nill
  * 
- *         To change the template for this generated type comment go to
- *         Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
+ * @author Thomas Nill
+ * 
+ *  Liest Daten aus einer Datei ein. Jede Zeile der Datei gibt ein DataItem
+ * 
  */
+
 public class Reader implements Runnable {
 	static Logger cat = Logger.getLogger("Reader");
 
@@ -28,9 +31,6 @@ public class Reader implements Runnable {
 	private boolean isEmpty = false;
 	private java.io.Reader input;
 
-	/**
-	 * 
-	 */
 	public Reader(DataFIFO queue) {
 		super();
 		this.queue = queue;
@@ -42,18 +42,13 @@ public class Reader implements Runnable {
 			isEmpty = false;
 			BufferedReader file = null;
 			file = new BufferedReader(input, 1000);
-
 			String line;
 
 			line = file.readLine();
 			while (line != null) {
-				// cat.error("line " + line);
 				DataItem t = new DataItem(line);
 				queue.offer(t);
-				
-				// cat.error("line " + t);
 				line = file.readLine();
-				// Thread.sleep(10);
 			}
 			queue.offer(new DataItem(DataItem.ENDOFFILE));
 			file.close();
@@ -77,7 +72,6 @@ public class Reader implements Runnable {
 		this.input = input;
 		Thread t = new Thread(this);
 		t.start();
-		// run();
 	}
 
 	public boolean isEmpty() {

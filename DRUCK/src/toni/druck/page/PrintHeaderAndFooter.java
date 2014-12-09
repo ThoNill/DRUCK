@@ -1,7 +1,13 @@
 package toni.druck.page;
 
 
-
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * {@link PrintController} um die Ausgabe von Header und Footer Abschnitten zu kontrollieren
+ * 
+ */
 public class PrintHeaderAndFooter implements PrintListener, PrintController {
 	private boolean printTheHeader = true;
 	private boolean printTheFooter = false;

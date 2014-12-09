@@ -3,6 +3,17 @@ package toni.druck.helper;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import toni.druck.filter.BasisFilter;
+
+
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Standard DE Formatierer für Beträge
+ * 
+ *  
+ */
 public class GetNumberFormat extends ThreadLocal<NumberFormat> {
 	public static GetNumberFormat format = new GetNumberFormat();
 

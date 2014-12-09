@@ -5,11 +5,20 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+import toni.druck.elements.Hbox;
 import toni.druck.elements.TextField;
 import toni.druck.page.Element;
 import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Erzeugen einer Testbeschreibung aus den Daten der {@link Verteiler} einer {@link Page}
+ * 
+ */
 public class ErzeugeTestBescheibung {
 	private HashMap<String, Verteiler> feld2verteiler = new HashMap<String, Verteiler>();
 	private HashMap<String, Set<Verteiler>> abschnit2verteiler = new HashMap<String, Set<Verteiler>>();

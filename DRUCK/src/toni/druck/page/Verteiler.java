@@ -8,17 +8,23 @@ package toni.druck.page;
 
 import org.apache.log4j.Logger;
 
-
-
-
 import toni.druck.model.DataModel;
 
-/**
- * @author Nill
+/*****
  * 
- *         To change the template for this generated type comment go to
- *         Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
+ * @author Thomas Nill
+ * 
+ * Ein {@link DataItem} stellt Daten für eine Seite das Ausdruckes bereit.
+ * Über sein command kann ihm eine Verteiler zugeordnet werden, dessen Name mit
+ * dem command übereinstimmt.
+ * 
+ * Der Verteiler legt dabei fest, wohin die Daten des {@link DataItem}
+ * verteilt werden.
+ * 
+ * Datenstruktur
+ * 
  */
+
 public class Verteiler extends EventAction {
 	static Logger logger = Logger.getLogger("DataPlace");
 

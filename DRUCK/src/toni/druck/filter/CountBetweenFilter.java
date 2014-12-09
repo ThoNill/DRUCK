@@ -2,14 +2,24 @@ package toni.druck.filter;
 
 import toni.druck.page.DataItem;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dieser Filter zählt die Elemente in countElement,
+ * wenn sie sich zwischen fromElement und toElement befinden.
+ * 
+ * In den Datenstraom werden indiziert durch deise Anzahl
+ * DataItm von command oder commandElse eingefügt
+ * 
+ * 
+ * 
+ */
 public class CountBetweenFilter extends BasisFilter {
 	private String command;
 	private String[] commandSplit;
-
 	private String commandElse = null;
-
 	private String fromElement;
-
 	private String toElement;
 	private String countElement;
 	private String[] countElementSplit;

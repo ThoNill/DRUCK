@@ -7,6 +7,13 @@ import toni.druck.page.Element;
 import toni.druck.page.Page;
 import toni.druck.standardElemente.StandardElementAction;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Ein Attribut eines Elements durch eine Variable setzen
+ * 
+ */
 public class SetAttribute extends StandardElementAction {
 	private String attribute;
 	private String variable;

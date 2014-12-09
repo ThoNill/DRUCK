@@ -11,6 +11,13 @@ import com.itextpdf.awt.geom.Dimension;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.pdf.PdfContentByte;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dient dazu, um ORM Striche zu malen
+ * 
+ */
 public class Omr extends Extension {
 	static int OMR_X = 6;
 	static int OMR_Y = 120;
@@ -27,6 +34,7 @@ public class Omr extends Extension {
 		return elem instanceof toni.druck.elements.OmrStriche;
 	}
 
+	// Ausgabe für Postscript
 	@Override
 	public void print(Element elem, PrintWriter out) {
 		out.print(" [ ");
@@ -34,6 +42,7 @@ public class Omr extends Extension {
 		out.println(" ] omrstriche ");
 	}
 
+	// Ausgabe für PDF
 	@Override
 	public void print(Element elem, Document document, PdfContentByte cb,
 			PageRenderer pageRenderer) {

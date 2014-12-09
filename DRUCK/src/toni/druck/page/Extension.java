@@ -8,6 +8,16 @@ import java.io.PrintWriter;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.pdf.PdfContentByte;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Erwiterung für den Ausdruck um neue Elemente 
+ * 
+ * Datentyp
+ * 
+ */
 public class Extension {
 	private String resname;
 
@@ -35,10 +45,12 @@ public class Extension {
 		return false;
 	}
 
+	// Ausgabe für Postscript
 	public void print(Element elem, PrintWriter out) {
 
 	}
-
+	
+	// Ausgabe für PDF
 	public void print(Element elem, Document document, PdfContentByte cb,
 			PageRenderer renderer) {
 	}

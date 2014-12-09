@@ -20,8 +20,18 @@ import toni.druck.elements.Sum;
 import toni.druck.elements.TextField;
 import toni.druck.elements.Vbox;
 import toni.druck.page.Action;
+import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Läd ein XML Layout und erzeugt daraus eine andere XML Datei,
+ * deren Format speziell für die Bearbeitung in einem Editor geeignet ist.
+ * 
+ */
 public class EditorXMLWalker extends DruckWalker {
 	private PrintWriter out;
 	private Vector<Verteiler> verteiler = new Vector<Verteiler>();

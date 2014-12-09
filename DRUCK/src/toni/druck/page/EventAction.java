@@ -2,10 +2,15 @@ package toni.druck.page;
 
 import java.util.Vector;
 
-
-
-
-
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Standard Implementierung einer Action
+ *  
+ * Datentyp
+ * 
+ */
 public class EventAction implements Action {
 
 	private Vector<PrintListener> listener = null;

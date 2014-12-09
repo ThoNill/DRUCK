@@ -3,12 +3,21 @@ package toni.druck.helper;
 import org.apache.log4j.Category;
 import org.apache.log4j.Logger;
 
+import toni.druck.filter.BasisFilter;
+
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ *         Hilfe für die Exceptionausgabe
+ * 
+ * 
+ */
 public class DebugAssistent {
 	static Logger logger = Logger.getLogger("DebugAssistent");
 
 	public DebugAssistent() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public static void log(Category log, Exception ex) {
@@ -44,14 +53,20 @@ public class DebugAssistent {
 	}
 
 	public static void logThreadInfo(Category log, int max) {
-		/*
-		 * Thread t = Thread.currentThread(); log.error("Thread: [" +
-		 * t.getName() + "]"); StackTraceElement elements[] = t.getStackTrace();
-		 * int anz = elements.length; if (anz > max) { anz = max; }; for(int
-		 * i=3;i < anz;i++) { log.error("[" + elements[i] + "] " +
-		 * elements[i].getFileName() + ":" + elements[i].getMethodName() + ":" +
-		 * elements[i].getLineNumber()); }
-		 */
+
+		Thread t = Thread.currentThread();
+		log.error("Thread: [" + t.getName() + "]");
+		StackTraceElement elements[] = t.getStackTrace();
+		int anz = elements.length;
+		if (anz > max) {
+			anz = max;
+		}
+		for (int i = 3; i < anz; i++) {
+			log.error("[" + elements[i] + "] " + elements[i].getFileName()
+					+ ":" + elements[i].getMethodName() + ":"
+					+ elements[i].getLineNumber());
+		}
+
 	}
 
 }

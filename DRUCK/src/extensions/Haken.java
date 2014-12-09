@@ -12,6 +12,13 @@ import com.itextpdf.awt.geom.Dimension;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.pdf.PdfContentByte;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dient dazu, um Hacken zu malen
+ * 
+ */
 public class Haken extends Extension {
 
 	public Haken() {
@@ -22,7 +29,9 @@ public class Haken extends Extension {
 	public boolean zustaendig(Element elem) {
 		return elem instanceof toni.druck.elements.Haken;
 	}
-
+		
+	
+	// Ausgabe für Postscript
 	@Override
 	public void print(Element elem, PrintWriter out) {
 		toni.druck.elements.Haken haken = (toni.druck.elements.Haken) elem;
@@ -32,7 +41,7 @@ public class Haken extends Extension {
 		out.print(" [ ");
 		out.print(elem.getText());
 		out.println(" ] ");
-		Dimension apos = getAbsolutPosition(elem);
+		Dimension apos = getAbsolutStartPosition(elem);
 		out.print(" ");
 		out.print((apos.width + elem.getPaddingX()) / 10.0);
 		out.print(" cm ");
@@ -43,46 +52,40 @@ public class Haken extends Extension {
 		out.println(" hakenschlagen ");
 	}
 
-	public Dimension getAbsolutPosition(Element e) {
-		Page p = e.getPage();
-		int w = e.X();
-		int h = e.Y();
-		if (h > p.getHeight()) {
-			throw new RuntimeException("Seite zu klein " + e.getName());
-		}
-		return new Dimension(w, p.getHeight() - h);
-		// return new Dimension(w, 280 - h);
-	}
-
+	// Ausgabe für PDF
 	@Override
 	public void print(Element elem, Document document, PdfContentByte cb,
 			PageRenderer pageRenderer) {
 		PDFRenderer renderer = (PDFRenderer) pageRenderer;
 		toni.druck.elements.Haken haken = (toni.druck.elements.Haken) elem;
 		String text = haken.getText();
-		boolean vh = !haken.isVh();
+		boolean vertikal_oder_horizontal = !haken.isVh();
 		if (text != null) {
-			// cb.saveState();
 			cb.setLineWidth(haken.getLinewidth());
-			Dimension dim = getAbsolutPosition(elem);
-			Dimension pdim = renderer.getDimensionAnpassung(dim, elem);
-			cb.moveTo((float) (pdim.width + elem.getPaddingX()),
-					(float) (pdim.height - elem.getPaddingY()));
+			Dimension dim = setzeStartPosition(elem, cb, renderer);
 			String snumber[] = text.trim().split(" +");
 			for (int i = 0; i < snumber.length; i++) {
 				float shift = 10.0f * Float.parseFloat(snumber[i]);
-				dim = printHakenString(cb, shift, renderer, dim, vh, elem);
-				vh = !vh;
+				dim = drawHakenLine(cb, shift, renderer, dim, vertikal_oder_horizontal, elem);
+				vertikal_oder_horizontal = !vertikal_oder_horizontal;
 			}
 			cb.stroke();
-			// cb.restoreState();
 		}
 	}
 
-	private Dimension printHakenString(PdfContentByte cb, float shift,
-			PDFRenderer renderer, Dimension pos, boolean vh, Element elem) {
+	private Dimension setzeStartPosition(Element elem, PdfContentByte cb,
+			PDFRenderer renderer) {
+		Dimension dim = getAbsolutStartPosition(elem);
+		Dimension pdim = renderer.getDimensionAnpassung(dim, elem);
+		cb.moveTo((float) (pdim.width + elem.getPaddingX()),
+				(float) (pdim.height - elem.getPaddingY()));
+		return dim;
+	}
+
+	private Dimension drawHakenLine(PdfContentByte cb, float shift,
+			PDFRenderer renderer, Dimension pos, boolean vertikal_oder_horizontal, Element elem) {
 		Dimension pos1 = new Dimension(pos);
-		if (vh) {
+		if (vertikal_oder_horizontal) {
 			pos1.height += shift;
 		} else {
 			pos1.width += shift;
@@ -93,4 +96,13 @@ public class Haken extends Extension {
 		return pos1;
 	}
 
+	private Dimension getAbsolutStartPosition(Element e) {
+		Page p = e.getPage();
+		int w = e.X();
+		int h = e.Y();
+		if (h > p.getHeight()) {
+			throw new RuntimeException("Seite zu klein " + e.getName());
+		}
+		return new Dimension(w, p.getHeight() - h);
+	}
 }

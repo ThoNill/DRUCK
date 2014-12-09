@@ -6,7 +6,17 @@ import org.jdom2.Element;
 import org.jdom2.Namespace;
 
 import toni.druck.helper.ClassFactory;
+import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Erzeugt Elemente {@link JDOMElementWithReference} die Referenzen auf 
+ * Objekte haben, diese Objekte können beliebig sein, sind also von JDOOM2 abgekoppelt.
+ * 
+ */
 public class PackagePathFactory extends DefaultJDOMFactory {
 	static Logger logger = Logger.getLogger(PackagePathFactory.class);
 

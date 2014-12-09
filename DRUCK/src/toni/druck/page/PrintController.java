@@ -2,18 +2,30 @@ package toni.druck.page;
 
 
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * In dieser Schnittstelle sind die zentralen Funktionen zur Steuerung es Ausdruckes enthalten
+ * 
+ * Objekt-Schnittstelle
+ * 
+ */
 public interface PrintController {
 
-	void prepareForPrint();
+	void prepareForPrint(); // Vorbereitung eines Element zur Ausgabe
 	
-	void print(PageRenderer out);
+	void print(PageRenderer out); // Eigentliche Ausgabe des Elements
 
-	int getTestHeight(DataItem item);
+	/* Höhe um zu testen, ob das Element noch auf die Seite passt, 
+	 * wenn man die Daten von DataItem berücksichtigt
+	 */
+	int getTestHeight(DataItem item); 
 
-	int getPageShiftHeight();
+	int getPageShiftHeight(); // Höhe der Verschiebung nach Ausgabe des Elements 
 
-	boolean isPrintable();
+	boolean isPrintable(); // Kann das Element gedruckt werden.
 
-	boolean isEnabled();
+	boolean isEnabled(); // Kann das Element sichtbar gedruckt werden.
 
 }

@@ -1,6 +1,13 @@
 package toni.druck.page;
 
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * {@link PrintEvent} mit einem {@link DataItem}
+ * 
+ */
 public class DataItemEvent extends PrintEvent {
 	public DataItem item;
 

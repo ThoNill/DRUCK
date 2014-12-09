@@ -4,6 +4,13 @@ import java.util.HashMap;
 
 import toni.druck.page.Page;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Standardimplementierung von PageLoader, einfach ein HashMap
+ * 
+ */
 public class StandardPageLoader implements PageLoader {
 	private HashMap<String, Page> pages;
 

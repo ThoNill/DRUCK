@@ -2,12 +2,19 @@ package toni.druck.standardElemente;
 
 import java.text.MessageFormat;
 
-
-
-
 import toni.druck.model.DataModel;
+import toni.druck.page.Element;
 import toni.druck.page.Page;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Verbindung eines oder mehrere Namen mit den Daten, die in einer Page stehen
+ * 
+ * 
+ */
 public class Variable extends StandardElement {
 
 	private String feldname;
@@ -35,7 +42,6 @@ public class Variable extends StandardElement {
 		if ((textformat == null || "".equals(textformat)) && s.length == 1) {
 			return s[0];
 		}
-
 		textformat = textformat.replaceAll("'", "#;#");
 
 		String erg = MessageFormat.format(textformat, s);

@@ -16,8 +16,6 @@ public class ClassFactory {
 			if (logger.isDebugEnabled()) {
 				logger.debug("Create object of class [" + classname + "]");
 			}
-			;
-
 			Class cl = ClassFactory.class.getClassLoader().loadClass(classname);
 			Object obj = cl.newInstance();
 			return obj;
@@ -38,7 +36,6 @@ public class ClassFactory {
 			if (logger.isDebugEnabled()) {
 				logger.debug("Create object of class [" + cl.getName() + "]");
 			}
-			;
 			Object obj = cl.newInstance();
 			return obj;
 

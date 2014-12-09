@@ -5,8 +5,15 @@ import java.util.Set;
 import java.util.Vector;
 
 import toni.druck.model.DataModel;
-//import toni.druck.standardElemente.PrintHeaderAndFooter;
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Repräsentiert ein Layout 
+ * 
+ *  
+ */
 public class Page extends EventAction {
 	public  static final String FOOTER = "footer";
 	public static final String HEADER = "header";

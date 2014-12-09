@@ -4,7 +4,16 @@ import org.jdom2.Document;
 
 import toni.druck.core.PageLoader;
 import toni.druck.page.Page;
+import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Läd ein XML Layout und erzeugt daraus eine {@link Page}.
+ * 
+ */
 public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
 
 	public Page createPage(String name) {
@@ -19,7 +28,6 @@ public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
 			page.layout();
 			return page;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

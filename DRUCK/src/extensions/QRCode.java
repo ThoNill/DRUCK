@@ -14,6 +14,14 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.BarcodeQRCode;
 import com.itextpdf.text.pdf.PdfContentByte;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Dient der Ausgabe von OCR Code
+ * 
+ * 
+ */
 public class QRCode extends Extension {
 
 	public QRCode() {
@@ -25,6 +33,7 @@ public class QRCode extends Extension {
 		return elem instanceof toni.druck.elements.QRCode;
 	}
 
+	// Ausgabe für Postscript
 	@Override
 	public void print(Element elem, PrintWriter out) {
 		out.print(" (");
@@ -34,6 +43,7 @@ public class QRCode extends Extension {
 
 	}
 
+	// Ausgabe für PDF
 	@Override
 	public void print(Element elem, Document document, PdfContentByte cb,
 			PageRenderer pageRenderer) {

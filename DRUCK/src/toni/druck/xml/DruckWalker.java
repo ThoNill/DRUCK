@@ -18,6 +18,14 @@ import toni.druck.page.ElementAction;
 import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Durchläuft eine JDOM2 Element Tree um eine {@link Page} aufzubauen.
+ * 
+ */
 public class DruckWalker extends TreeWalker {
 	private Page page;
 	private Stack<Object> parents = new Stack<Object>();
@@ -159,12 +167,12 @@ public class DruckWalker extends TreeWalker {
 	}
 
 	private void setBeanAttributesWithName(Element elem, Object reference,
-			String attributname[]) {
+			String attributnamen[]) {
 		ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(reference);
 		for (Object a : elem.getAttributes()) {
 			if (a instanceof Attribute) {
 				Attribute at = (Attribute) a;
-				if (find(at.getName(), attributname)) {
+				if (find(at.getName(), attributnamen)) {
 					bean.set(at.getName(), at.getValue());
 				}
 			}
@@ -173,13 +181,13 @@ public class DruckWalker extends TreeWalker {
 	}
 
 	private void setBeanAttributesExcept(Element elem, Object reference,
-			String attributname[]) {
+			String ausnahmeAttribute[]) {
 		ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(reference);
 
 		for (Object a : elem.getAttributes()) {
 			if (a instanceof Attribute) {
 				Attribute at = (Attribute) a;
-				if (!find(at.getName(), attributname)) {
+				if (!find(at.getName(), ausnahmeAttribute)) {
 					bean.set(at.getName(), at.getValue());
 				}
 			}

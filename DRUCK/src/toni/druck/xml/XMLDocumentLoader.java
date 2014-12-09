@@ -1,6 +1,7 @@
 package toni.druck.xml;
 
 import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -13,7 +14,17 @@ import org.jdom2.Element;
 import org.jdom2.Parent;
 import org.jdom2.input.SAXBuilder;
 
+import toni.druck.page.Verteiler;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Läd ein JDOM2 Dokument aus einer Datei/Resource
+ * Includiert auch andere XML-Dateien
+ * 
+ */
 public class XMLDocumentLoader  {
 
 

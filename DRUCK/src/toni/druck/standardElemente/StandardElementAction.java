@@ -5,6 +5,15 @@ import toni.druck.page.Element;
 import toni.druck.page.ElementAction;
 import toni.druck.page.Page;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Standardimplementierung der {@link ElementAction} Schnittstelle
+ * 
+ * 
+ */
 public abstract class StandardElementAction implements ElementAction {
 	
 	public void prepareForPrint(Element elem) {

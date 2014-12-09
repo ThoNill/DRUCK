@@ -2,6 +2,13 @@ package toni.druck.page;
 
 
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Events vom {@link PageRenderer} für die {@link PrintListener}
+ * 
+ */
 public class PrintEvent {
 
 	public static final int DATEN = 1;

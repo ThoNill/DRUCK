@@ -2,6 +2,15 @@ package toni.druck.filter;
 
 import toni.druck.page.DataItem;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Falls ein DataItem mit command im Datenstrom erscheint
+ * werden append Items angehängt
+ * Entweder vor pre = true odr nach dem DataItem
+ * 
+ */
 public class AppendFilter extends BasisFilter {
 	private boolean pre;
 	private String command;

@@ -13,6 +13,14 @@ import toni.druck.page.ElementAction;
 import toni.druck.page.Page;
 import toni.druck.page.PageRenderer;
 
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Standardimplementierung der {@link Element} Schnittstelle
+ * 
+ * 
+ */
 public class StandardElement implements Element {
 	private int width = 0;
 	private int height = 0;

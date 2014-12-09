@@ -4,6 +4,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Schnittstelle das die eigentliche Druckausgabe abgekapselt 
+ * 
+ *s 
+ */
 public interface PageRenderer {
 
 	int REAL_PRINT = 0;

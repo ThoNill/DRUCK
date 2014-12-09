@@ -2,6 +2,13 @@ package toni.druck.elementActions;
 
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ * Konkrete Implementierung Entscheidung über Reguläre Expressions
+ * 
+ */
 public class RegExpAction extends OnOffAction {
 	private Pattern ifRe = null;
 	

@@ -1,6 +1,13 @@
 package toni.druck.core;
 
-
+/**
+ * 
+ * @author Thomas Nill
+ * 
+ *         angepasster Code aus Java. ArrayQue die NICHT thread sicher ist. Um
+ *         Zeit für die beiden Queues in DataFIFO zu sparen.
+ * 
+ */
 public class UnprotectedArrayQueue<E> {
 
 	/** The queued items */
@@ -22,20 +29,12 @@ public class UnprotectedArrayQueue<E> {
 		return (++i == items.length) ? 0 : i;
 	}
 
-	/**
-	 * Inserts element at current put position, advances, and signals. Call only
-	 * when holding lock.
-	 */
 	public void insert(E x) {
 		items[putIndex] = x;
 		putIndex = inc(putIndex);
 		++count;
 	}
 
-	/**
-	 * Extracts element at current take position, advances, and signals. Call
-	 * only when holding lock.
-	 */
 	public E extract() {
 		final E[] items = this.items;
 		E x = items[takeIndex];
@@ -49,13 +48,12 @@ public class UnprotectedArrayQueue<E> {
 		return (count == 0) ? null : items[takeIndex];
 	}
 
-	
-	 public int size() {
-	            return count;
-	  }
-	 
-	 public boolean isEmpty() {
-		 return (count == 0);
-	 }
+	public int size() {
+		return count;
+	}
+
+	public boolean isEmpty() {
+		return (count == 0);
+	}
 
 }

@@ -5,6 +5,17 @@ import java.util.List;
 
 import toni.druck.model.DataModel;
 
+
+/*****
+ * 
+ * @author Thomas Nill
+ * 
+ * Ein Ausgabeelement auf dem Ausdruck, kann Kinder enthalten.
+ * Stellt Größenangaben, Positionen, Fonts usw. zur Verfügung
+ * 
+ * Datentyp
+ * 
+ */
 public interface Element extends PrintController {
 
 	void printChilds(PageRenderer out);
@@ -75,10 +86,6 @@ public interface Element extends PrintController {
 
 	void setHeight(int height);
 
-	boolean isPrintable();
-
-	int getTestHeight(DataItem item);
-
 	String getName();
 
 	void setName(String name);
@@ -103,19 +110,12 @@ public interface Element extends PrintController {
 
 	void printDefinitions(PageRenderer out);
 
-	void print(PageRenderer out);
-
 	String getFont();
 
 	Dimension getSize();
 
-
 	List<Element> getChilds();
 
-	int getPageShiftHeight();
-	
 	void setPageShiftHeight(int height);
-
-	void prepareForPrint();
-
+	
 }
