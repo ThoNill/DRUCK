@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            name="DatenGraphiti Diagram Type"
+            type="DatenGraphiti"
+            id="DatenGraphiti.DatenGraphitiDiagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="DatenGraphiti Diagram Type Provider"
+            class="datengraphiti.diagram.DatenGraphitiDiagramTypeProvider"
+            id="DatenGraphiti.DatenGraphitiDiagramTypeProvider">
+         <diagramType
+               id="DatenGraphiti.DatenGraphitiDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   
+    <extension
+    point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor contributorId="DatenGraphiti.PropertyContributor"> 
+        <propertyCategory category="Graphiti"> 
+        </propertyCategory> 
+    </propertyContributor> 
+</extension>
+       
+ <extension
+      point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+    <propertyTabs
+          contributorId="DatenGraphiti.PropertyContributor">
+    <propertyTab
+         category="Graphiti"
+         id="graphiti.main.tab"
+          label="Main">
+    </propertyTab>
+   </propertyTabs>
+</extension>
+     
+ 
+ <extension
+      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections
+          contributorId="DatenGraphiti.PropertyContributor">
+        <propertySection
+              class="datengraphiti.properties.PropertiesSection"
+              filter="datengraphiti.properties.PropertiesFilter"
+              id="graphiti.main.tab.emfclass"
+              tab="graphiti.main.tab">
+        </propertySection>
+    </propertySections>
+ </extension>
+ 
+</plugin>
