@@ -34,9 +34,11 @@ pop pop
 
 /yzentrieren { dup true charpath pathbbox 3 -1 roll sub 2 div neg 3 1 roll sub exch rmoveto } def 
 
-/ralign { yzentrieren exch 1 index  stringwidth pop sub 0 rmoveto show } def 
-/calign { yzentrieren exch 1 index  stringwidth pop sub 2 div 0 rmoveto show } def
-/lalign { yzentrieren exch pop show } def
+% 90 rotate show
+
+/ralign { yzentrieren exch 1 index  stringwidth pop sub 0 rmoveto  } def 
+/calign { yzentrieren exch 1 index  stringwidth pop sub 2 div 0 rmoveto  } def
+/lalign { yzentrieren exch pop  } def
 
 
 

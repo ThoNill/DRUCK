@@ -195,7 +195,6 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		if (needGSafe) {
 			gsave();
 		}
-		;
 
 		printPre(elem);
 		logger.debug("print 2");
@@ -206,7 +205,6 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		if (needGSafe) {
 			grestore();
 		}
-		;
 	}
 
 	public boolean needGSave(Element elem) {
@@ -437,7 +435,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 			// text = text.replaceAll("\\)", "\\\\)");
 			return " " + getTextPosString(e) + " "
 					+ ((e.getWidth() - 2 * e.getPaddingX()) / 10.0) + " cm  ("
-					+ text + ") " + e.getAlign() + "align \n";
+					+ text + ") " + e.getAlign() + rotateAndShow(e);
 		}
 		return " ";
 	}
@@ -494,6 +492,14 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		out.print(" cm moveto \n");
 	}
 
+	private String rotateAndShow(Element elem) {
+		int rotation = elem.getRotation();
+		if (rotation != 0) {
+			return "align  " + rotation + " rotate  show \n";
+		}
+		return "align show \n";
+	}
+	
 	public void printMultiline(MultiLine m) {
 		gsave();
 		printClipString(m);
@@ -507,7 +513,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 			if (text != null && !"".equals(text.trim())) {
 				out.print(" " + getTextPosString(m, -(i + 1)) + " "
 						+ ((size.width - 2 * m.getPaddingX()) / 10.0)
-						+ " cm  (" + text + ") " + m.getAlign() + "align \n");
+						+ " cm  (" + text + ") " + m.getAlign() + rotateAndShow(m));
 			}
 		}
 		grestore();

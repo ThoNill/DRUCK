@@ -118,4 +118,6 @@ public interface Element extends PrintController {
 
 	void setPageShiftHeight(int height);
 	
+	int getRotation();
+	
 }

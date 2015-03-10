@@ -69,6 +69,8 @@ public class StandardElement implements Element {
 	private boolean enabled = true;
 
 	private Vector<ElementAction> prepareBeforPrintActions;
+	
+	private int rotation=0;
 
 	public StandardElement(String name, Page page) {
 		super();
@@ -427,6 +429,14 @@ public class StandardElement implements Element {
 
 	public List<Element> getChilds() {
 		return childs;
+	}
+
+	public int getRotation() {
+		return rotation;
+	}
+
+	public void setRotation(int rotation) {
+		this.rotation = rotation;
 	}
 
 }
