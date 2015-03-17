@@ -19,13 +19,13 @@
 	</Hbox>
 
 	<Hbox name="item_header" filled="true" linewidth="1" grayscale="70">
-		<Label text="wert1" width="20" height="10" bordered="true"
+		<Label text="ih1" width="20" height="10" bordered="true"
 			linewidth="2" />
-		<Label text="wert2" width="30" height="10" linewidth="1"
+		<Label text="ih2" width="30" height="10" linewidth="1"
 			bordered="true" />
 	</Hbox>
 
-	<Hbox name="item" filled="true" linewidth="1" grayscale="70">
+	<Hbox name="item" filled="true" linewidth="1" grayscale="10">
 		<TextField variable="wert1" width="20" height="10" bordered="true"
 			linewidth="2" />
 		<TextField variable="wert2" width="30" height="10"

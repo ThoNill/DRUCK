@@ -1,5 +1,6 @@
 package toni.druck.xml;
 
+import org.apache.log4j.Logger;
 import org.jdom2.Document;
 
 import toni.druck.core.PageLoader;
@@ -15,7 +16,8 @@ import toni.druck.page.Verteiler;
  * 
  */
 public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
-
+	static Logger logger = Logger.getLogger(XMLPageLoader.class.getSimpleName());
+	
 	public Page createPage(String name) {
 		try {
 
@@ -28,7 +30,7 @@ public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
 			page.layout();
 			return page;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Resource " + name + " do not exist");
 		}
 		return null;
 	}

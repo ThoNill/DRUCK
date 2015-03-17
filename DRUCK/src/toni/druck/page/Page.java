@@ -136,7 +136,6 @@ public class Page extends EventAction {
 		if (pages == 0) {
 			hoeheNichtBeruecksichtigen(FOOTER);
 		}
-		;
 		freePlace -= getHeight(FOOTER);
 		if (freePlace <= 0) {
 			throw new RuntimeException("Page zu klein!");
@@ -203,7 +202,7 @@ public class Page extends EventAction {
 		return (s != null);
 	}
 
-	private void print(PrintController controller, PageRenderer out) {
+	public void print(PrintController controller, PageRenderer out) {
 		if (controller != null && controller.isPrintable()) {
 			pageIsEmpty = false;
 			int h = controller.getPageShiftHeight();

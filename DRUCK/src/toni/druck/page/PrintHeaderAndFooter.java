@@ -14,8 +14,10 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
 	private Element header = null;
 	private Element body = null;
 	private Element footer = null;
+	private Page page=null;
 
 	public PrintHeaderAndFooter(Page page, String name) {
+		this.page = page;
 		header = page.getSection(name + "_header");
 		footer = page.getSection(name + "_footer");
 		body = page.getSection(name);
@@ -50,11 +52,11 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
 	 */
 	public void print(PageRenderer out) {
 		if (printTheHeader) {
-			header.print(out);
+			page.print(header, out);
 		}
-		body.print(out);
+		page.print(body,out);
 		if (printTheFooter) {
-			footer.print(out);
+			page.print(footer,out);
 		}
 		printTheHeader = false;
 		printTheFooter = false;
@@ -84,14 +86,7 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
 	 * @see toni.druck.core.PrintController#getPageShiftHeight()
 	 */
 	public int getPageShiftHeight() {
-		int height = body.getPageShiftHeight();
-		if (printTheHeader) {
-			height += header.getPageShiftHeight();
-		}
-		if (printTheFooter) {
-			height += footer.getPageShiftHeight();
-		}
-		return height;
+		return 0;
 	}
 
 	public boolean isPrintable() {

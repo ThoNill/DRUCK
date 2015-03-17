@@ -22,13 +22,14 @@ public class XMLIncludeTest {
 		}
 	}
 	
+	
+	
 	@Test
 	public void fehlt() {
 		try {
 			Page page = new XMLPageLoader().createPage("testdaten/testtemplates1.xml");
 			assertNull(page);
 		} catch (Exception e) {
-			Assert.fail("Exception " + e.getMessage());
 		}
 	}
 
