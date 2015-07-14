@@ -3,7 +3,7 @@ DRUCK
 
 Print rendering library, output formats: Postscript, PDF
 
-Diese Library erstellt aus einer Testdatei, die
+Diese Library erstellt aus einer Textdatei, die
 die Daten enthält eine PS oder PDF Datei.
 
 Die Datendatei hat folgendes Format:
