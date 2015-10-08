@@ -428,11 +428,9 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 	public String getTextString(Element e) {
 		String text = e.getText();
 		if (text != null && !"".equals(text.trim())) {
-			text = text.replaceAll("\\(", "\\(");
-			text = text.replaceAll("\\)", "\\)");
+			text = text.replaceAll("\\(", "\\\\(");
+			text = text.replaceAll("\\)", "\\\\)");
 
-			// text = text.replaceAll("\\(", "\\\\(");
-			// text = text.replaceAll("\\)", "\\\\)");
 			return " " + getTextPosString(e) + " "
 					+ ((e.getWidth() - 2 * e.getPaddingX()) / 10.0) + " cm  ("
 					+ text + ") " + e.getAlign() + rotateAndShow(e);
