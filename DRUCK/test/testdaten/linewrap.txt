@@ -1,0 +1,9 @@
+output|results/linewrap.ps
+layout|testdaten/linewrap
+text|das ist ein weiterer längerer Text, der in mehrere Zeilen gebrochen wird
+text|ein kurzer Text
+text|ein langer Text der über mehrere Zeilen geht
+text|das ist ein weiterer noch um ein paar Worte längerer Text, der in noch mehr Zeilen gebrochen wird
+print
+print
+print

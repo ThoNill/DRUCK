@@ -28,7 +28,7 @@ public class Page extends EventAction {
 	private boolean pageIsEmpty;
 	private DataModel data;
 	private int width = 210;
-	private int height = 300;
+	private int height = 297;
 	private String name;
 	private int posy;
 	private boolean firstPage = true;

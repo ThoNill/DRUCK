@@ -1,0 +1,45 @@
+
+%%BeginSetup
+% Default text margins: top, right, bottom, left
+% top margin = text height: right margin = text width
+/TM	{ /tm exch def } def	680 TM % 9.5"
+/RM	{ /rm exch def } def	450 RM % 6.5"
+/BM	{ /bm exch def } def 	0 BM 
+/LM	{ /lm exch def } def	 0 LM 
+
+
+/textheight { 
+    gsave                                  % save graphic context
+    {                            
+        100 100 moveto                     % move to some point 
+        (HÍpg) true charpath pathbbox      % gets text path bounding box (LLx LLy URx URy)
+        exch pop 3 -1 roll pop             % keeps LLy and URy
+        exch sub                           % URy - LLy
+    }
+    stopped                                % did the last block fail?
+    {
+        pop pop                            % get rid of "stopped" junk
+        currentfont /FontMatrix get 3 get  % gets alternative text height
+    }
+    if
+    grestore                               % restore graphic context
+} bind def
+
+/LG	{ textheight 1.15 mul /lg exch def } def	 LG % linespacing
+
+% knife and fork linewrapping procedures 
+% Revised 'toofar' proc by Rob Rich
+% Is the word too long for the space on the line?
+/toofar? {dup stringwidth pop currentpoint pop add rm gt} bind def
+% Show a word, line wrap if needed
+/showword {toofar? {L} if show} def
+
+% Mark-up codes
+% full line advance 
+/FL	{ lm tm moveto } def 
+/L	{ lg tm exch sub TM lm tm moveto } def 
+% in a loop, break by spaces, and print each word. 
+% If there isn't a space left, be done.
+/S { {( ) search exch showword not {exit} if show} loop} def
+% paragraph line advance
+/P { FL S L } def

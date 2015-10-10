@@ -25,13 +25,11 @@ import toni.druck.page.Element;
 import toni.druck.page.Extension;
 import toni.druck.page.Page;
 
-
-
 /*****
  * 
  * @author Thomas Nill
  * 
- * Ausgabe in einer Postscript Datei
+ *         Ausgabe in einer Postscript Datei
  * 
  * 
  */
@@ -41,7 +39,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 	private Vector<Extension> extensions = new Vector<Extension>();
 	private int counter = 0;
 	private int save_restore = 0;
-	private int pageCount=0;
+	private int pageCount = 0;
 
 	public PostscriptRenderer(String codepage) {
 		super(codepage);
@@ -133,7 +131,11 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		} else if (elem instanceof TextField || elem instanceof Vbox
 				|| elem instanceof Hbox || elem instanceof PositionBox
 				|| elem instanceof Label) {
-			printElement(elem);
+			if (hasExtension(elem)) {
+				printExtension(elem);
+			} else {
+				printElement(elem);
+			}
 		} else if (elem instanceof Element) {
 			printExtension(elem);
 		}
@@ -270,6 +272,15 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 			}
 		}
 		grestore();
+	}
+
+	boolean hasExtension(Element elem) {
+		for (Extension ext : extensions) {
+			if (ext.zustaendig(elem)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void grestore() {
@@ -497,7 +508,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 		}
 		return "align show \n";
 	}
-	
+
 	public void printMultiline(MultiLine m) {
 		gsave();
 		printClipString(m);
@@ -511,7 +522,8 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 			if (text != null && !"".equals(text.trim())) {
 				out.print(" " + getTextPosString(m, -(i + 1)) + " "
 						+ ((size.width - 2 * m.getPaddingX()) / 10.0)
-						+ " cm  (" + text + ") " + m.getAlign() + rotateAndShow(m));
+						+ " cm  (" + text + ") " + m.getAlign()
+						+ rotateAndShow(m));
 			}
 		}
 		grestore();
@@ -542,7 +554,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 	public void newPage(int pagenr, Page page) {
 		pageCount++;
 		out.println("showpage ");
-		out.println("%%Page: " + pageCount+ " " + pageCount);
+		out.println("%%Page: " + pageCount + " " + pageCount);
 		out.println("%%BeginPageSetup ");
 		out.println("%%EndPageSetup");
 

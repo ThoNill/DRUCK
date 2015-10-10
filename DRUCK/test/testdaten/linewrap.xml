@@ -1,0 +1,9 @@
+<Page name="linewrap" width="210" height="297">
+	<Verteiler name="text" fields="inhalt" />
+	
+	<Hbox name="text" >
+	    <Hbox width="50" height="40"  />
+		<TextArea width="50" height="40" variable="inhalt" bordered="true" />
+	</Hbox>
+	
+</Page>
