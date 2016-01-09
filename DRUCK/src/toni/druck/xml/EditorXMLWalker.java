@@ -1,10 +1,12 @@
 package toni.druck.xml;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -19,6 +21,7 @@ import toni.druck.elements.PositionBox;
 import toni.druck.elements.Sum;
 import toni.druck.elements.TextField;
 import toni.druck.elements.Vbox;
+import toni.druck.helper.DirectoryHelper;
 import toni.druck.page.Action;
 import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
@@ -159,9 +162,12 @@ public class EditorXMLWalker extends DruckWalker {
 	}
 
 	public void printXML(String filename) throws IOException {
+		DirectoryHelper.createDirsForFile(filename);
 		printXML(new FileOutputStream(filename));
 
 	}
+
+	
 
 	public void printXML(OutputStream ostream) throws IOException {
 		printXML(new PrintWriter(new OutputStreamWriter(ostream, "UTF-8")));
