@@ -6,9 +6,9 @@ import toni.druck.page.Page;
  * 
  * @author Thomas Nill
  * 
- * Fabrik für Page, holt Layouts  
+ *         Fabrik für Page, holt Layouts
  * 
  */
 public interface PageLoader {
-	Page createPage(String name);
+    Page createPage(String name);
 }

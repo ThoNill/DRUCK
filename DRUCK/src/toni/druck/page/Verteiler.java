@@ -14,107 +14,108 @@ import toni.druck.model.DataModel;
  * 
  * @author Thomas Nill
  * 
- * Ein {@link DataItem} stellt Daten für eine Seite das Ausdruckes bereit.
- * Über sein command kann ihm eine Verteiler zugeordnet werden, dessen Name mit
- * dem command übereinstimmt.
+ *         Ein {@link DataItem} stellt Daten für eine Seite das Ausdruckes
+ *         bereit. Über sein command kann ihm eine Verteiler zugeordnet werden,
+ *         dessen Name mit dem command übereinstimmt.
  * 
- * Der Verteiler legt dabei fest, wohin die Daten des {@link DataItem}
- * verteilt werden.
+ *         Der Verteiler legt dabei fest, wohin die Daten des {@link DataItem}
+ *         verteilt werden.
  * 
- * Datenstruktur
+ *         Datenstruktur
  * 
  */
 
 public class Verteiler extends EventAction {
-	static Logger logger = Logger.getLogger("DataPlace");
+    static Logger logger = Logger.getLogger("DataPlace");
 
-	private int place[] = null;
+    private int place[] = null;
 
-	private String name;
+    private String name;
 
-	private String placeNames;
+    private String placeNames;
 
-	private String newHeaderWhen = null;
-	private DataModel model;
+    private String newHeaderWhen = null;
+    private DataModel model;
 
-	public Verteiler(String name, String placeNames) {
-		super();
-		setName(name);
-		setFields(placeNames);
-	}
+    public Verteiler(String name, String placeNames) {
+        super();
+        setName(name);
+        setFields(placeNames);
+    }
 
-	public Verteiler() {
-		super();
-	}
+    public Verteiler() {
+        super();
+    }
 
-	public String getNewHeaderWhen() {
-		return newHeaderWhen;
-	}
+    public String getNewHeaderWhen() {
+        return newHeaderWhen;
+    }
 
-	public void setNewHeaderWhen(String newHeaderWhen) {
-		this.newHeaderWhen = newHeaderWhen;
-	}
+    public void setNewHeaderWhen(String newHeaderWhen) {
+        this.newHeaderWhen = newHeaderWhen;
+    }
 
-	public String getFields() {
-		return placeNames;
-	}
+    public String getFields() {
+        return placeNames;
+    }
 
-	public void setDataModel(DataModel model) {
-		this.model = model;
-		if (placeNames != null) {
-			place = model.getMultiIndex(placeNames);
-		}
-	}
+    public void setDataModel(DataModel model) {
+        this.model = model;
+        if (placeNames != null) {
+            place = model.getMultiIndex(placeNames);
+        }
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setFields(String placeNames) {
-		this.placeNames = placeNames;
-	}
+    public void setFields(String placeNames) {
+        this.placeNames = placeNames;
+    }
 
-	public void fillValues(DataItem data) {
-		if (data.getCommand().equals(name)) {
-			if (place != null && place.length == data.getSize() - 1) {
-				for (int i = 1; i <= place.length; i++) {
-					model.put(place[i - 1], data.getData(i));
-				}
-			}
-		}
-	}
+    public void fillValues(DataItem data) {
+        if (data.getCommand().equals(name)) {
+            if (place != null && place.length == data.getSize() - 1) {
+                for (int i = 1; i <= place.length; i++) {
+                    model.put(place[i - 1], data.getData(i));
+                }
+            }
+        }
+    }
 
-	public String[] getActualValues() {
-		if (place != null) {
-			String v[] = new String[place.length];
-			for (int i = 0; i < place.length; i++) {
-				v[i] = model.get(place[i]);
-			}
-			return v;
-		}
-		return null;
-	}
+    public String[] getActualValues() {
+        if (place != null) {
+            String v[] = new String[place.length];
+            for (int i = 0; i < place.length; i++) {
+                v[i] = model.get(place[i]);
+            }
+            return v;
+        }
+        return null;
+    }
 
-	public void restoreValues(String v[]) {
-		if (v == null) return;
-		
-		if (place != null) {
-			for (int i = 0; i < place.length; i++) {
-				model.put(place[i], v[i]);
-			}
-		}
-	}
+    public void restoreValues(String v[]) {
+        if (v == null)
+            return;
 
-	public void perform(DataItem data, PageRenderer out) {
-		fireEvent(data, out);
-		perform();
-	}
+        if (place != null) {
+            for (int i = 0; i < place.length; i++) {
+                model.put(place[i], v[i]);
+            }
+        }
+    }
 
-	public void fireEvent(DataItem item, PageRenderer out) {
-		fireEvent(new DataItemEvent(item, out));
-	}
+    public void perform(DataItem data, PageRenderer out) {
+        fireEvent(data, out);
+        perform();
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void fireEvent(DataItem item, PageRenderer out) {
+        fireEvent(new DataItemEvent(item, out));
+    }
+
+    public String getName() {
+        return name;
+    }
 }

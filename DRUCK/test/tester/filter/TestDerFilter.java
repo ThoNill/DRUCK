@@ -1,8 +1,9 @@
 package tester.filter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import toni.druck.filter.AppendFilter;

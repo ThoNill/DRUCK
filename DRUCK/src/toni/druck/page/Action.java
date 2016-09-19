@@ -1,6 +1,5 @@
 package toni.druck.page;
 
-
 /*****
  * 
  * Eine Aktion die während des erstellens eines Ausdruckes aufgerufen wird
@@ -12,6 +11,7 @@ package toni.druck.page;
  *
  */
 public interface Action {
-	void perform();
-	void setPage(Page page);
+    void perform();
+
+    void setPage(Page page);
 }

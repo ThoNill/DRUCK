@@ -1,7 +1,5 @@
 package tester;
 
-import java.util.Vector;
-
 import toni.druck.page.Element;
 
 public class TestRendererItem {

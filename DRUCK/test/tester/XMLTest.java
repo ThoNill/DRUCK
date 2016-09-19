@@ -1,10 +1,9 @@
 package tester;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
+import org.apache.log4j.Logger;
 import org.jdom2.Document;
-
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,20 +16,22 @@ import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.testdatei.ErzeugeTestBescheibung;
 import toni.druck.xml.DruckWalker;
 import toni.druck.xml.EditorXMLWalker;
-import toni.druck.xml.PackagePathFactory;
 import toni.druck.xml.XMLPageLoader;
 import extensions.Haken;
 import extensions.Omr;
 import extensions.QRCode;
 
 public class XMLTest {
+    private static final String DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG = "Diese Exception ist nicht in Ordnung";
+    private static final Logger LOG = Logger.getLogger(XMLTest.class.getSimpleName());
 
 	@Test
 	public void loadDocument() {
 		try {
-			Page page = new XMLPageLoader().createPage("testdaten/test1.xml");
+		    Page page = new XMLPageLoader().createPage("testdaten/test1.xml");
 			assertNotNull(page);
 		} catch (Exception e) {
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -41,6 +42,7 @@ public class XMLTest {
 			 Page page =new XMLPageLoader().createPage("testdaten/test1");
 			assertNotNull(page);
 		} catch (Exception e) {
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -55,6 +57,7 @@ public class XMLTest {
 			Page page = walker.getPage();
 			Assert.assertEquals("erster", page.getName());
 		} catch (Exception e) {
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -68,6 +71,7 @@ public class XMLTest {
 			Page page = walker.getPage();
 			Assert.assertEquals("Abrechnung", page.getName());
 		} catch (Exception e) {
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -81,6 +85,7 @@ public class XMLTest {
 			Manager m = new Manager(l, r);
 			m.print("testdaten/testdaten4.txt");
 		} catch (Exception e) {
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -94,8 +99,8 @@ public class XMLTest {
 			Manager m = new Manager(l, r);
 			m.print("testdaten/testdaten5.txt");
 		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Exception " + e.getMessage());
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
+		    Assert.fail("Exception " + e.getMessage());
 		}
 	}
 
@@ -108,7 +113,7 @@ public class XMLTest {
 			Manager m = new Manager(l, r);
 			m.print("testdaten/testdaten6.txt");
 		} catch (Exception e) {
-			e.printStackTrace();
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -117,9 +122,6 @@ public class XMLTest {
 	@Test
 	public void createTestFile() {
 		try {
-	/*		TestDateiCreator creator = new TestDateiCreator();
-			 creator.loadAndWrite("biglist");
-*/
 			PageLoader l = new XMLPageLoader();
 			PageRenderer r = new PostscriptRenderer("ISO-8859-1");
 			r.addExtension(new QRCode());
@@ -130,12 +132,8 @@ public class XMLTest {
 			m.print("testdaten/testbiglist.txt");
 			long end = System.currentTimeMillis();
 			System.out.println(end-start);
-/*		do {
-				m.print("testbiglist.txt");
-				Thread.sleep(100);
-			} while (1 == 1);*/
 		} catch (Exception e) {
-			e.printStackTrace();
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -150,7 +148,7 @@ public class XMLTest {
 			walker.printXML("results/biglist_gui.xml");
 		
 		} catch (Exception e) {
-			e.printStackTrace();
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -161,9 +159,8 @@ public class XMLTest {
 			PageLoader l = new XMLPageLoader();
 			Page page = l.createPage("testdaten/biglist");
 			ErzeugeTestBescheibung erz = new ErzeugeTestBescheibung();
-	//		erz.analysiereUndBeschreibe(page,System.out);
 		} catch (Exception e) {
-			e.printStackTrace();
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -173,7 +170,7 @@ public class XMLTest {
 		try {
 			Main.probedruck("testdaten/biglist","results/","testdaten/");
 		} catch (Exception e) {
-			e.printStackTrace();
+		    LOG.error(DIESE_EXCEPTION_IST_NICHT_IN_ORDNUNG, e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}

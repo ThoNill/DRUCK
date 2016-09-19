@@ -1,6 +1,7 @@
 package toni.druck.filter;
 
 import java.util.Vector;
+
 /**
  * 
  * @author Thomas Nill
@@ -19,177 +20,179 @@ import java.util.Vector;
  */
 import toni.druck.page.DataItem;
 
-
 /**
  * 
  * @author Thomas Nill
  * 
- * Dieser Filter teilt den Datenstrom in Abschnitte, die durch die
- * {@link DataItem} mit getCommand = command begrent werden d.h
+ *         Dieser Filter teilt den Datenstrom in Abschnitte, die durch die
+ *         {@link DataItem} mit getCommand = command begrent werden d.h
  * 
- * ...Abschnitt... command ...Abschnitt... command 
+ *         ...Abschnitt... command ...Abschnitt... command
  * 
- * Dieser Abschnitte werden aus dem Datenstrom entfernt bzw. erhalten
+ *         Dieser Abschnitte werden aus dem Datenstrom entfernt bzw. erhalten
  * 
- * ist exclude = false 
+ *         ist exclude = false
  * 
- * wird der Abschnitt erhalten wenn in ihm DataItem mit getCommand in exists vorkommen,
- * ansonsten wird dieser Abschnit eliminiert
+ *         wird der Abschnitt erhalten wenn in ihm DataItem mit getCommand in
+ *         exists vorkommen, ansonsten wird dieser Abschnit eliminiert
  * 
- * ist exclude = true
+ *         ist exclude = true
  * 
- * wird der Abschnitt erhalten wenn in ihm kein DataItem mit getCommand in exists vorkommt,
- * ansonsten wird dieser Abschnit eliminiert
+ *         wird der Abschnitt erhalten wenn in ihm kein DataItem mit getCommand
+ *         in exists vorkommt, ansonsten wird dieser Abschnit eliminiert
  * 
  * 
  * 
  */
 public class IfExistsFilter extends BasisFilter {
-	private boolean exclude = false;
+    private boolean exclude = false;
 
-	private String command;
-	private String[] exists;
-	
-	private Vector<DataItem> betweenItems = new Vector<DataItem>(); // DataItems zwischen zwei aus exits
-	private Vector<DataItem> preItems = new Vector<DataItem>();
+    private String command;
+    private String[] exists;
 
-	enum Status {
-		PRE_COMMAND, COMMAND, FOUND
-	};
+    private Vector<DataItem> betweenItems = new Vector<DataItem>(); // DataItems
+                                                                    // zwischen
+                                                                    // zwei aus
+                                                                    // exits
+    private Vector<DataItem> preItems = new Vector<DataItem>();
 
-	private Status status = Status.PRE_COMMAND;
+    enum Status {
+        PRE_COMMAND, COMMAND, FOUND
+    };
 
-	public IfExistsFilter() {
-		super();
-	}
+    private Status status = Status.PRE_COMMAND;
 
-	public String getCommand() {
-		return command;
-	}
+    public IfExistsFilter() {
+        super();
+    }
 
-	public void setCommand(String command) {
-		this.command = command;
-	}
+    public String getCommand() {
+        return command;
+    }
 
-	public void setExclude(boolean exclude) {
-		this.exclude = exclude;
-	}
+    public void setCommand(String command) {
+        this.command = command;
+    }
 
-	public void setExists(String append) {
-		this.exists = append.split(" *, *");
-	}
+    public void setExclude(boolean exclude) {
+        this.exclude = exclude;
+    }
 
-	@Override
-	public void receive(DataItem item) {
-		String itemCommand = item.getCommand();
-		boolean commandFound = (getCommand().equals(itemCommand))
-				|| itemCommand.equals(DataItem.ENDOFFILE);
-		if (exclude) {
-			status = nextStatusExclude(status, commandFound, item);
-		} else {
-			status = nextStatusInclude(status, commandFound, item);
-		}
-		if (itemCommand.equals(DataItem.ENDOFFILE)) {
-			preItems.clear();
-			betweenItems.clear();
-			send(item);
-		}
-	}
+    public void setExists(String append) {
+        this.exists = append.split(" *, *");
+    }
 
-	private Status nextStatusInclude(Status status, boolean commandFound,
-			DataItem item) {
-		switch (status) {
-		case PRE_COMMAND:
-			if (commandFound) {
-				betweenItems.add(item);
-				return Status.COMMAND;
-			} else {
-				preItems.add(item);
-			}
-			break;
-		case COMMAND:
-			if (commandFound) {
-				betweenItems.clear();
-			}
-			betweenItems.add(item);
-			if (!commandFound) {
-				boolean existsFound = getFound(item.getCommand());
-				if (existsFound) {
-					return Status.FOUND;
-				}
-			}
-			break;
-		case FOUND:
-			if (commandFound) {
-				send(preItems);
-				send(betweenItems);
-				betweenItems.add(item);
-				return Status.COMMAND;
-			} else {
-				betweenItems.add(item);
-			}
-			break;
-		default:
-			throw new RuntimeException("nicht erlaubter Status");
+    @Override
+    public void receive(DataItem item) {
+        String itemCommand = item.getCommand();
+        boolean commandFound = (getCommand().equals(itemCommand))
+                || itemCommand.equals(DataItem.ENDOFFILE);
+        if (exclude) {
+            status = nextStatusExclude(status, commandFound, item);
+        } else {
+            status = nextStatusInclude(status, commandFound, item);
+        }
+        if (itemCommand.equals(DataItem.ENDOFFILE)) {
+            preItems.clear();
+            betweenItems.clear();
+            send(item);
+        }
+    }
 
-		}
+    private Status nextStatusInclude(Status status, boolean commandFound,
+            DataItem item) {
+        switch (status) {
+        case PRE_COMMAND:
+            if (commandFound) {
+                betweenItems.add(item);
+                return Status.COMMAND;
+            } else {
+                preItems.add(item);
+            }
+            break;
+        case COMMAND:
+            if (commandFound) {
+                betweenItems.clear();
+            }
+            betweenItems.add(item);
+            if (!commandFound) {
+                boolean existsFound = getFound(item.getCommand());
+                if (existsFound) {
+                    return Status.FOUND;
+                }
+            }
+            break;
+        case FOUND:
+            if (commandFound) {
+                send(preItems);
+                send(betweenItems);
+                betweenItems.add(item);
+                return Status.COMMAND;
+            } else {
+                betweenItems.add(item);
+            }
+            break;
+        default:
+            throw new RuntimeException("nicht erlaubter Status");
 
-		return status;
-	}
+        }
 
-	private Status nextStatusExclude(Status status, boolean commandFound,
-			DataItem item) {
-		switch (status) {
-		case PRE_COMMAND:
-			if (commandFound) {
-				betweenItems.add(item);
-				return Status.FOUND;
-			} else {
-				preItems.add(item);
-			}
-			break;
-		case FOUND:
-			if (commandFound) {
-				send(preItems);
-				send(betweenItems);
-			}
-			betweenItems.add(item);
-			if (!commandFound) {
-				boolean existsFound = getFound(item.getCommand());
-				if (existsFound) {
-					return Status.COMMAND;
-				}
-			}
-			break;
-		case COMMAND:
-			if (commandFound) {
-				betweenItems.clear();
-				betweenItems.add(item);
-				return Status.FOUND;
-			}
-			break;
-		default:
-			throw new RuntimeException("nicht erlaubter Status");
+        return status;
+    }
 
-		}
+    private Status nextStatusExclude(Status status, boolean commandFound,
+            DataItem item) {
+        switch (status) {
+        case PRE_COMMAND:
+            if (commandFound) {
+                betweenItems.add(item);
+                return Status.FOUND;
+            } else {
+                preItems.add(item);
+            }
+            break;
+        case FOUND:
+            if (commandFound) {
+                send(preItems);
+                send(betweenItems);
+            }
+            betweenItems.add(item);
+            if (!commandFound) {
+                boolean existsFound = getFound(item.getCommand());
+                if (existsFound) {
+                    return Status.COMMAND;
+                }
+            }
+            break;
+        case COMMAND:
+            if (commandFound) {
+                betweenItems.clear();
+                betweenItems.add(item);
+                return Status.FOUND;
+            }
+            break;
+        default:
+            throw new RuntimeException("nicht erlaubter Status");
 
-		return status;
-	}
+        }
 
-	private boolean getFound(String command) {
-		for (String e : exists) {
-			if (command.equals(e)) {
-				return true;
-			}
-		}
-		return false;
-	}
+        return status;
+    }
 
-	private void send(Vector<DataItem> items) {
-		for (DataItem item : items) {
-			send(item);
-		}
-		items.clear();
-	}
+    private boolean getFound(String command) {
+        for (String e : exists) {
+            if (command.equals(e)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void send(Vector<DataItem> items) {
+        for (DataItem item : items) {
+            send(item);
+        }
+        items.clear();
+    }
 
 }

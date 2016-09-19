@@ -4,12 +4,12 @@ import toni.druck.page.Page;
 
 public class TextArea extends TextField {
 
-	public TextArea() {
-		super();
-	}
+    public TextArea() {
+        super();
+    }
 
-	public TextArea(String name, Page page) {
-		super(name, page);
-	}
+    public TextArea(String name, Page page) {
+        super(name, page);
+    }
 
 }

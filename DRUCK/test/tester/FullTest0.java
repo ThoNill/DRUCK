@@ -3,9 +3,6 @@ package tester;
 import org.junit.Test;
 
 import toni.druck.core.Manager;
-import toni.druck.page.PageRenderer;
-import toni.druck.renderer.PostscriptRenderer;
-import toni.druck.renderer.ToFilePageRenderer;
 import toni.druck.xml.XMLPageLoader;
 
 public class FullTest0 {

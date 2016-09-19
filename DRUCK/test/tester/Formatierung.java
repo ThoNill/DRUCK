@@ -8,7 +8,7 @@ public class Formatierung {
 	
 	@Test 
 	public void first() {
-		Assert.assertEquals(241920,(long)Math.round(2419.20 * 100.00));
+		Assert.assertEquals(241920,Math.round(2419.20 * 100.00));
 	}
 	
 }

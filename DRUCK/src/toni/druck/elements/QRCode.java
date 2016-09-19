@@ -4,7 +4,7 @@ import toni.druck.standardElemente.Variable;
 
 public class QRCode extends Variable {
 
-	public QRCode() {
-		super();
-	}
+    public QRCode() {
+        super();
+    }
 }

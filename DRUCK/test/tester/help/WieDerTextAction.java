@@ -1,16 +1,15 @@
 package tester.help;
 
-import toni.druck.elementRenderer.StandardRenderer;
 import toni.druck.model.DataModel;
 import toni.druck.page.Element;
-import toni.druck.page.ElementAction;
 import toni.druck.page.Page;
 import toni.druck.standardElemente.StandardElement;
 import toni.druck.standardElemente.StandardElementAction;
 
 public class WieDerTextAction extends StandardElementAction {
 
-	public void prepareForPrint(Element elem, DataModel model, Page page) {
+	@Override
+    public void prepareForPrint(Element elem, DataModel model, Page page) {
 		StandardElement selem = (StandardElement) elem;
 		String text = selem.getText();
 		selem.setEnabled(true);

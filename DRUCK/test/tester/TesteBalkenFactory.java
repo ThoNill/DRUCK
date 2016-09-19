@@ -1,8 +1,10 @@
 package tester;
 
-import junit.framework.Assert;
 
+
+import org.apache.log4j.Logger;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.junit.Assert;
 import org.junit.Test;
 
 import toni.druck.chart.BalkenFactory;
@@ -18,7 +20,9 @@ import extensions.Omr;
 import extensions.QRCode;
 
 public class TesteBalkenFactory {
+    private static final Logger LOG = Logger.getLogger(TesteBalkenFactory.class.getName());
 
+   
 	
 		@Test
 		public void teste1() {
@@ -122,7 +126,7 @@ public class TesteBalkenFactory {
 				Manager m = new Manager(l, r);
 				m.print("testdaten/biglist.txt");
 			} catch (Exception e) {
-				e.printStackTrace();
+				LOG.error(e);
 				Assert.fail("Exception " + e.getMessage());
 			}
 		}
@@ -138,7 +142,7 @@ public class TesteBalkenFactory {
 				Manager m = new Manager(l, r);
 				m.print("testdaten/biglistpdf.txt");
 			} catch (Exception e) {
-				e.printStackTrace();
+				LOG.error(e);
 				Assert.fail("Exception " + e.getMessage());
 			}
 		}

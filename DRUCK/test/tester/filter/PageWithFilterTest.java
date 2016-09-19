@@ -1,28 +1,26 @@
 package tester.filter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
-import java.util.Vector;
+import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.jdom2.Element;
 import org.junit.Assert;
 import org.junit.Test;
-
-import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
 import toni.druck.filter.AppendFilter;
 import toni.druck.filter.Filter;
 import toni.druck.filter.FilterFactory;
 import toni.druck.filter.FilterGroup;
 import toni.druck.page.Page;
-import toni.druck.page.PageRenderer;
-import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.xml.XMLPageLoader;
-import extensions.Haken;
-import extensions.Omr;
-import extensions.QRCode;
 
 public class PageWithFilterTest {
+    private static final Logger LOG = Logger.getLogger(PageWithFilterTest.class.getName());
+
 
 
 	@Test
@@ -31,16 +29,16 @@ public class PageWithFilterTest {
 			PageLoader l = new XMLPageLoader();
 			Page page = l.createPage("testdaten/filter");
 			
-			Vector<Element> filterElements = page.getFilterElements();
+			List<Element> filterElements = page.getFilterElements();
 			assertEquals(2,filterElements.size());
-			if (filterElements != null) {
-				Filter filter = FilterFactory.getFilter(filterElements.elementAt(0));
+			if (!filterElements.isEmpty()) {
+				Filter filter = FilterFactory.getFilter(filterElements.get(0));
 				assertTrue(filter instanceof AppendFilter);
-				assertEquals("start",(((AppendFilter) filter).getCommand()));
+				assertEquals("start",((AppendFilter) filter).getCommand());
 			}
 		
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -52,15 +50,15 @@ public class PageWithFilterTest {
 			PageLoader l = new XMLPageLoader();
 			Page page = l.createPage("testdaten/filter");
 			
-			Vector<Element> filterElements = page.getFilterElements();
+			List<Element> filterElements = page.getFilterElements();
 			assertEquals(2,filterElements.size());
-			if (filterElements != null) {
-				Filter filter = FilterFactory.getFilter(filterElements.elementAt(1));
+			if (!filterElements.isEmpty()) {
+				Filter filter = FilterFactory.getFilter(filterElements.get(1));
 				assertNull(filter );
 			}
 		
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -71,12 +69,12 @@ public class PageWithFilterTest {
 			PageLoader l = new XMLPageLoader();
 			Page page = l.createPage("testdaten/filter");
 			
-			Vector<Element> filterElements = page.getFilterElements();
+			List<Element> filterElements = page.getFilterElements();
 			FilterGroup group = FilterFactory.getFilterGroup(filterElements);
 			assertEquals(1,group.getFilterCount());
 		
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}

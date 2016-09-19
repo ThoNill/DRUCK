@@ -1,10 +1,14 @@
 package tester;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
+
 import toni.druck.main.Main;
 
 public class MainTest {
+    private static final Logger LOG = Logger.getLogger(MainTest.class.getName());
+
 
 	
 	@Test
@@ -12,7 +16,7 @@ public class MainTest {
 		try {
 			Main.probedruck("testdaten/biglist","results/","testdaten/");
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}
@@ -22,7 +26,7 @@ public class MainTest {
 		try {
 			Main.probedruck("testdaten/probedruck","results/","testdaten/");
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}

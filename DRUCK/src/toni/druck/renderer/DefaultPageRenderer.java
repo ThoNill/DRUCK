@@ -6,24 +6,22 @@ import toni.druck.chart.Chart;
 import toni.druck.chart.DruckChartFactory;
 import toni.druck.page.PageRenderer;
 
-
-
 /*****
  * 
  * @author Thomas Nill
  * 
- * Basisklasse für einen PageRenderer
+ *         Basisklasse für einen PageRenderer
  * 
  */
 public abstract class DefaultPageRenderer implements PageRenderer {
 
-	protected void printChart(Chart elem, int thema) {
-		DruckChartFactory cf = elem.getClassFactory();
-		if (cf != null) {
-			printChart(elem, cf.getChart(elem, thema));
-		}
-	}
+    protected void printChart(Chart elem, int thema) {
+        DruckChartFactory cf = elem.getClassFactory();
+        if (cf != null) {
+            printChart(elem, cf.getChart(elem, thema));
+        }
+    }
 
-	protected abstract void printChart(Chart elem, JFreeChart chart);
+    protected abstract void printChart(Chart elem, JFreeChart chart);
 
 }

@@ -2,15 +2,12 @@ package tester;
 
 import org.junit.Test;
 
-import extensions.Linewrap;
-import extensions.QRCode;
 import toni.druck.core.Manager;
 import toni.druck.core.PageLoader;
 import toni.druck.page.PageRenderer;
-import toni.druck.renderer.PDFRenderer;
 import toni.druck.renderer.PostscriptRenderer;
-import toni.druck.renderer.ToFilePageRenderer;
 import toni.druck.xml.XMLPageLoader;
+import extensions.Linewrap;
 
 public class LinewrapTest {
 

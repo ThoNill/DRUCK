@@ -6,40 +6,40 @@ import toni.druck.standardElemente.VHElement;
 
 public class Vbox extends VHElement {
 
-	public Vbox(String name, Page page) {
-		super(name, page);
-	}
+    public Vbox(String name, Page page) {
+        super(name, page);
+    }
 
-	public Vbox() {
-		super();
-	}
+    public Vbox() {
+        super();
+    }
 
-	@Override
-	public void berechneGroesse() {
-		int h = 0;
-		int w = 0;
-		if (childs != null) {
-			for (Element e : childs) {
-				e.berechneGroesse();
-				w = Math.max(w, e.getWidth());
-				h += e.getHeight();
-			}
-		}
-		setzeWidthAndHeight(h, w);
-	}
+    @Override
+    public void berechneGroesse() {
+        int h = 0;
+        int w = 0;
+        if (childs != null) {
+            for (Element e : childs) {
+                e.berechneGroesse();
+                w = Math.max(w, e.getWidth());
+                h += e.getHeight();
+            }
+        }
+        setzeWidthAndHeight(h, w);
+    }
 
-	@Override
-	public void setzePositionen() {
+    @Override
+    public void setzePositionen() {
 
-		int h = 0;
-		if (childs != null) {
-			for (Element e : childs) {
-				e.setzePositionen();
-				e.setRelX(0);
-				e.setRelY(h);
-				h += e.getHeight();
-			}
-		}
-	}
+        int h = 0;
+        if (childs != null) {
+            for (Element e : childs) {
+                e.setzePositionen();
+                e.setRelX(0);
+                e.setRelY(h);
+                h += e.getHeight();
+            }
+        }
+    }
 
 }

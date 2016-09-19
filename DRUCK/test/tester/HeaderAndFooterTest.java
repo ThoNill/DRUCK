@@ -1,5 +1,6 @@
 package tester;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ import toni.druck.renderer.PostscriptRenderer;
 import toni.druck.xml.XMLPageLoader;
 
 public class HeaderAndFooterTest {
+    private static final Logger LOG = Logger.getLogger(HeaderAndFooterTest.class.getName());
 
 	
 	public void loadTest(int nr) {
@@ -19,7 +21,7 @@ public class HeaderAndFooterTest {
 			Manager m = new Manager(l, r);
 			m.print("testdaten/testdaten" + nr + ".txt");
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}

@@ -1,8 +1,8 @@
 package tester.layout;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import toni.druck.elements.Hbox;
@@ -10,7 +10,6 @@ import toni.druck.elements.Vbox;
 import toni.druck.page.Page;
 import toni.druck.standardElemente.StandardElement;
 import toni.druck.standardElemente.VHElement;
-import toni.druck.xml.XMLPageLoader;
 
 public class TestLayout {
 	int nr = 0;

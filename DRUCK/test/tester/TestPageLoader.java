@@ -19,7 +19,8 @@ public class TestPageLoader extends StandardPageLoader {
 		super();
 	}
 
-	public Page createPage(String name) {
+	@Override
+    public Page createPage(String name) {
 		if ("sum".equals(name)) {
 			return createSumPage(name);
 		}

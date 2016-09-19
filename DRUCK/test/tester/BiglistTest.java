@@ -1,5 +1,6 @@
 package tester;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,14 +14,13 @@ import extensions.Omr;
 import extensions.QRCode;
 
 public class BiglistTest {
+    private static final Logger LOG = Logger.getLogger(BiglistTest.class.getName());
+   
 
 
 	@Test
 	public void createTestFile() {
 		try {
-	/*		TestDateiCreator creator = new TestDateiCreator();
-			 creator.loadAndWrite("biglist");
-*/
 			PageLoader l = new XMLPageLoader();
 			PageRenderer r = new PostscriptRenderer("ISO-8859-1");
 			r.addExtension(new QRCode());
@@ -31,12 +31,8 @@ public class BiglistTest {
 			m.print("testdaten/testbiglist2.txt");
 			long end = System.currentTimeMillis();
 			System.out.println(end-start);
-/*		do {
-				m.print("testbiglist.txt");
-				Thread.sleep(100);
-			} while (1 == 1);*/
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 			Assert.fail("Exception " + e.getMessage());
 		}
 	}

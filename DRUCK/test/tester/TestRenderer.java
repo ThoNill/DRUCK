@@ -1,36 +1,15 @@
 package tester;
 
 import java.awt.Dimension;
-import java.awt.geom.Rectangle2D;
-import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.Vector;
 
-import junit.framework.Test;
-
-import org.apache.log4j.Logger;
-import org.apache.xmlgraphics.java2d.ps.EPSDocumentGraphics2D;
-import org.jfree.chart.JFreeChart;
-
-import toni.druck.chart.Chart;
-import toni.druck.chart.DruckChartFactory;
-import toni.druck.elements.Hbox;
-import toni.druck.elements.Image;
-import toni.druck.elements.Label;
-import toni.druck.elements.Line;
-import toni.druck.elements.MultiLine;
-import toni.druck.elements.PositionBox;
-import toni.druck.elements.TextField;
-import toni.druck.elements.Vbox;
 import toni.druck.page.Element;
 import toni.druck.page.Extension;
 import toni.druck.page.Page;
 import toni.druck.page.PageRenderer;
-import toni.druck.renderer.DefaultPageRenderer;
-import toni.druck.renderer.ToFilePageRenderer;
 
 public class TestRenderer implements PageRenderer {
 

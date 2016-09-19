@@ -3,7 +3,6 @@ package tester.filter;
 import java.util.Vector;
 
 import toni.druck.filter.BasisFilter;
-import toni.druck.filter.EmptyFilter;
 import toni.druck.page.DataItem;
 
 public class RecorderFilter extends BasisFilter {

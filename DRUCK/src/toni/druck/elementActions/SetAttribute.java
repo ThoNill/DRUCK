@@ -11,41 +11,40 @@ import toni.druck.standardElemente.StandardElementAction;
  * 
  * @author Thomas Nill
  * 
- * Ein Attribut eines Elements durch eine Variable setzen
+ *         Ein Attribut eines Elements durch eine Variable setzen
  * 
  */
 public class SetAttribute extends StandardElementAction {
-	private String attribute;
-	private String variable;
-	private int varpos = -1;
-	
-	public SetAttribute() {
-	}
-	
-	@Override
-	public void prepareForPrint(Element elem, DataModel model, Page page) {
-		ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(elem);
-		if (varpos <0) {
-			varpos = model.getIndex(variable);
-		}
-		bean.set(attribute,page.getData(varpos));
-	}
+    private String attribute;
+    private String variable;
+    private int varpos = -1;
 
-	public String getAttribute() {
-		return attribute;
-	}
+    public SetAttribute() {
+    }
 
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
-	}
+    @Override
+    public void prepareForPrint(Element elem, DataModel model, Page page) {
+        ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(elem);
+        if (varpos < 0) {
+            varpos = model.getIndex(variable);
+        }
+        bean.set(attribute, page.getData(varpos));
+    }
 
-	public String getVariable() {
-		return variable;
-	}
+    public String getAttribute() {
+        return attribute;
+    }
 
-	public void setVariable(String variable) {
-		this.variable = variable;
-	}
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
 
+    public String getVariable() {
+        return variable;
+    }
+
+    public void setVariable(String variable) {
+        this.variable = variable;
+    }
 
 }

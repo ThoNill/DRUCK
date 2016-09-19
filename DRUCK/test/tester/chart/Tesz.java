@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.io.FileOutputStream;
 
+import org.apache.log4j.Logger;
 import org.apache.xmlgraphics.java2d.ps.EPSDocumentGraphics2D;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -19,6 +20,7 @@ import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class Tesz {
+    private static final Logger LOG = Logger.getLogger(Tesz.class.getName());
 
 	public static JFreeChart generatePieChart() {
 		DefaultPieDataset dataSet = new DefaultPieDataset();
@@ -87,7 +89,7 @@ public class Tesz {
 			contentByte.addTemplate(template, 0, 0);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		document.close();
 	}
@@ -110,7 +112,7 @@ public class Tesz {
 
 			g2d.finish();
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 
 	}

@@ -5,119 +5,118 @@ import java.util.List;
 
 import toni.druck.model.DataModel;
 
-
 /*****
  * 
  * @author Thomas Nill
  * 
- * Ein Ausgabeelement auf dem Ausdruck, kann Kinder enthalten.
- * Stellt Größenangaben, Positionen, Fonts usw. zur Verfügung
+ *         Ein Ausgabeelement auf dem Ausdruck, kann Kinder enthalten. Stellt
+ *         Größenangaben, Positionen, Fonts usw. zur Verfügung
  * 
- * Datentyp
+ *         Datentyp
  * 
  */
 public interface Element extends PrintController {
 
-	void printChilds(PageRenderer out);
+    void printChilds(PageRenderer out);
 
-	int getFontsize();
+    int getFontsize();
 
-	void setFontsize(int fontsize);
+    void setFontsize(int fontsize);
 
-	int getGrayscale();
+    int getGrayscale();
 
-	void setGrayscale(int grayscale);
+    void setGrayscale(int grayscale);
 
-	int getLinewidth();
+    int getLinewidth();
 
-	void setLinewidth(int linewidth);
+    void setLinewidth(int linewidth);
 
-	boolean isBordered();
+    boolean isBordered();
 
-	void setBordered(boolean bordered);
+    void setBordered(boolean bordered);
 
-	boolean isFilled();
+    boolean isFilled();
 
-	void setFilled(boolean filled);
+    void setFilled(boolean filled);
 
-	void setFont(String font);
+    void setFont(String font);
 
-	void addChild(Element e);
+    void addChild(Element e);
 
-	void berechneGroesse();
+    void berechneGroesse();
 
-	void setzePositionen();
+    void setzePositionen();
 
-	void layout();
+    void layout();
 
-	Element getParent();
+    Element getParent();
 
-	void setParent(Element parent);
+    void setParent(Element parent);
 
-	int getRelX();
+    int getRelX();
 
-	void setRelX(int relX);
+    void setRelX(int relX);
 
-	int getRelY();
+    int getRelY();
 
-	void setRelY(int relY);
+    void setRelY(int relY);
 
-	DataModel getData();
+    DataModel getData();
 
-	Page getPage();
+    Page getPage();
 
-	int getBorderWidth();
+    int getBorderWidth();
 
-	void setBorderWidth(int borderWidth);
+    void setBorderWidth(int borderWidth);
 
-	int getPaddingX();
+    int getPaddingX();
 
-	void setPaddingX(int paddingX);
+    void setPaddingX(int paddingX);
 
-	int getPaddingY();
+    int getPaddingY();
 
-	void setPaddingY(int paddingY);
+    void setPaddingY(int paddingY);
 
-	int getWidth();
+    int getWidth();
 
-	void setWidth(int width);
+    void setWidth(int width);
 
-	int getHeight();
+    int getHeight();
 
-	void setHeight(int height);
+    void setHeight(int height);
 
-	String getName();
+    String getName();
 
-	void setName(String name);
+    void setName(String name);
 
-	int shiftY();
+    int shiftY();
 
-	int shiftX();
+    int shiftX();
 
-	int Y();
+    int Y();
 
-	int X();
+    int X();
 
-	String getAlign();
+    String getAlign();
 
-	void setAlign(String align);
+    void setAlign(String align);
 
-	String getText();
+    String getText();
 
-	void setText(String text);
+    void setText(String text);
 
-	void setPage(Page page);
+    void setPage(Page page);
 
-	void printDefinitions(PageRenderer out);
+    void printDefinitions(PageRenderer out);
 
-	String getFont();
+    String getFont();
 
-	Dimension getSize();
+    Dimension getSize();
 
-	List<Element> getChilds();
+    List<Element> getChilds();
 
-	void setPageShiftHeight(int height);
-	
-	int getRotation();
-	
+    void setPageShiftHeight(int height);
+
+    int getRotation();
+
 }
