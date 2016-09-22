@@ -1,6 +1,7 @@
 package toni.druck.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.page.DataItem;
 
@@ -18,17 +19,17 @@ import toni.druck.page.DataItem;
  */
 
 public abstract class BasisFilter implements Filter {
-    private Vector<Filter> followers = new Vector<Filter>();
+    private List<Filter> followers = new ArrayList<Filter>();
 
     abstract public void receive(DataItem item);
 
     public void addFollower(Filter filter) {
         testAllreadyThere(filter);
-        followers.addElement(filter);
+        followers.add(filter);
     }
 
     public void removeFollower(Filter filter) {
-        followers.removeElement(filter);
+        followers.remove(filter);
     }
 
     protected void send(DataItem item) {

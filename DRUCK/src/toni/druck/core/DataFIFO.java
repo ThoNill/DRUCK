@@ -4,6 +4,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.log4j.Logger;
+
 import toni.druck.page.DataItem;
 import toni.druck.page.Element;
 import toni.druck.page.Page;
@@ -27,6 +29,8 @@ import toni.druck.page.Page;
  * 
  */
 public class DataFIFO {
+    private static final Logger LOG = Logger.getLogger(DataFIFO.class
+            .getName());
 
     private static final long serialVersionUID = 1L;
     private UnprotectedArrayQueue<DataItem> withSections = null;
@@ -44,8 +48,8 @@ public class DataFIFO {
     public DataFIFO(int capacity, PageLoader loader) {
         super();
         this.loader = loader;
-        withSections = new UnprotectedArrayQueue<DataItem>(capacity);
-        dataItems = new UnprotectedArrayQueue<DataItem>(capacity);
+        withSections = new UnprotectedArrayQueue<>(capacity);
+        dataItems = new UnprotectedArrayQueue<>(capacity);
         this.capacity = capacity;
     }
 
@@ -65,17 +69,15 @@ public class DataFIFO {
             fallsSectionDannMerken(item);
             notEmpty.signal();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOG.error("Daten in die Queue",ex);
         } finally {
             lock.unlock();
         }
     }
 
     private void fallsSectionDannMerken(DataItem item) {
-        if (page != null) {
-            if (item.hasSection()) {
+        if (page != null && item.hasSection()) {
                 withSections.insert(item);
-            }
         }
     }
 
@@ -99,10 +101,10 @@ public class DataFIFO {
 
     private void beachteNachfolgendeSections(DataItem item) {
         item.setNextItemOfTheSameType(false);
-        if (item != null && !withSections.isEmpty()) {
+        if (!withSections.isEmpty()) {
             DataItem sitem = withSections.peek();
             if (sitem == item) {
-                sitem = withSections.extract();
+                withSections.extract();
                 item.setNextItemOfTheSameType(isNextItemOfTheSameType(item));
             }
         }

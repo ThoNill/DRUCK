@@ -1,19 +1,20 @@
 package tester.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.page.DataItem;
 
 public class TestDataItem extends DataItem {
 
-	Vector<String> filterReihe = new Vector<String>();
+	List<String> filterReihe = new ArrayList<String>();
 
 	
 	public TestDataItem(String text) {
 			super(text);
 	}
 
-	public Vector<String> getFilterReihe() {
+	public List<String> getFilterReihe() {
 		return filterReihe;
 	}
 

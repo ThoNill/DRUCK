@@ -13,7 +13,6 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import toni.druck.helper.DebugAssistent;
 import toni.druck.page.DataItem;
 
 /**
@@ -26,7 +25,8 @@ import toni.druck.page.DataItem;
  */
 
 public class Reader implements Runnable {
-    static Logger cat = Logger.getLogger("Reader");
+    private static final Logger LOG = Logger.getLogger(Reader.class.getName());
+
 
     private DataFIFO queue;
     private boolean isEmpty = false;
@@ -41,8 +41,7 @@ public class Reader implements Runnable {
     public void run() {
         try {
             isEmpty = false;
-            BufferedReader file = null;
-            file = new BufferedReader(input, 1000);
+            BufferedReader file = new BufferedReader(input, 1000);
             String line;
 
             line = file.readLine();
@@ -55,17 +54,17 @@ public class Reader implements Runnable {
             file.close();
             isEmpty = true;
         } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
+            LOG.error("File not found",e1);
         } catch (IOException e2) {
-            e2.printStackTrace();
+            LOG.error("IO",e2);
         } catch (Exception ex) {
-            DebugAssistent.log(ex);
+            LOG.error("General",ex);
         }
 
     }
 
     public void read(String filename) throws IOException {
-        cat.debug("open " + filename);
+        LOG.debug("open " + filename);
         read(new FileReader(filename));
     }
 

@@ -1,14 +1,15 @@
 package tester.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.filter.BasisFilter;
 import toni.druck.page.DataItem;
 
 public class RecorderFilter extends BasisFilter {
-	private Vector<String> commands = new Vector<String>();
+	private List<String> commands = new ArrayList<String>();
 
-	public Vector<String> getCommands() {
+	public List<String> getCommands() {
 		return commands;
 	}
 

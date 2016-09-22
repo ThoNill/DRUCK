@@ -4,7 +4,8 @@ import java.awt.Dimension;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.page.Element;
 import toni.druck.page.Extension;
@@ -14,7 +15,7 @@ import toni.druck.page.PageRenderer;
 public class TestRenderer implements PageRenderer {
 
 	private boolean inPrint = false;
-	private Vector<TestRendererItem> out = new Vector<TestRendererItem>();
+	private List<TestRendererItem> out = new ArrayList<TestRendererItem>();
 
 	public TestRenderer() {
 		super();

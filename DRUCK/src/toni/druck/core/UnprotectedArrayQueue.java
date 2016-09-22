@@ -26,7 +26,8 @@ public class UnprotectedArrayQueue<E> {
     }
 
     final private int inc(int i) {
-        return (++i == items.length) ? 0 : i;
+        int ii=i;
+        return (++ii == items.length) ? 0 : ii;
     }
 
     public void insert(E x) {
@@ -36,7 +37,6 @@ public class UnprotectedArrayQueue<E> {
     }
 
     public E extract() {
-        final E[] items = this.items;
         E x = items[takeIndex];
         items[takeIndex] = null;
         takeIndex = inc(takeIndex);
@@ -53,7 +53,7 @@ public class UnprotectedArrayQueue<E> {
     }
 
     public boolean isEmpty() {
-        return (count == 0);
+        return count == 0;
     }
 
 }

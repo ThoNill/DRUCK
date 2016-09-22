@@ -3,7 +3,8 @@ package tester.help;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.page.Element;
 import toni.druck.page.Extension;
@@ -12,13 +13,13 @@ import toni.druck.page.PageRenderer;
 
 public class TestRenderer implements PageRenderer {
 	int pageCount = 0;
-	Vector<Element> printedElements = null;
+	List<Element> printedElements = null;
 
 	public TestRenderer() {
-		printedElements = new Vector<Element>();
+		printedElements = new ArrayList<Element>();
 	}
 
-	public Vector<Element> getPrintedElements() {
+	public List<Element> getPrintedElements() {
 		return printedElements;
 	}
 

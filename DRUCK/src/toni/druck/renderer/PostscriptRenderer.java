@@ -5,7 +5,8 @@ import java.awt.geom.Rectangle2D;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.xmlgraphics.java2d.ps.EPSDocumentGraphics2D;
@@ -37,7 +38,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
     private static final Logger LOG = Logger.getLogger(PostscriptRenderer.class
             .getName());
 
-    private Vector<Extension> extensions = new Vector<Extension>();
+    private List<Extension> extensions = new ArrayList<Extension>();
     private int counter = 0;
     private int save_restore = 0;
     private int pageCount = 0;
@@ -54,7 +55,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 
     @Override
     public void addExtension(Extension extension) {
-        extensions.addElement(extension);
+        extensions.add(extension);
     }
 
     @Override

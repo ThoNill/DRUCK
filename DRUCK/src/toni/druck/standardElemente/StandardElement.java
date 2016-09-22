@@ -1,8 +1,8 @@
 package toni.druck.standardElemente;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import toni.druck.elementRenderer.ElementRenderer;
 import toni.druck.helper.ClassFactory;
@@ -30,7 +30,7 @@ public class StandardElement implements Element {
 
     protected Element parent;
 
-    protected Vector<Element> childs = null;
+    protected List<Element> childs = null;
 
     private int relX = 0;
     private int relY = 0;
@@ -68,7 +68,7 @@ public class StandardElement implements Element {
 
     private boolean enabled = true;
 
-    private Vector<ElementAction> prepareBeforPrintActions;
+    private List<ElementAction> prepareBeforPrintActions;
 
     private int rotation = 0;
 
@@ -118,7 +118,7 @@ public class StandardElement implements Element {
 
     public void addBeforPrint(ElementAction action) {
         if (prepareBeforPrintActions == null) {
-            prepareBeforPrintActions = new Vector<ElementAction>();
+            prepareBeforPrintActions = new ArrayList<ElementAction>();
         }
         prepareBeforPrintActions.add(action);
     }
@@ -218,9 +218,9 @@ public class StandardElement implements Element {
 
     public void addChild(Element e) {
         if (childs == null) {
-            childs = new Vector<Element>();
+            childs = new ArrayList<Element>();
         }
-        childs.addElement(e);
+        childs.add(e);
         if (e instanceof StandardElement) {
             ((StandardElement) e).setAbsolute(absolute);
         }

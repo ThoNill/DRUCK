@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.jdom2.Element;
 import org.junit.Assert;
 import org.junit.Test;
+
 import toni.druck.core.PageLoader;
 import toni.druck.filter.AppendFilter;
 import toni.druck.filter.Filter;

@@ -1,8 +1,9 @@
 package toni.druck.page;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
-import java.util.Vector;
 
 import toni.druck.model.DataModel;
 
@@ -32,13 +33,13 @@ public class Page extends EventAction {
     private String name;
     private int posy;
     private boolean firstPage = true;
-    private Vector<org.jdom2.Element> filterElements = null;
+    private List<org.jdom2.Element> filterElements = null;
 
-    public Vector<org.jdom2.Element> getFilterElements() {
+    public List<org.jdom2.Element> getFilterElements() {
         return filterElements;
     }
 
-    Vector<VerteilerConnector> connectMe = new Vector<VerteilerConnector>();
+    List<VerteilerConnector> connectMe = new ArrayList<VerteilerConnector>();
 
     int posx;
 
@@ -60,7 +61,7 @@ public class Page extends EventAction {
 
     public void addFilter(org.jdom2.Element elem) {
         if (filterElements == null) {
-            filterElements = new Vector<org.jdom2.Element>();
+            filterElements = new ArrayList<org.jdom2.Element>();
         }
         filterElements.add(elem);
     }
@@ -258,7 +259,7 @@ public class Page extends EventAction {
     }
 
     public void addPrintListener(String name, PrintListener listener) {
-        connectMe.addElement(new VerteilerConnector(name, listener));
+        connectMe.add(new VerteilerConnector(name, listener));
     }
 
     public void connectPrintListener() {

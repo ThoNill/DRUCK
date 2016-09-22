@@ -11,8 +11,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+
 import toni.druck.page.Page;
 import toni.druck.page.Verteiler;
 import toni.druck.xml.XMLPageLoader;
@@ -29,7 +32,7 @@ public class TestDateiCreator {
             .getName());
 
     private Page page;
-    private Vector<TestDateiVerteiler> verteiler = new Vector<TestDateiVerteiler>();
+    private List<TestDateiVerteiler> verteiler = new ArrayList<TestDateiVerteiler>();
     private String outDir;
     private String inDir;
 

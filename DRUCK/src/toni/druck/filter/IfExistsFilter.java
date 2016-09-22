@@ -1,6 +1,7 @@
 package toni.druck.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -50,11 +51,11 @@ public class IfExistsFilter extends BasisFilter {
     private String command;
     private String[] exists;
 
-    private Vector<DataItem> betweenItems = new Vector<DataItem>(); // DataItems
+    private List<DataItem> betweenItems = new ArrayList<DataItem>(); // DataItems
                                                                     // zwischen
                                                                     // zwei aus
                                                                     // exits
-    private Vector<DataItem> preItems = new Vector<DataItem>();
+    private List<DataItem> preItems = new ArrayList<DataItem>();
 
     enum Status {
         PRE_COMMAND, COMMAND, FOUND
@@ -179,6 +180,13 @@ public class IfExistsFilter extends BasisFilter {
         return status;
     }
 
+    private void send(List<DataItem> items) {
+       for(DataItem item : items) {
+           send(item);
+       }
+        
+    }
+
     private boolean getFound(String command) {
         for (String e : exists) {
             if (command.equals(e)) {
@@ -188,11 +196,6 @@ public class IfExistsFilter extends BasisFilter {
         return false;
     }
 
-    private void send(Vector<DataItem> items) {
-        for (DataItem item : items) {
-            send(item);
-        }
-        items.clear();
-    }
+  
 
 }

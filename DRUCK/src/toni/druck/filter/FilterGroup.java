@@ -1,6 +1,7 @@
 package toni.druck.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.page.DataItem;
 
@@ -17,7 +18,7 @@ import toni.druck.page.DataItem;
  */
 
 public class FilterGroup implements Filter {
-    private Vector<Filter> filters = new Vector<Filter>();
+    private List<Filter> filters = new ArrayList<Filter>();
 
     public FilterGroup() {
         super();

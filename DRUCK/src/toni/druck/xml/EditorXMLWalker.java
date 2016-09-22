@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Vector;
+import java.util.List;
 
 import org.jdom2.Element;
 
@@ -33,8 +34,8 @@ import toni.druck.page.Verteiler;
  */
 public class EditorXMLWalker extends DruckWalker {
     private PrintWriter out;
-    private Vector<Verteiler> verteiler = new Vector<Verteiler>();
-    private Vector<toni.druck.page.Element> sections = new Vector<toni.druck.page.Element>();
+    private List<Verteiler> verteiler = new ArrayList<Verteiler>();
+    private List<toni.druck.page.Element> sections = new ArrayList<toni.druck.page.Element>();
     private HashMap<String, String> clasnnames = new HashMap<String, String>();
 
     public EditorXMLWalker() {
@@ -62,7 +63,7 @@ public class EditorXMLWalker extends DruckWalker {
     @Override
     protected void bearbeiteVerteiler(Element elem, Verteiler reference) {
         super.bearbeiteVerteiler(elem, reference);
-        verteiler.addElement(reference);
+        verteiler.add(reference);
     }
 
     @Override
@@ -70,16 +71,16 @@ public class EditorXMLWalker extends DruckWalker {
             toni.druck.page.Element reference) {
         super.bearbeiteDruckElement(elem, reference);
         if ((!hasParent()) && reference.getName() != null) {
-            sections.addElement(reference);
+            sections.add(reference);
         }
 
     }
 
     private void setDescendents(toni.druck.page.Element e,
-            Vector<toni.druck.page.Element> descendents) {
+            List<toni.druck.page.Element> descendents) {
         if (e.getChilds() != null) {
             for (toni.druck.page.Element c : e.getChilds()) {
-                descendents.addElement(c);
+                descendents.add(c);
                 setDescendents(c, descendents);
             }
         }
@@ -177,7 +178,7 @@ public class EditorXMLWalker extends DruckWalker {
             startSection();
             startChilds();
 
-            Vector<toni.druck.page.Element> descendents = new Vector<toni.druck.page.Element>();
+            List<toni.druck.page.Element> descendents = new ArrayList<toni.druck.page.Element>();
             setDescendents(e, descendents);
             e.layout();
             for (toni.druck.page.Element c : descendents) {
@@ -273,7 +274,7 @@ public class EditorXMLWalker extends DruckWalker {
     }
 
     public void startComponents() {
-        out.println("<void property=\"components\">\n<object class=\"java.util.Vector\">");
+        out.println("<void property=\"components\">\n<object class=\"java.util.ArrayList\">");
     }
 
     public void startSection() {
@@ -298,7 +299,7 @@ public class EditorXMLWalker extends DruckWalker {
     }
 
     public void startKomponentenOhneGrafik() {
-        out.println("<void property=\"komponentenOhneGrafik\">  <object class=\"java.util.Vector\"> ");
+        out.println("<void property=\"komponentenOhneGrafik\">  <object class=\"java.util.ArrayList\"> ");
     }
 
     public void startClass(String classname) {

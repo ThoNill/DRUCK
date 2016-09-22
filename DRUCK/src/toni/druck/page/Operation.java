@@ -11,10 +11,14 @@ package toni.druck.page;
  */
 import java.text.NumberFormat;
 
+import org.apache.log4j.Logger;
+
 import toni.druck.helper.GetNumberFormat;
 import toni.druck.model.DataModel;
 
 public abstract class Operation {
+    private static final Logger LOG = Logger.getLogger(Operation.class.getName());
+
 
     private DataModel model;
     private Page page;
@@ -46,6 +50,7 @@ public abstract class Operation {
             NumberFormat f = GetNumberFormat.format.get();
             return Math.round(f.parse(s).doubleValue() * 100.00);
         } catch (Exception e) {
+            LOG.error("can not read money", e);
             return 0;
         }
     }
@@ -58,6 +63,7 @@ public abstract class Operation {
         try {
             return Long.parseLong(s);
         } catch (Exception e) {
+            LOG.error("can not read long", e);
             return 0;
         }
     }

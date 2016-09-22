@@ -1,6 +1,7 @@
 package toni.druck.page;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /*****
  * 
@@ -13,8 +14,8 @@ import java.util.Vector;
  */
 public class EventAction implements Action {
 
-    private Vector<PrintListener> listener = null;
-    private Vector<Action> actions = null;
+    private List<PrintListener> listener = null;
+    private List<Action> actions = null;
 
     public EventAction() {
         super();
@@ -30,14 +31,14 @@ public class EventAction implements Action {
 
     public void addListener(PrintListener arg0) {
         if (listener == null) {
-            listener = new Vector<PrintListener>();
+            listener = new ArrayList<PrintListener>();
         }
-        listener.addElement(arg0);
+        listener.add(arg0);
     }
 
     public boolean removeListener(Object arg0) {
         if (listener != null) {
-            return listener.removeElement(arg0);
+            return listener.remove(arg0);
         }
         return false;
     }
@@ -52,23 +53,23 @@ public class EventAction implements Action {
 
     public void addAction(Action arg0) {
         if (actions == null) {
-            actions = new Vector<Action>();
+            actions = new ArrayList<Action>();
         }
-        actions.addElement(arg0);
+        actions.add(arg0);
     }
 
     public boolean removeAction(Action arg0) {
         if (actions != null) {
-            return actions.removeElement(arg0);
+            return actions.remove(arg0);
         }
         return false;
     }
 
-    public Vector<PrintListener> getListener() {
+    public List<PrintListener> getListener() {
         return listener;
     }
 
-    public Vector<Action> getActions() {
+    public List<Action> getActions() {
         return actions;
     }
 

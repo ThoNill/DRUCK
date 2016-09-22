@@ -163,22 +163,7 @@ public class PDFRenderer extends DefaultPageRenderer {
 
     }
 
-    /*
-     * public void printChilds(Element elem) { Vector v = elem.getChilds(); int
-     * anz = v.size();
-     * 
-     * for (int i = 0; i < anz; i++) {
-     * 
-     * Object obj = v.elementAt(i);
-     * 
-     * if (obj instanceof Element) {
-     * 
-     * ((Element) obj).print(this);
-     * 
-     * } // end if
-     * 
-     * } // end for }
-     */
+ 
     public void printChilds(Element elem) {
         elem.printChilds(this);
     }

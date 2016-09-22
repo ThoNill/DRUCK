@@ -1,12 +1,13 @@
 package tester.filter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import toni.druck.filter.Filter;
 import toni.druck.page.DataItem;
 
 public class ItemGenarator {
-	Vector<String> commands = new Vector<String>();
+	List<String> commands = new ArrayList<String>();
 
 	public ItemGenarator(String... names) {
 		addItems(names);

@@ -1,7 +1,6 @@
 package toni.druck.filter;
 
 import java.util.List;
-import java.util.Vector;
 
 import org.jdom2.Element;
 

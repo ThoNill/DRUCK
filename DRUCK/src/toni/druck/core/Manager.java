@@ -3,7 +3,7 @@ package toni.druck.core;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Vector;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.jdom2.Element;
@@ -35,7 +35,7 @@ import toni.druck.page.PageRenderer;
  */
 
 public class Manager extends BasisFilter {
-    private static final Logger LOG = Logger.getLogger("Manager");
+    private static final Logger LOG = Logger.getLogger(Manager.class.getName());
 
     private Reader reader = null; // verantwortlich für das Einlesen der Daten
     private DataFIFO datenQueue; // zwischenspeichern, damit auf nachfolgende
@@ -53,7 +53,7 @@ public class Manager extends BasisFilter {
         try {
             print(new FileReader(dataFileName));
         } catch (FileNotFoundException e) {
-            LOG.error(e);
+            LOG.error("can not create File",e);
         }
     }
 
@@ -72,7 +72,8 @@ public class Manager extends BasisFilter {
             finishPage();
             renderer.endDocument();
         } catch (InterruptedException e) {
-            LOG.error(e);
+            LOG.error("Interruption at take",e);
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -81,7 +82,7 @@ public class Manager extends BasisFilter {
         if (item != null
                 && (doLoadLayout(item) || doOutput(item) || doPrint(item)
                         || doInclude(item) || doData(item))) {
-
+            LOG.debug("print " + item.getCommand());
         }
     }
 
@@ -130,7 +131,7 @@ public class Manager extends BasisFilter {
 
     private void setPage(DataItem d) {
         page = d.getPage();
-        Vector<Element> filterElements = page.getFilterElements();
+        List<Element> filterElements = page.getFilterElements();
         if (filterElements != null) {
             filterGroup = FilterFactory.getFilterGroup(filterElements);
             filterGroup.addFollower(this);
@@ -158,7 +159,6 @@ public class Manager extends BasisFilter {
         if (ok) {
             page.printNewPage(renderer);
         }
-        ;
         return ok;
     }
 
