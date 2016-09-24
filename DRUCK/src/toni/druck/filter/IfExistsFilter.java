@@ -155,6 +155,7 @@ public class IfExistsFilter extends BasisFilter {
         case FOUND:
             if (commandFound) {
                 send(preItems);
+                preItems.clear();
                 send(betweenItems);
             }
             betweenItems.add(item);
@@ -184,7 +185,6 @@ public class IfExistsFilter extends BasisFilter {
        for(DataItem item : items) {
            send(item);
        }
-        
     }
 
     private boolean getFound(String command) {
