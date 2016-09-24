@@ -22,12 +22,13 @@ public class PieFactory implements DruckChartFactory {
         this.title = title;
     }
 
+    @Override
     public JFreeChart getChart(Chart chart, int thema) {
 
-        String values[] = chart.getVariablen();
+        String[] values = chart.getVariablen();
         DefaultPieDataset dataSet = new DefaultPieDataset();
 
-        String daten[] = values[0].split("#");
+        String[] daten = values[0].split("#");
         if (daten.length % 2 == 0 && daten.length > 0) {
             for (int i = 0; i < daten.length; i += 2) {
                 dataSet.setValue(daten[i], Double.parseDouble(daten[i + 1]));

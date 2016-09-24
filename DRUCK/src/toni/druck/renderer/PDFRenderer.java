@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ import com.itextpdf.text.pdf.PdfWriter;
  * 
  */
 public class PDFRenderer extends DefaultPageRenderer {
-    private static final Logger LOG = Logger.getLogger("PDFRenderer");
+    private static final Logger LOG = Logger.getLogger(PDFRenderer.class.getName());
 
     private List<Extension> extensions = new ArrayList<Extension>();
 
@@ -89,10 +90,12 @@ public class PDFRenderer extends DefaultPageRenderer {
         this.scaleY = scaleY;
     }
 
+    @Override
     public void addExtension(Extension extension) {
         extensions.add(extension);
     }
 
+    @Override
     public void print(Element elem) {
         if (!elem.isEnabled())
             return;
@@ -158,7 +161,7 @@ public class PDFRenderer extends DefaultPageRenderer {
             }
 
         } catch (Exception ex) {
-            LOG.error("An Exception occured: " + ex.getMessage());
+            LOG.error("An Exception occured: ",ex);
         }
 
     }
@@ -175,6 +178,7 @@ public class PDFRenderer extends DefaultPageRenderer {
         }
     }
 
+    @Override
     public void startDocument(Page page) {
 
         endDocument();
@@ -189,7 +193,7 @@ public class PDFRenderer extends DefaultPageRenderer {
             scaleContext();
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOG.error("An Exception occured: ",ex);
         }
     }
 
@@ -204,6 +208,7 @@ public class PDFRenderer extends DefaultPageRenderer {
         return (page.isLandscape()) ? PageSize.A4.rotate() : PageSize.A4;
     }
 
+    @Override
     public void endDocument() {
         try {
             if (document != null) {
@@ -215,7 +220,7 @@ public class PDFRenderer extends DefaultPageRenderer {
                 document = null;
             }
         } catch (Exception ex) {
-
+            LOG.error("An Exception occured: " ,ex);
         }
     }
 
@@ -225,8 +230,6 @@ public class PDFRenderer extends DefaultPageRenderer {
             return;
         }
 
-        // cb.restoreState();
-
     }
 
     public void printPre(Element elem) {
@@ -234,8 +237,6 @@ public class PDFRenderer extends DefaultPageRenderer {
             printPre((Page) elem);
             return;
         }
-
-        // cb.saveState();
 
     }
 
@@ -262,7 +263,7 @@ public class PDFRenderer extends DefaultPageRenderer {
         try {
 
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-            byte b[] = new byte[80];
+            byte[] b = new byte[80];
             InputStream in = getClass().getClassLoader().getResourceAsStream(
                     elem.getName());
             int anz = in.read(b);
@@ -342,7 +343,7 @@ public class PDFRenderer extends DefaultPageRenderer {
         int w = e.X();
         int h = e.Y();
         if (h > p.getHeight()) {
-            throw new RuntimeException("Seite zu klein " + e.getName());
+            throw new InvalidParameterException("Seite zu klein " + e.getName());
         }
         return new Dimension(w, e.getPage().getHeight() - h);
     }
@@ -447,13 +448,16 @@ public class PDFRenderer extends DefaultPageRenderer {
         }
     }
 
+    @Override
     public int getStatus() {
         return 0;
     }
 
+    @Override
     public void include(String filename) throws IOException {
     }
 
+    @Override
     public void newPage(int pagenr, Page page) {
         if (document != null) {
             document.newPage();
@@ -463,13 +467,16 @@ public class PDFRenderer extends DefaultPageRenderer {
         }
     }
 
+    @Override
     public void printDefs(Element elem) {
     }
 
+    @Override
     public void setOutput(OutputStream out) {
         this.out = out;
     }
 
+    @Override
     public void setOutput(String filename) throws FileNotFoundException {
         outputFileName = filename.replaceAll("\\.ps$", ".pdf");
     }
@@ -492,8 +499,8 @@ public class PDFRenderer extends DefaultPageRenderer {
             Dimension size = getSizeForPdf(m);
             drawBorderedBox(m, apos, size);
             drawFilledBox(m, apos, size);
-            // defineClipBox(m, apos, size);
-            String texte[] = m.getTexte();
+           
+            String[] texte = m.getTexte();
             int rows = m.getRows();
             int fontSize = m.getFontsize();
             float fh = (bfont.getAscentPoint("Xg", fontSize) - bfont

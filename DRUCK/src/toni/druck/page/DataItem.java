@@ -39,7 +39,7 @@ public class DataItem {
     public static final String ENDOFFILE = "endOfFile";
 
     private String command = null;
-    private String values[] = null;
+    private String[] values = null;
     private Element section; // Abschnitt im Layout
     private boolean nextItemOfTheSameType = false; // Hat der nachfolgende
                                                    // Druckabschnitt denselben
@@ -68,7 +68,7 @@ public class DataItem {
         }
     }
 
-    public DataItem(String values[]) {
+    public DataItem(String[] values) {
         this.values = new String[values.length];
         for (int i = 0; i < values.length; i++)
             this.values[i] = values[i];

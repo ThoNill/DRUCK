@@ -27,52 +27,58 @@ public class TestRenderer implements PageRenderer {
 		return pageCount;
 	}
 
-	public void addExtension(Extension qrCode) {
-		// TODO Auto-generated method stub
+	@Override
+    public void addExtension(Extension qrCode) {
 
 	}
 
-	public void endDocument() {
-		// TODO Auto-generated method stub
-
+	@Override
+    public void endDocument() {
 	}
 
-	public int getStatus() {
-		// TODO Auto-generated method stub
+	@Override
+    public int getStatus() {
 		return 0;
 	}
 
-	public void newPage(int pagenr,Page page) {
+	@Override
+    public void newPage(int pagenr,Page page) {
 		pageCount++;
 
 	}
 
-	public void print(Element elem) {
+	@Override
+    public void print(Element elem) {
 		printedElements.add(elem);
 
 	}
 
-	public void printDefs(Element elem) {
+	@Override
+    public void printDefs(Element elem) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void setOutput(OutputStream out) {
+	@Override
+    public void setOutput(OutputStream out) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void setOutput(String filename) throws FileNotFoundException {
+	@Override
+    public void setOutput(String filename) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void startDocument(Page page) {
+	@Override
+    public void startDocument(Page page) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void include(String filename) throws IOException {
+	@Override
+    public void include(String filename) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}

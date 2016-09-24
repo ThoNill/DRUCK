@@ -59,6 +59,7 @@ public class Sum extends Operation implements Action, PrintListener {
         iitem = source.getIndex(sitem);
     }
 
+    @Override
     public void perform() {
         long i = readMoney(iitem);
         long sum = readMoney(isum);
@@ -66,6 +67,7 @@ public class Sum extends Operation implements Action, PrintListener {
         writeMoney(isum, sum);
     }
 
+    @Override
     public void listenTo(PrintEvent ev) {
         writeMoney(isum, 0L);
     }

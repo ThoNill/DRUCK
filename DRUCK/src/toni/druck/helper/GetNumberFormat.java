@@ -12,7 +12,7 @@ import java.util.Locale;
  * 
  */
 public class GetNumberFormat extends ThreadLocal<NumberFormat> {
-    public static GetNumberFormat format = new GetNumberFormat();
+    public static final GetNumberFormat format = new GetNumberFormat();
 
     @Override
     protected NumberFormat initialValue() {

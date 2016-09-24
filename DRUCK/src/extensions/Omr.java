@@ -49,7 +49,7 @@ public class Omr extends Extension {
         PDFRenderer renderer = (PDFRenderer) pageRenderer;
         String text = elem.getText();
         if (text != null) {
-            String snumber[] = text.trim().split(" +");
+            String[] snumber = text.trim().split(" +");
             for (int i = 0; i < snumber.length; i++) {
                 int n = Integer.parseInt(snumber[i]);
                 printOmrString(cb, n, renderer, elem);

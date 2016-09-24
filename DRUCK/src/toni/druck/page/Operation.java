@@ -72,8 +72,8 @@ public abstract class Operation {
         return model.get(index);
     }
 
-    public long[] readArguments(int indexe[]) {
-        long erg[] = new long[indexe.length];
+    public long[] readArguments(int[] indexe) {
+        long[] erg= new long[indexe.length];
         for (int i = 0; i < indexe.length; i++) {
             erg[i] = readMoney(indexe[i]);
         }

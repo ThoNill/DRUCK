@@ -1,6 +1,7 @@
 package toni.druck.xml;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import org.apache.commons.beanutils.ConvertingWrapDynaBean;
 import org.jdom2.Attribute;
@@ -27,7 +28,7 @@ import toni.druck.page.Verteiler;
  */
 public class DruckWalker extends TreeWalker {
     private Page page;
-    private Stack<Object> parents = new Stack<Object>();
+    private Deque<Object> parents = new ArrayDeque<Object>();
 
     public Page getPage() {
         return page;
@@ -41,7 +42,6 @@ public class DruckWalker extends TreeWalker {
 
     @Override
     protected void bearbeite(Element elem) {
-        // TODO Auto-generated method stub
         bearbeiteReferenz(elem,
                 ((JDOMElementWithReference) elem).getReference());
     }
@@ -73,7 +73,7 @@ public class DruckWalker extends TreeWalker {
 
     private void bearbeiteElementAction(Element elem, ActionOnElement action) {
         if (hasParent()) {
-            String attributes[] = new String[] { "className" };
+            String[] attributes = new String[] { "className" };
             setBeanAttributesWithName(elem, action, attributes);
             Object vo = parents.peek();
             if (vo instanceof toni.druck.standardElemente.StandardElement) {
@@ -90,7 +90,7 @@ public class DruckWalker extends TreeWalker {
     }
 
     private void bearbeiteChart(Element elem, Chart chart) {
-        String attributes[] = new String[] { "className", "variable", "width",
+        String[] attributes = new String[] { "className", "variable", "width",
                 "height", "name", "relX", "relY", "shiftY", "shiftX", "font",
                 "fontsize", "align", "grayscale", "linewidth", "bordered",
                 "filled", "paddingX", "paddingY" };
@@ -102,7 +102,7 @@ public class DruckWalker extends TreeWalker {
 
     private void bearbeiteRenderer(Element elem, Renderer renderer) {
         if (hasParent()) {
-            String attributes[] = new String[] { "className" };
+            String[] attributes = new String[] { "className" };
             setBeanAttributesWithName(elem, renderer, attributes);
             Object vo = parents.peek();
             if (vo instanceof toni.druck.standardElemente.StandardElement) {
@@ -168,7 +168,7 @@ public class DruckWalker extends TreeWalker {
     }
 
     private void setBeanAttributesWithName(Element elem, Object reference,
-            String attributnamen[]) {
+            String[] attributnamen) {
         ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(reference);
         for (Object a : elem.getAttributes()) {
             if (a instanceof Attribute) {
@@ -182,7 +182,7 @@ public class DruckWalker extends TreeWalker {
     }
 
     private void setBeanAttributesExcept(Element elem, Object reference,
-            String ausnahmeAttribute[]) {
+            String[] ausnahmeAttribute) {
         ConvertingWrapDynaBean bean = new ConvertingWrapDynaBean(reference);
 
         for (Object a : elem.getAttributes()) {

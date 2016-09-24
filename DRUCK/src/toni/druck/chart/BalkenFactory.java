@@ -73,8 +73,9 @@ public class BalkenFactory implements DruckChartFactory {
         this.ytitle = ytitle;
     }
 
+    @Override
     public JFreeChart getChart(Chart chart, int theme) {
-        String values[] = chart.getVariablen();
+        String[] values= chart.getVariablen();
         if (values != null) {
             DefaultCategoryDataset dataSet = fülleDasDataSet(chart, values);
             JFreeChart jfc = ChartFactory.createBarChart(getTitle(),
@@ -90,12 +91,12 @@ public class BalkenFactory implements DruckChartFactory {
     }
 
     // Wegen Benutzung in Tests ist diese Methode public
-    public DefaultCategoryDataset fülleDasDataSet(Chart chart, String values[]) {
+    public DefaultCategoryDataset fülleDasDataSet(Chart chart, String[] values) {
         DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
         for (int j = 0; j < values.length; j++) {
             if (values[j] != null && !"".equals(values[j].trim())) {
                 String gruppenName = "group " + j;
-                String daten[] = values[j].split("#");
+                String[] daten = values[j].split("#");
                 füllenDerDatenFürEineGruppe(dataSet, gruppenName, daten);
             }
         }

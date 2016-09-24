@@ -11,7 +11,8 @@ public class SinglePageLoader implements PageLoader {
 		this.page = page;
 	}
 
-	public Page createPage(String name) {
+	@Override
+    public Page createPage(String name) {
 		return page;
 	}
 

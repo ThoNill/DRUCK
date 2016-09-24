@@ -14,7 +14,6 @@ public class RecorderFilter extends BasisFilter {
 	}
 
 	public RecorderFilter() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -54,6 +54,7 @@ public class AllCounter extends Operation implements Action, PrintListener {
         iKey = source.getIndex(key);
     }
 
+    @Override
     public void listenTo(PrintEvent ev) {
         if (ev.getStatus() == PageRenderer.ACCUMULATION) {
             long l = readLong(icount);
@@ -62,6 +63,7 @@ public class AllCounter extends Operation implements Action, PrintListener {
         }
     }
 
+    @Override
     public void perform() {
         String k = readString(iKey);
         Long l = map.get(k);

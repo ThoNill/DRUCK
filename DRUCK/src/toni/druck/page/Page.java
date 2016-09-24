@@ -139,7 +139,7 @@ public class Page extends EventAction {
         }
         freePlace -= getHeight(FOOTER);
         if (freePlace <= 0) {
-            throw new RuntimeException("Page zu klein!");
+            throw new IllegalStateException("Page zu klein!");
         }
     }
 
@@ -168,7 +168,7 @@ public class Page extends EventAction {
 
     private void printWhenFreePlace(DataItem d, PageRenderer out,
             PrintController controller) {
-        String aktualValues[] = null; // zum Zurücksichern der Datenwerte aus d
+        String[] aktualValues = null; // zum Zurücksichern der Datenwerte aus d
         Verteiler v = verteiler.get(d.getCommand());
         if (v != null) {
             aktualValues = v.getActualValues(); // alte Werte sichern

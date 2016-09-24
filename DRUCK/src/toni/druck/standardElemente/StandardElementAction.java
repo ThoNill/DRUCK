@@ -15,6 +15,7 @@ import toni.druck.page.Page;
  */
 public abstract class StandardElementAction implements ElementAction {
 
+    @Override
     public void prepareForPrint(Element elem) {
         prepareForPrint(elem, elem.getData(), elem.getPage());
     }

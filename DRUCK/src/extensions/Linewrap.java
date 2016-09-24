@@ -41,7 +41,7 @@ public class Linewrap extends Extension {
         int w = e.X();
         int h = e.Y();
         if (h > p.getHeight()) {
-            throw new RuntimeException("Seite zu klein " + e.getName());
+            throw new IllegalArgumentException("Seite zu klein " + e.getName());
         }
         return new Dimension(w, p.getHeight() - h);
     }

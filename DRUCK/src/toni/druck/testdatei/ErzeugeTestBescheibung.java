@@ -76,8 +76,7 @@ public class ErzeugeTestBescheibung {
     }
 
     private void analysiereVerteiler(Page page) {
-        // TODO Auto-generated method stub
-        for (String name : page.getVerteilerNamen()) {
+       for (String name : page.getVerteilerNamen()) {
             analysiereEinzelnenVerteiler(page, page.getVerteiler(name));
         }
 

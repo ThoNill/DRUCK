@@ -4,6 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import toni.druck.filter.AppendFilter;
@@ -12,6 +13,8 @@ import toni.druck.filter.FilterGroup;
 import toni.druck.filter.IfExistsFilter;
 
 public class TestDerFilter {
+    private static final Logger LOG = Logger.getLogger(TestDerFilter.class
+            .getSimpleName());
 
     @Test
     public void testVerkettung() {
@@ -44,7 +47,7 @@ public class TestDerFilter {
             a.addFollower(b);
             fail("Exception fehlt");
         } catch (RuntimeException ex) {
-
+            LOG.error("kein echter Fehler",ex);
         }
 
     }
@@ -61,7 +64,7 @@ public class TestDerFilter {
             group.addFollower(a);
             fail("Exception fehlt");
         } catch (RuntimeException ex) {
-
+            LOG.error("kein echter Fehler",ex);
         }
 
     }

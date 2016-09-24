@@ -50,6 +50,7 @@ public class FilterGroup implements Filter {
         return null;
     }
 
+    @Override
     public void receive(DataItem item) {
         Filter f = getFirst();
         if (f != null) {
@@ -59,10 +60,11 @@ public class FilterGroup implements Filter {
 
     public void testAllreadyThere(Filter filter) {
         if (filters.contains(filter)) {
-            throw new RuntimeException("Filter is allready in FilterGroup");
+            throw new IllegalStateException("Filter is allready in FilterGroup");
         }
     }
 
+    @Override
     public void addFollower(Filter filter) {
         testAllreadyThere(filter);
         Filter f = getLast();
@@ -72,6 +74,7 @@ public class FilterGroup implements Filter {
         filters.add(filter);
     }
 
+    @Override
     public void removeFollower(Filter filter) {
         int index = filters.indexOf(filter);
         if (index >= 0) {

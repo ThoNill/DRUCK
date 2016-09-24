@@ -49,19 +49,23 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
         this.codepage = codepage;
     }
 
+    @Override
     public void endDocument() {
         inPrint = false;
     }
 
+    @Override
     public void print(Element elem) {
         if (out != null) {
             out.println(elem.getName());
         }
     }
 
+    @Override
     public void printDefs(Element elem) {
     }
 
+    @Override
     public void setOutput(OutputStream out) {
         try {
             this.out = new PrintWriter(new BufferedWriter(
@@ -71,15 +75,17 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
         }
     }
 
+    @Override
     public void setOutput(String name) throws FileNotFoundException {
         try {
             DirectoryHelper.createDirsForFile(name);
             setOutput(new FileOutputStream(name));
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOG.error(ex);
         }
     }
 
+    @Override
     public void startDocument(Page page) {
         if (inPrint) {
             endDocument();
@@ -87,16 +93,20 @@ public class ToFilePageRenderer extends DefaultPageRenderer {
         inPrint = true;
     }
 
+    @Override
     public int getStatus() {
         return ACCUMULATION;
     }
 
+    @Override
     public void newPage(int pagenr, Page page) {
     }
 
+    @Override
     public void addExtension(Extension qrCode) {
     }
 
+    @Override
     public void include(String filename) throws IOException {
     }
 

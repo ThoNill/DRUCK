@@ -62,7 +62,7 @@ public class Haken extends Extension {
         if (text != null) {
             cb.setLineWidth(haken.getLinewidth());
             Dimension dim = setzeStartPosition(elem, cb, renderer);
-            String snumber[] = text.trim().split(" +");
+            String[] snumber = text.trim().split(" +");
             for (int i = 0; i < snumber.length; i++) {
                 float shift = 10.0f * Float.parseFloat(snumber[i]);
                 dim = drawHakenLine(cb, shift, renderer, dim,
@@ -102,7 +102,7 @@ public class Haken extends Extension {
         int w = e.X();
         int h = e.Y();
         if (h > p.getHeight()) {
-            throw new RuntimeException("Seite zu klein " + e.getName());
+            throw new IllegalArgumentException("Seite zu klein " + e.getName());
         }
         return new Dimension(w, p.getHeight() - h);
     }

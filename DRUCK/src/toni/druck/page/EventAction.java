@@ -43,6 +43,7 @@ public class EventAction implements Action {
         return false;
     }
 
+    @Override
     public void perform() {
         if (actions != null) {
             for (Action a : actions) {
@@ -73,6 +74,7 @@ public class EventAction implements Action {
         return actions;
     }
 
+    @Override
     public void setPage(Page page) {
     }
 

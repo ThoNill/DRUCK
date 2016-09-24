@@ -41,12 +41,15 @@ public class Variable extends StandardElement {
         if ((textformat == null || "".equals(textformat)) && s.length == 1) {
             return s[0];
         }
-        textformat = textformat.replaceAll("'", "#;#");
+        if (textformat != null) {
+            textformat = textformat.replaceAll("'", "#;#");
 
-        String erg = MessageFormat.format(textformat, s);
+            String erg = MessageFormat.format(textformat, s);
 
-        erg = erg.replaceAll("#;#", "'");
-        return erg;
+            erg = erg.replaceAll("#;#", "'");
+            return erg;
+        }
+        return "";
     }
 
     public String[] getVariablen() {

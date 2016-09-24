@@ -3,8 +3,10 @@ package tester.layout;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import tester.filter.TestDerFilter;
 import toni.druck.elements.Hbox;
 import toni.druck.elements.Vbox;
 import toni.druck.page.Page;
@@ -12,6 +14,9 @@ import toni.druck.standardElemente.StandardElement;
 import toni.druck.standardElemente.VHElement;
 
 public class TestLayout {
+    private static final Logger LOG = Logger.getLogger(TestDerFilter.class
+            .getSimpleName());
+    
 	int nr = 0;
 
 	public TestLayout() {
@@ -108,6 +113,7 @@ public class TestLayout {
 			
 
 		} catch (Exception e) {
+		    LOG.error("echter Fehler",e);
 			fail("Exception " + e.getMessage());
 		}
 	}
@@ -138,6 +144,7 @@ public class TestLayout {
 			
 
 		} catch (Exception e) {
+		    LOG.error("echter Fehler",e);
 			fail("Exception " + e.getMessage());
 		}
 	}
@@ -190,6 +197,7 @@ public class TestLayout {
 				
 	
 		} catch (Exception e) {
+		    LOG.error("echter Fehler",e);
 			fail("Exception " + e.getMessage());
 		}
 	}

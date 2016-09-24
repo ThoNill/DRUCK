@@ -29,15 +29,20 @@ public class XMLDocumentLoader {
             .getSimpleName());
 
     public Document createDocument(String name) {
-        if (!name.endsWith(".xml")) {
-            name = name + ".xml";
-        }
-        InputStream resource = findeResource(name);
+       
+        InputStream resource = findeResource(addXMLToName(name));
 
         Document doc = LadeDocument(resource);
         Element root = doc.getRootElement();
         erstzeIncludes(root);
         return doc;
+    }
+
+    protected String addXMLToName(String name) {
+        if (!name.endsWith(".xml")) {
+            return name + ".xml";
+        }
+        return name;
     }
 
     private InputStream findeResource(String name) {
@@ -50,6 +55,7 @@ public class XMLDocumentLoader {
             try {
                 return new FileInputStream(name);
             } catch (FileNotFoundException e) {
+                LOG.error("can ot fin the file " + name, e);
                 throw new MissingResourceException("Resource " + name
                         + " konnte nicht gefunden werden!", name, name);
             }
@@ -100,7 +106,7 @@ public class XMLDocumentLoader {
 
     static private HashMap<String, Element> extractHashOfElementsWithName(
             Element source, String name) {
-        HashMap<String, Element> childs = new HashMap<String, Element>();
+        HashMap<String, Element> childs = new HashMap<>();
         for (Content c : source.getDescendants()) {
             if (c instanceof Element && name.equals(((Element) c).getName())) {
                 Element e = (Element) c;
@@ -112,7 +118,7 @@ public class XMLDocumentLoader {
 
     static private List<Element> extractListOfElementsWithName(Element source,
             String name) {
-        List<Element> childs = new ArrayList<Element>();
+        List<Element> childs = new ArrayList<>();
         for (Content c : source.getContent()) {
             if (c instanceof Element && name.equals(((Element) c).getName())) {
                 childs.add((Element) c);
@@ -170,7 +176,7 @@ public class XMLDocumentLoader {
     }
 
     static private void erstzeIncludes(Element elem) {
-        List<IncludeElement> includes = new ArrayList<IncludeElement>();
+        List<IncludeElement> includes = new ArrayList<>();
         for (Content c : elem.getDescendants()) {
             if (c instanceof IncludeElement) {
                 includes.add((IncludeElement) c);
@@ -188,7 +194,7 @@ public class XMLDocumentLoader {
         int index = p.indexOf(target);
         target.detach();
 
-        List<Content> childs = new ArrayList<Content>();
+        List<Content> childs = new ArrayList<>();
         for (Content c : source.getChildren()) {
             childs.add(c);
         }

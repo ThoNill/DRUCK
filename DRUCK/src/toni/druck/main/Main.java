@@ -80,7 +80,7 @@ public class Main {
         m.print(filename);
     }
 
-    private static void createGuiXML(String filename) throws Exception {
+    private static void createGuiXML(String filename) throws IOException  {
 
         XMLPageLoader l = new XMLPageLoader();
         Document doc = l.createDocument(filename);
@@ -136,7 +136,7 @@ public class Main {
         ByteArrayOutputStream testDaten = new ByteArrayOutputStream();
         creator.loadAndWrite(page, in, testDaten);
 
-        byte aTestDaten[] = testDaten.toByteArray();
+        byte[] aTestDaten = testDaten.toByteArray();
         return aTestDaten;
     }
 
@@ -145,7 +145,7 @@ public class Main {
         ByteArrayOutputStream testBescheibung = new ByteArrayOutputStream();
         testErzeuger.analysiereUndBeschreibe(page, new PrintWriter(
                 new OutputStreamWriter(testBescheibung, "ISO-8859-1"), true));
-        byte aTestBeschreibung[] = testBescheibung.toByteArray();
+        byte[] aTestBeschreibung = testBescheibung.toByteArray();
         return aTestBeschreibung;
     }
 }

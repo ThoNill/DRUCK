@@ -20,7 +20,7 @@ public class DebugAssistent {
 
     public static void log(Category log, Exception ex) {
 
-        StackTraceElement elements[] = ex.getStackTrace();
+        StackTraceElement[] elements = ex.getStackTrace();
         log.error("Exception [" + ex.getMessage() + "]");
         for (int i = 0; i < elements.length; i++) {
             log.error("[" + elements[i] + "] " + elements[i].getFileName()
@@ -36,7 +36,7 @@ public class DebugAssistent {
 
     public static void log(Category log, Error ex) {
 
-        StackTraceElement elements[] = ex.getStackTrace();
+        StackTraceElement[] elements = ex.getStackTrace();
         log.error("Exception [" + ex.getMessage() + "]");
         for (int i = 0; i < elements.length; i++) {
             log.error("[" + elements[i] + "] " + elements[i].getFileName()
@@ -54,7 +54,7 @@ public class DebugAssistent {
 
         Thread t = Thread.currentThread();
         log.error("Thread: [" + t.getName() + "]");
-        StackTraceElement elements[] = t.getStackTrace();
+        StackTraceElement[] elements = t.getStackTrace();
         int anz = elements.length;
         if (anz > max) {
             anz = max;

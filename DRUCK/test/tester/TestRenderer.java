@@ -41,14 +41,17 @@ public class TestRenderer implements PageRenderer {
 		return item;
 	}
 
-	public int getStatus() {
+	@Override
+    public int getStatus() {
 		return REAL_PRINT;
 	}
 
-	public void addExtension(Extension extension) {
+	@Override
+    public void addExtension(Extension extension) {
 	}
 
-	public void print(Element elem) {
+	@Override
+    public void print(Element elem) {
 		if (!elem.isEnabled())
 			return;
 		if (!elem.isPrintable())
@@ -66,7 +69,8 @@ public class TestRenderer implements PageRenderer {
 		elem.printChilds(this);
 	}
 
-	public void startDocument(Page page) {
+	@Override
+    public void startDocument(Page page) {
 		if (inPrint) {
 			endDocument();
 		}
@@ -77,7 +81,8 @@ public class TestRenderer implements PageRenderer {
 	}
 
 
-	public void endDocument() {
+	@Override
+    public void endDocument() {
 		if (out != null) {
 			newItem("endDocument");
 		}
@@ -90,7 +95,7 @@ public class TestRenderer implements PageRenderer {
 		int w = e.X();
 		int h = e.Y();
 		if (h > p.getHeight()) {
-			throw new RuntimeException("Seite zu klein " + e.getName());
+			throw new IllegalArgumentException("Seite zu klein " + e.getName());
 		}
 		return new Dimension(w, p.getHeight() - h);
 	}
@@ -107,20 +112,25 @@ public class TestRenderer implements PageRenderer {
 		item.setDimension(e.getWidth(), e.getHeight());
 	}
 
-	public void newPage(int pagenr, Page page) {
+	@Override
+    public void newPage(int pagenr, Page page) {
 		newItem(page.getName());
 	}
 
-	public void setOutput(OutputStream out) {
+	@Override
+    public void setOutput(OutputStream out) {
 	}
 
-	public void setOutput(String filename) throws FileNotFoundException {
+	@Override
+    public void setOutput(String filename) throws FileNotFoundException {
 	}
 
-	public void printDefs(Element elem) {
+	@Override
+    public void printDefs(Element elem) {
 	}
 
-	public void include(String filename) throws IOException {
+	@Override
+    public void include(String filename) throws IOException {
 	}
 
 

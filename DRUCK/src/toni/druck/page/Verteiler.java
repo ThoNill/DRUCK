@@ -28,7 +28,7 @@ import toni.druck.model.DataModel;
 public class Verteiler extends EventAction {
     static Logger logger = Logger.getLogger("DataPlace");
 
-    private int place[] = null;
+    private int[] place = null;
 
     private String name;
 
@@ -86,7 +86,7 @@ public class Verteiler extends EventAction {
 
     public String[] getActualValues() {
         if (place != null) {
-            String v[] = new String[place.length];
+            String[] v = new String[place.length];
             for (int i = 0; i < place.length; i++) {
                 v[i] = model.get(place[i]);
             }
@@ -95,7 +95,7 @@ public class Verteiler extends EventAction {
         return null;
     }
 
-    public void restoreValues(String v[]) {
+    public void restoreValues(String[] v) {
         if (v == null)
             return;
 

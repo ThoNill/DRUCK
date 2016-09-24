@@ -47,10 +47,12 @@ public class Counter extends Operation implements Action, PrintListener {
         writeLong(icount, 0L);
     }
 
+    @Override
     public void listenTo(PrintEvent ev) {
         set0();
     }
 
+    @Override
     public void perform() {
         inc();
     }

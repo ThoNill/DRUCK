@@ -134,7 +134,7 @@ public class IfExistsFilter extends BasisFilter {
             }
             break;
         default:
-            throw new RuntimeException("nicht erlaubter Status");
+            throw new IllegalStateException("nicht erlaubter Status");
 
         }
 
@@ -174,7 +174,7 @@ public class IfExistsFilter extends BasisFilter {
             }
             break;
         default:
-            throw new RuntimeException("nicht erlaubter Status");
+            throw new IllegalStateException("nicht erlaubter Status");
 
         }
 

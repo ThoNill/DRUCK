@@ -17,6 +17,7 @@ public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
     private static final Logger LOG = Logger.getLogger(XMLPageLoader.class
             .getSimpleName());
 
+    @Override
     public Page createPage(String name) {
         try {
 
@@ -29,7 +30,7 @@ public class XMLPageLoader extends XMLDocumentLoader implements PageLoader {
             page.layout();
             return page;
         } catch (Exception e) {
-            LOG.error("Resource " + name + " do not exist");
+            LOG.error("Resource " + name + " do not exist",e);
         }
         return null;
     }

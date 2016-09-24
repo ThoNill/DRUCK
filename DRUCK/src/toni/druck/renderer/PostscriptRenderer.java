@@ -63,9 +63,9 @@ public class PostscriptRenderer extends ToFilePageRenderer {
 
         try {
 
-            byte eps[] = createEPS(elem, chart);
+            byte[] eps = createEPS(elem, chart);
             if (eps != null) {
-                int boundingBox[] = new int[4];
+                int[] boundingBox = new int[4];
                 boundingBox[0] = 0;
                 boundingBox[1] = 0;
                 boundingBox[2] = elem.getWidth() * 10;
@@ -171,7 +171,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
         printClipString(elem);
         String t = elem.getText();
 
-        int boundingBox[] = elem.getBoundlingBox();
+        int[] boundingBox = elem.getBoundlingBox();
 
         printImageBox(elem, t, boundingBox);
 
@@ -233,7 +233,6 @@ public class PostscriptRenderer extends ToFilePageRenderer {
                 ext.extend(out);
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             LOG.error(e);
         }
 
@@ -404,7 +403,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
         int w = e.X();
         int h = e.Y();
         if (h > p.getHeight()) {
-            throw new RuntimeException("Seite zu klein " + e.getName());
+            throw new IllegalArgumentException("Seite zu klein " + e.getName());
         }
         return new Dimension(w, p.getHeight() - h);
         // return new Dimension(w, 280 - h);
@@ -517,7 +516,7 @@ public class PostscriptRenderer extends ToFilePageRenderer {
         printFixedText(m);
         out.println(" calculateTextHeight ");
         Dimension size = m.getSize();
-        String texte[] = m.getTexte();
+        String[] texte = m.getTexte();
         int rows = m.getRows();
         for (int i = 0; i < texte.length && i < rows; i++) {
             String text = texte[i];

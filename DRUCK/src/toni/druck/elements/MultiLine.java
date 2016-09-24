@@ -61,25 +61,25 @@ public class MultiLine extends StandardElement {
     private String fillNextLineIntoErg(String t, String[] erg, int i, String p) {
         if (Character.isSpace(p.charAt(charsInRow - 1))) {
             erg[i] = p.trim();
-            t = t.substring(charsInRow).trim();
+            return t.substring(charsInRow).trim();
         } else {
             int li = p.lastIndexOf(' ');
             if (li >= 0) {
                 erg[i] = t.substring(0, li).trim();
-                t = t.substring(li).trim();
+                return t.substring(li).trim();
             } else {
                 erg[i] = p;
-                t = t.substring(charsInRow).trim();
+                return t.substring(charsInRow).trim();
             }
         }
-        return t;
     }
 
     public int neededLines(String t) {
+        String text = t;
         int lines = 0;
-        while (t.length() > charsInRow) {
-            String p = t.substring(0, charsInRow);
-            t = nextLine(t, p);
+        while (text.length() > charsInRow) {
+            String p = text.substring(0, charsInRow);
+            text = nextLine(text, p);
             lines++;
         }
         lines++;

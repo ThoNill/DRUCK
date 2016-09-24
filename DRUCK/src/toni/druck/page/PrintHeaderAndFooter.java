@@ -32,6 +32,7 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
 
     }
 
+    @Override
     public void listenTo(PrintEvent ev) {
         if (header != null) {
             printTheHeader = true;
@@ -50,6 +51,7 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
      * @see
      * toni.druck.core.PrintController#print(toni.druck.renderer.PageRenderer)
      */
+    @Override
     public void print(PageRenderer out) {
         if (printTheHeader) {
             page.print(header, out);
@@ -67,6 +69,7 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
      * 
      * @see toni.druck.core.PrintController#getTestHeight()
      */
+    @Override
     public int getTestHeight(DataItem item) {
         calculatePrintFooter(item);
 
@@ -85,18 +88,22 @@ public class PrintHeaderAndFooter implements PrintListener, PrintController {
      * 
      * @see toni.druck.core.PrintController#getPageShiftHeight()
      */
+    @Override
     public int getPageShiftHeight() {
         return 0;
     }
 
+    @Override
     public boolean isPrintable() {
         return body.isPrintable();
     }
 
+    @Override
     public boolean isEnabled() {
         return body.isEnabled();
     }
 
+    @Override
     public void prepareForPrint() {
         if (printTheHeader) {
             header.prepareForPrint();

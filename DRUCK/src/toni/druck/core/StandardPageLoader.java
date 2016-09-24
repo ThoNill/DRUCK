@@ -22,6 +22,7 @@ public class StandardPageLoader implements PageLoader {
         pages.put(page.getName(), page);
     }
 
+    @Override
     public Page createPage(String name) {
         return pages.get(name);
     }

@@ -21,13 +21,16 @@ import toni.druck.page.DataItem;
 public abstract class BasisFilter implements Filter {
     private List<Filter> followers = new ArrayList<Filter>();
 
+    @Override
     abstract public void receive(DataItem item);
 
+    @Override
     public void addFollower(Filter filter) {
         testAllreadyThere(filter);
         followers.add(filter);
     }
 
+    @Override
     public void removeFollower(Filter filter) {
         followers.remove(filter);
     }
@@ -40,7 +43,7 @@ public abstract class BasisFilter implements Filter {
 
     public void testAllreadyThere(Filter filter) {
         if (followers.contains(filter)) {
-            throw new RuntimeException("Filter is allready in BasisFilter");
+            throw new IllegalStateException("Filter is allready in BasisFilter");
         }
     }
 

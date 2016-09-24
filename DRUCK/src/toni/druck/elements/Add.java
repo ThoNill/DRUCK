@@ -6,7 +6,7 @@ import toni.druck.page.Operation;
 
 public class Add extends Operation implements Action {
 
-    private int place[] = null;
+    private int[] place = null;
     private String fields;
     private String sresult;
     private int iresult;
@@ -45,6 +45,7 @@ public class Add extends Operation implements Action {
         iresult = source.getIndex(sresult);
     }
 
+    @Override
     public void perform() {
         long sum = add();
         resultValue(sum);
